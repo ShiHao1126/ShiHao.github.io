@@ -1,24 +1,542 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#faf8f2"><meta name="description" content="石昊的个人主页。关于在交大学自动化、做机器人和记录触觉的经历。"><meta property="og:type" content="website"><meta property="og:title" content="石昊 · Hao Shi"><meta property="og:description" content="在交大学自动化，从仿真走到机器人操作台边。这是我的经历和做过的东西。"><meta property="og:url" content="https://shihao1126.github.io/"><meta property="og:image" content="https://shihao1126.github.io/assets/art/hero.webp"><title>石昊 · Hao Shi</title><link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="stylesheet" href="home.css"><script defer src="home.js"></script></head>
-<body id="top"><a class="skip" href="#main"><span data-ln="zh">跳到正文</span><span lang="en" data-ln="en">Skip to content</span></a>
-<header><div class="mast"><a class="wordmark" href="#top"><i aria-hidden="true">✳</i> Hao Shi<span class="wordmark-zh">石昊</span></a><nav aria-label="导航"><a href="#experience"><span data-ln="zh">来时路</span><span lang="en" data-ln="en">Journey</span></a><a href="#projects"><span data-ln="zh">做过的东西</span><span lang="en" data-ln="en">Work</span></a><a href="#contact"><span data-ln="zh">联系</span><span lang="en" data-ln="en">Contact</span></a></nav><div class="lang" role="group" aria-label="中文 / English"><button data-lang="zh" lang="zh-CN" aria-label="中文" aria-pressed="true">中</button><span aria-hidden="true">/</span><button data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button></div></div></header>
-<main id="main"><div class="intro inner" data-part="intro"><article class="hello"><h1><span data-ln="zh">你好，我是<span class="accent">石昊</span>。</span><span lang="en" data-ln="en">Hi, I’m <span class="accent">Hao Shi</span>.</span></h1><p class="lede"><span data-ln="zh">我在上海交通大学读自动化，喜欢亲手搭机器人。</span><span lang="en" data-ln="en">I study automation at Shanghai Jiao Tong University and like building robots with my own hands.</span></p><p><span data-ln="zh">最早是在仿真里学着看机器人怎么动。后来做外骨骼、戴上数据手套，开始关心另一件事：机器人碰到东西的时候，手上究竟能感觉到什么？</span><span lang="en" data-ln="en">I first learned about robot motion in simulation. Working with exoskeletons and data gloves led me to a different question: what can you feel through a robot when it touches something?</span></p><p><span data-ln="zh">最近我在做视触觉采集，用机械臂按压传感器，把每一帧触觉图像和接触力对起来。</span><span lang="en" data-ln="en">Lately I’ve been working on tactile data collection, pressing a sensor with a robot arm and matching each image to the force that produced it.</span></p><div class="intro-links"><a href="mailto:shihao1126@sjtu.edu.cn"><span data-ln="zh">写信给我</span><span lang="en" data-ln="en">Email me</span> ↗</a><span>·</span><a href="https://github.com/ShiHao1126">GitHub ↗</a></div></article>
-<figure class="sketch"><div class="paper"><svg viewBox="0 0 460 320" role="img" aria-labelledby="sk-title" xmlns="http://www.w3.org/2000/svg"><title id="sk-title">机械臂与触觉接触概念手绘 / Robot arm and tactile contact sketch</title><defs><pattern id="dots" width="15" height="15" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".7" fill="#aca79a" opacity=".58"/></pattern><pattern id="hatch" width="7" height="7" patternTransform="rotate(-28)" patternUnits="userSpaceOnUse"><path d="M0 0V7" stroke="#626c69" stroke-width="1" opacity=".3"/></pattern></defs><rect width="460" height="320" fill="#f1ede0"/><rect width="460" height="320" fill="url(#dots)"/><g fill="none" stroke="#b8b4a7" stroke-width="1" stroke-dasharray="4 4"><path d="M40 251l207 35 152-71M79 224l165-54 161 34M103 200V88M250 282V99"/></g>
-<g fill="none" stroke="#384a49" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round">
-<path d="M46 222l58-20 51 10-58 24z" fill="#e4e1d3"/><path d="M46 222v12l51 14v-12m0 12l58-24v-12" fill="url(#hatch)"/>
-<path d="M64 211v12c8 8 40 10 61-2l2-14" fill="#dddccf"/><ellipse cx="96" cy="209" rx="32" ry="10" transform="rotate(-6 96 209)" fill="#f0ecde"/>
-<path d="M80 205l5-47c1-15 19-19 26-6l6 42-6 13c-10 4-21 4-31-2z" fill="#e0dfd1"/>
-<path d="M95 150l53-75c9-9 24-6 27 4l-9 17-56 70" fill="#eee9d9"/><path d="M107 156l53-72 10-4m-68 68l43-61" stroke="#8d9287" stroke-width="1.2"/>
-<circle cx="98" cy="159" r="16" fill="#d1d3c5"/><circle cx="98" cy="159" r="10" fill="#f7f1e3"/><circle cx="98" cy="159" r="3.5" fill="#536964"/>
-<path d="M159 71l19-4 78 40 5 14-12 10-17-6-74-39z" fill="#e7e4d6"/><path d="M174 77l68 35m-67-29l61 31" stroke="#90938b" stroke-width="1"/>
-<circle cx="163" cy="84" r="16" fill="#d2d4c7"/><circle cx="163" cy="84" r="10" fill="#f6f0df"/><circle cx="163" cy="84" r="3.5" fill="#536964"/>
-<path d="M241 124l4 18 24 13 13-9-6-20-17-10z" fill="#e1dfcf"/><circle cx="251" cy="118" r="13" fill="#d1d3c6"/><circle cx="251" cy="118" r="7" fill="#f5efdf"/>
-<path d="M258 149l1 17 8 5 4-4-3-14m9-8l11 13-4 14-6 1-1-7 3-6-9-10" fill="#e2e1d2"/>
-<path d="M226 211l46-19 48 11-45 22z" fill="#dfdbca"/><path d="M226 211v9l49 15 45-22v-10m-45 22v10" fill="#eae4d4"/>
-<path d="M247 203l23-10 25 6-22 11z" fill="#9baeac"/><path d="M247 203v4l26 8 22-12v-4"/>
-</g><g stroke="#bc623e" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M272 178v12m-4-4l4 5 4-5"/><path d="M287 191c23-10 37-17 47-33" stroke-dasharray="4 4"/><circle cx="355" cy="127" r="34" fill="#f1eddf"/><g transform="rotate(-18 355 127)"><ellipse cx="355" cy="127" rx="22" ry="13"/><ellipse cx="355" cy="127" rx="16" ry="9"/><ellipse cx="355" cy="127" rx="9" ry="5"/></g></g><g fill="none" stroke="#78847c" stroke-width="1.3"><path d="M48 269v-27m0 27l23 6m-23-6l16-9"/></g><g font-size="12" fill="#777e72" font-family="monospace"><text x="29" y="254">z</text><text x="74" y="279">x</text></g></svg></div><figcaption><span data-ln="zh">机械臂与触觉接触 · 原理示意</span><span lang="en" data-ln="en">A robot arm and tactile contact · schematic</span></figcaption></figure></div>
-<section class="journey inner" id="experience" data-part="experience"><div class="section-title"><h2><span data-ln="zh">一路走来</span><span lang="en" data-ln="en">Along the way</span></h2><span class="rule"></span><span class="yearspan">2023 — 2026</span></div><div class="years"><article class="year" data-part="year-2023"><div class="date">2023</div><div class="entry"><h3><span data-ln="zh">从自动化开始</span><span lang="en" data-ln="en">Starting with automation</span></h3><p><span data-ln="zh">我来到上海交通大学读自动化。之后做过的机器人项目，把课堂里的运动学、控制和感知联系到了一起。</span><span lang="en" data-ln="en">I came to Shanghai Jiao Tong University to study automation. Working on robots later brought kinematics, control, and sensing together for me.</span></p></div></article><article class="year" data-part="year-2024"><div class="date">2024</div><div class="entry"><h3><span data-ln="zh">在仿真里接触机器人</span><span lang="en" data-ln="en">My first steps in simulation</span></h3><p><span data-ln="zh">在 MVIG，我开始学 MuJoCo，也试着用 3D Gaussian Splatting 重建场景。那是我第一次接触科研。</span><span lang="en" data-ln="en">At MVIG I began learning MuJoCo and exploring how 3D Gaussian Splatting reconstructs a scene. It was my first experience of research.</span></p></div></article><article class="year" data-part="year-2025"><div class="date">2025</div><div class="entry"><h3><span data-ln="zh">从仿真走到操作台边</span><span lang="en" data-ln="en">From simulation to the workbench</span></h3><p><span data-ln="zh">在唐鼎老师的课题组，我开始做力反馈外骨骼，也采集人手示教数据。同一个擦拭动作，除了工具走过的轨迹，还得记录它沿途用了多大的力。</span><span lang="en" data-ln="en">In Ding Tang’s group I began working on a force-feedback exoskeleton and recording human demonstrations. For a wiping task, the tool’s path tells only part of the story. We also needed to measure how hard it pressed.</span></p></div></article><article class="year" data-part="year-2026"><div class="date">2026</div><div class="entry"><h3><span data-ln="zh">把接触记录下来</span><span lang="en" data-ln="en">Recording contact</span></h3><p><span data-ln="zh">在灵巧智能，我把手套动作映射到灵巧手上。在千觉机器人和交大 MPI Lab，我开始让机械臂重复按压、旋转和剪切，把触觉图像与力信号一一对应。</span><span lang="en" data-ln="en">At DexRobot I mapped glove motion to a dexterous hand. At Xense Robotics and SJTU’s MPI Lab, I started using a robot arm to repeat presses, twists, and shears, pairing tactile images with the resulting forces.</span></p></div></article></div></section>
-<section class="works inner" id="projects" data-part="projects"><div class="section-title"><h2><span data-ln="zh">做过的东西</span><span lang="en" data-ln="en">Things I’ve built</span></h2><span class="rule"></span></div><div class="work-grid"><article class="work" data-part="work-haptic"><a class="cover" href="projects/haptic.html" data-project aria-label="怎样把接触力传回操作者手上？"><img loading="lazy" src="assets/art/haptic.webp" alt="" width="1152" height="720"><span class="figtag"><span data-ln="zh">原理示意</span><span lang="en" data-ln="en">Schematic</span></span></a><h3><a href="projects/haptic.html" data-project><span data-ln="zh">怎样把接触力传回操作者手上？</span><span lang="en" data-ln="en">How can an operator feel contact at a distance?</span></a></h3><p><span data-ln="zh">我和小组搭起一套外骨骼与 Flexiv 机械臂的双边遥操作系统。主端带动从端，接触产生的力和力矩再回到主端。</span><span lang="en" data-ln="en">My team and I built a bilateral system with a haptic exoskeleton and a Flexiv arm. Motion travels to the robot, and the forces and torques at contact travel back.</span></p><a class="textlink" href="projects/haptic.html" data-project><span data-ln="zh">项目记录</span><span lang="en" data-ln="en">Project notes</span> ↗</a></article><article class="work" data-part="work-tactile"><a class="cover" href="projects/tactile.html" data-project aria-label="给触觉图像配上力的读数"><img loading="lazy" src="assets/art/tactile.webp" alt="" width="1152" height="720"><span class="figtag"><span data-ln="zh">原理示意</span><span lang="en" data-ln="en">Schematic</span></span></a><h3><a href="projects/tactile.html" data-project><span data-ln="zh">给触觉图像配上力的读数</span><span lang="en" data-ln="en">Putting a force reading next to a tactile image</span></a></h3><p><span data-ln="zh">从一次按压开始，我把接触位置、加载条件和图像记录下来，再用机器人参考力检查三轴力估计。</span><span lang="en" data-ln="en">Starting with a single press, I recorded the contact location, loading conditions, and sensor image, then checked three-axis force estimates against the robot’s reference signal.</span></p><a class="textlink" href="projects/tactile.html" data-project><span data-ln="zh">项目记录</span><span lang="en" data-ln="en">Project notes</span> ↗</a></article><article class="work" data-part="work-force"><a class="cover" href="projects/force.html" data-project aria-label="让机器人重做一次擦拭"><img loading="lazy" src="assets/art/force.webp" alt="" width="1152" height="720"><span class="figtag"><span data-ln="zh">原理示意</span><span lang="en" data-ln="en">Schematic</span></span></a><h3><a href="projects/force.html" data-project><span data-ln="zh">让机器人重做一次擦拭</span><span lang="en" data-ln="en">Teaching a robot a wiping motion</span></a></h3><p><span data-ln="zh">在 ForceTrace-CAFE 项目里，我负责采集示教、部署策略和真机实验。要看懂一次执行，还得把相机、位姿和六维力信号在时间上对齐。</span><span lang="en" data-ln="en">For ForceTrace-CAFE, I collected demonstrations, deployed policies, and ran hardware experiments. To inspect a single rollout, I had to align the camera, pose, and six-axis force signals in time.</span></p><a class="textlink" href="projects/force.html" data-project><span data-ln="zh">项目记录</span><span lang="en" data-ln="en">Project notes</span> ↗</a></article></div>
-<p class="other"><span data-ln="zh">也做过</span><span lang="en" data-ln="en">Also explored</span> <a data-project href="projects/hand.html"><span data-ln="zh">手套遥操作</span><span lang="en" data-ln="en">glove teleoperation</span></a><b> / </b><a data-project href="projects/sim.html"><span data-ln="zh">Isaac Lab 触觉仿真</span><span lang="en" data-ln="en">tactile simulation in Isaac Lab</span></a><b> / </b><a data-project href="projects/kineteach.html">KineTeach</a></p></section>
-<section id="publications" class="pub inner" data-part="publications"><details><summary><span><span data-ln="zh">合作论文与稿件</span><span lang="en" data-ln="en">Papers and manuscripts</span></span><span class="p-toggle" aria-hidden="true">+</span></summary><div class="plist"><article id="paper-1"><h3 lang="en">KineTeach for Robot-Free Real-to-Sim-to-Real Data Generation in Cross-Embodiment Robotic Manipulation</h3><p><em>ICIRA 2026</em> · <span data-ln="zh">已录用 · 第四作者</span><span lang="en" data-ln="en">Accepted · Fourth author</span></p></article><article id="paper-2"><h3 lang="en">Towards Physical Intelligence in Contact-Rich Manufacturing: A Visual-Force-Pose Demonstration and Phase-Aware Learning Framework</h3><p><em>Robotics and Computer-Integrated Manufacturing</em> · <span data-ln="zh">已投稿 · 第四作者</span><span lang="en" data-ln="en">Submitted · Fourth author</span></p></article><article id="paper-3"><h3 lang="en">Anti-Light-Variation, Detailed Camera-Based Tactile Sensing With Continuous Binary Encoding</h3><p><em>IEEE Transactions on Industrial Electronics</em> · <span data-ln="zh">修回中 · 第六作者</span><span lang="en" data-ln="en">Under revision · Sixth author</span></p></article></div></details></section>
-</main><footer id="contact" data-part="contact"><div class="inner"><div class="section-title"><h2><span data-ln="zh">联系我</span><span lang="en" data-ln="en">Get in touch</span></h2><span class="rule"></span></div><div class="footerrow"><p><span data-ln="zh">想聊机器人、触觉或一起做点东西，欢迎来信。</span><span lang="en" data-ln="en">If you’d like to talk robots, tactile sensing, or building something together, drop me a line.</span><br><a href="mailto:shihao1126@sjtu.edu.cn">shihao1126@sjtu.edu.cn ↗</a></p><div><a href="https://github.com/ShiHao1126">GitHub ↗</a><br><a id="cv" href="cv/hao-shi-zh.pdf"><span data-ln="zh">中文简历</span><span lang="en" data-ln="en">English CV</span> ↗</a></div></div><div class="bottom"><span>© 2026 Hao Shi</span><a href="#top"><span data-ln="zh">回到顶部</span><span lang="en" data-ln="en">Back to top</span> ↑</a></div></div></footer></body></html>
+<html lang="zh-CN"
+  ><head
+    ><meta charset="utf-8" /><meta
+      name="viewport"
+      content="width=device-width,initial-scale=1" /><meta
+      name="theme-color"
+      content="#faf8f2" /><meta
+      name="description"
+      content="石昊的个人主页。关于在交大学自动化、做机器人和记录触觉的经历。" /><meta
+      property="og:type"
+      content="website" /><meta
+      property="og:title"
+      content="石昊 · Hao Shi" /><meta
+      property="og:description"
+      content="在交大学自动化，从仿真走到机器人操作台边。这是我的经历和做过的东西。" /><meta
+      property="og:url"
+      content="https://shihao1126.github.io/" /><meta
+      property="og:image"
+      content="https://shihao1126.github.io/assets/art/hero.webp" /><title
+      >石昊 · Hao Shi</title
+    ><link rel="icon" type="image/svg+xml" href="assets/favicon.svg" /><link
+      rel="stylesheet"
+      href="home.css" /><script defer src="home.js"></script
+  ></head>
+  <body id="top"
+    ><a class="skip" href="#main"
+      ><span data-ln="zh">跳到正文</span
+      ><span lang="en" data-ln="en">Skip to content</span></a
+    >
+    <header
+      ><div class="mast"
+        ><a class="wordmark" href="#top"
+          ><i aria-hidden="true">✳</i> Hao Shi<span class="wordmark-zh"
+            >石昊</span
+          ></a
+        ><nav aria-label="导航"
+          ><a href="#experience"
+            ><span data-ln="zh">来时路</span
+            ><span lang="en" data-ln="en">Journey</span></a
+          ><a href="#projects"
+            ><span data-ln="zh">做过的东西</span
+            ><span lang="en" data-ln="en">Work</span></a
+          ><a href="#contact"
+            ><span data-ln="zh">联系</span
+            ><span lang="en" data-ln="en">Contact</span></a
+          ></nav
+        ><div class="lang" role="group" aria-label="中文 / English"
+          ><button
+            data-lang="zh"
+            lang="zh-CN"
+            aria-label="中文"
+            aria-pressed="true"
+            >中</button
+          ><span aria-hidden="true">/</span
+          ><button
+            data-lang="en"
+            lang="en"
+            aria-label="English"
+            aria-pressed="false"
+            >EN</button
+          ></div
+        ></div
+      ></header
+    >
+    <main id="main"
+      ><div class="intro inner" data-part="intro"
+        ><article class="hello"
+          ><h1
+            ><span data-ln="zh"
+              >你好，我是<span class="accent">石昊</span>。</span
+            ><span lang="en" data-ln="en"
+              >Hi, I’m <span class="accent">Hao Shi</span>.</span
+            ></h1
+          ><p class="lede"
+            ><span data-ln="zh"
+              >我在上海交通大学读自动化，喜欢亲手搭机器人。</span
+            ><span lang="en" data-ln="en"
+              >I study automation at Shanghai Jiao Tong University and like
+              building robots with my own hands.</span
+            ></p
+          ><p
+            ><span data-ln="zh"
+              >最早是在仿真里学着看机器人怎么动。后来做外骨骼、戴上数据手套，开始关心另一件事：机器人碰到东西的时候，手上究竟能感觉到什么？</span
+            ><span lang="en" data-ln="en"
+              >I first learned about robot motion in simulation. Working with
+              exoskeletons and data gloves led me to a different question: what
+              can you feel through a robot when it touches something?</span
+            ></p
+          ><p
+            ><span data-ln="zh"
+              >最近我在做视触觉采集，用机械臂按压传感器，把每一帧触觉图像和接触力对起来。</span
+            ><span lang="en" data-ln="en"
+              >Lately I’ve been working on tactile data collection, pressing a
+              sensor with a robot arm and matching each image to the force that
+              produced it.</span
+            ></p
+          ><div class="intro-links"
+            ><a href="mailto:shihao1126@sjtu.edu.cn"
+              ><span data-ln="zh">写信给我</span
+              ><span lang="en" data-ln="en">Email me</span> ↗</a
+            ><span>·</span
+            ><a href="https://github.com/ShiHao1126">GitHub ↗</a></div
+          ></article
+        >
+        <figure class="sketch"
+          ><div class="paper"
+            ><svg
+              viewBox="0 0 460 320"
+              role="img"
+              aria-labelledby="sk-title"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title id="sk-title">
+                机械臂与触觉接触概念手绘 / Robot arm and tactile contact sketch
+              </title>
+              <defs>
+                <pattern
+                  id="dots"
+                  width="15"
+                  height="15"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <circle cx="2" cy="2" r=".7" fill="#aca79a" opacity=".58" />
+                </pattern>
+                <pattern
+                  id="hatch"
+                  width="7"
+                  height="7"
+                  patternTransform="rotate(-28)"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path
+                    d="M0 0V7"
+                    stroke="#626c69"
+                    stroke-width="1"
+                    opacity=".3"
+                  />
+                </pattern>
+              </defs>
+              <rect width="460" height="320" fill="#f1ede0" />
+              <rect width="460" height="320" fill="url(#dots)" />
+              <g
+                fill="none"
+                stroke="#b8b4a7"
+                stroke-width="1"
+                stroke-dasharray="4 4"
+              >
+                <path
+                  d="M40 251l207 35 152-71M79 224l165-54 161 34M103 200V88M250 282V99"
+                />
+              </g>
+              <g
+                fill="none"
+                stroke="#384a49"
+                stroke-width="2.1"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+              >
+                <path d="M46 222l58-20 51 10-58 24z" fill="#e4e1d3" />
+                <path
+                  d="M46 222v12l51 14v-12m0 12l58-24v-12"
+                  fill="url(#hatch)"
+                />
+                <path d="M64 211v12c8 8 40 10 61-2l2-14" fill="#dddccf" />
+                <ellipse
+                  cx="96"
+                  cy="209"
+                  rx="32"
+                  ry="10"
+                  transform="rotate(-6 96 209)"
+                  fill="#f0ecde"
+                />
+                <path
+                  d="M80 205l5-47c1-15 19-19 26-6l6 42-6 13c-10 4-21 4-31-2z"
+                  fill="#e0dfd1"
+                />
+                <path
+                  d="M95 150l53-75c9-9 24-6 27 4l-9 17-56 70"
+                  fill="#eee9d9"
+                />
+                <path
+                  d="M107 156l53-72 10-4m-68 68l43-61"
+                  stroke="#8d9287"
+                  stroke-width="1.2"
+                />
+                <circle cx="98" cy="159" r="16" fill="#d1d3c5" />
+                <circle cx="98" cy="159" r="10" fill="#f7f1e3" />
+                <circle cx="98" cy="159" r="3.5" fill="#536964" />
+                <path
+                  d="M159 71l19-4 78 40 5 14-12 10-17-6-74-39z"
+                  fill="#e7e4d6"
+                />
+                <path
+                  d="M174 77l68 35m-67-29l61 31"
+                  stroke="#90938b"
+                  stroke-width="1"
+                />
+                <circle cx="163" cy="84" r="16" fill="#d2d4c7" />
+                <circle cx="163" cy="84" r="10" fill="#f6f0df" />
+                <circle cx="163" cy="84" r="3.5" fill="#536964" />
+                <path d="M241 124l4 18 24 13 13-9-6-20-17-10z" fill="#e1dfcf" />
+                <circle cx="251" cy="118" r="13" fill="#d1d3c6" />
+                <circle cx="251" cy="118" r="7" fill="#f5efdf" />
+                <path
+                  d="M258 149l1 17 8 5 4-4-3-14m9-8l11 13-4 14-6 1-1-7 3-6-9-10"
+                  fill="#e2e1d2"
+                />
+                <path d="M226 211l46-19 48 11-45 22z" fill="#dfdbca" />
+                <path d="M226 211v9l49 15 45-22v-10m-45 22v10" fill="#eae4d4" />
+                <path d="M247 203l23-10 25 6-22 11z" fill="#9baeac" />
+                <path d="M247 203v4l26 8 22-12v-4" />
+              </g>
+              <g
+                stroke="#bc623e"
+                fill="none"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              >
+                <path d="M272 178v12m-4-4l4 5 4-5" />
+                <path d="M287 191c23-10 37-17 47-33" stroke-dasharray="4 4" />
+                <circle cx="355" cy="127" r="34" fill="#f1eddf" />
+                <g transform="rotate(-18 355 127)">
+                  <ellipse cx="355" cy="127" rx="22" ry="13" />
+                  <ellipse cx="355" cy="127" rx="16" ry="9" />
+                  <ellipse cx="355" cy="127" rx="9" ry="5" />
+                </g>
+              </g>
+              <g fill="none" stroke="#78847c" stroke-width="1.3">
+                <path d="M48 269v-27m0 27l23 6m-23-6l16-9" />
+              </g>
+              <g font-size="12" fill="#777e72" font-family="monospace">
+                <text x="29" y="254">z</text>
+                <text x="74" y="279">x</text>
+              </g>
+            </svg></div
+          ><figcaption
+            ><span data-ln="zh">机械臂与触觉接触 · 原理示意</span
+            ><span lang="en" data-ln="en"
+              >A robot arm and tactile contact · schematic</span
+            ></figcaption
+          ></figure
+        ></div
+      >
+      <section class="journey inner" id="experience" data-part="experience"
+        ><div class="section-title"
+          ><h2
+            ><span data-ln="zh">一路走来</span
+            ><span lang="en" data-ln="en">Along the way</span></h2
+          ><span class="rule"></span
+          ><span class="yearspan">2023 — 2026</span></div
+        ><div class="years"
+          ><article class="year" data-part="year-2023"
+            ><div class="date">2023</div
+            ><div class="entry"
+              ><h3
+                ><span data-ln="zh">从自动化开始</span
+                ><span lang="en" data-ln="en"
+                  >Starting with automation</span
+                ></h3
+              ><p
+                ><span data-ln="zh"
+                  >我来到上海交通大学读自动化。之后做过的机器人项目，把课堂里的运动学、控制和感知联系到了一起。</span
+                ><span lang="en" data-ln="en"
+                  >I came to Shanghai Jiao Tong University to study automation.
+                  Working on robots later brought kinematics, control, and
+                  sensing together for me.</span
+                ></p
+              ></div
+            ></article
+          ><article class="year" data-part="year-2024"
+            ><div class="date">2024</div
+            ><div class="entry"
+              ><h3
+                ><span data-ln="zh">在仿真里接触机器人</span
+                ><span lang="en" data-ln="en"
+                  >My first steps in simulation</span
+                ></h3
+              ><p
+                ><span data-ln="zh"
+                  >在 MVIG，我开始学 MuJoCo，也试着用 3D Gaussian Splatting
+                  重建场景。那是我第一次接触科研。</span
+                ><span lang="en" data-ln="en"
+                  >At MVIG I began learning MuJoCo and exploring how 3D Gaussian
+                  Splatting reconstructs a scene. It was my first experience of
+                  research.</span
+                ></p
+              ></div
+            ></article
+          ><article class="year" data-part="year-2025"
+            ><div class="date">2025</div
+            ><div class="entry"
+              ><h3
+                ><span data-ln="zh">从仿真走到操作台边</span
+                ><span lang="en" data-ln="en"
+                  >From simulation to the workbench</span
+                ></h3
+              ><p
+                ><span data-ln="zh"
+                  >在唐鼎老师的课题组，我开始做力反馈外骨骼，也采集人手示教数据。同一个擦拭动作，除了工具走过的轨迹，还得记录它沿途用了多大的力。</span
+                ><span lang="en" data-ln="en"
+                  >In Ding Tang’s group I began working on a force-feedback
+                  exoskeleton and recording human demonstrations. For a wiping
+                  task, the tool’s path tells only part of the story. We also
+                  needed to measure how hard it pressed.</span
+                ></p
+              ></div
+            ></article
+          ><article class="year" data-part="year-2026"
+            ><div class="date">2026</div
+            ><div class="entry"
+              ><h3
+                ><span data-ln="zh">把接触记录下来</span
+                ><span lang="en" data-ln="en">Recording contact</span></h3
+              ><p
+                ><span data-ln="zh"
+                  >在灵巧智能，我把手套动作映射到灵巧手上。在千觉机器人和交大
+                  MPI
+                  Lab，我开始让机械臂重复按压、旋转和剪切，把触觉图像与力信号一一对应。</span
+                ><span lang="en" data-ln="en"
+                  >At DexRobot I mapped glove motion to a dexterous hand. At
+                  Xense Robotics and SJTU’s MPI Lab, I started using a robot arm
+                  to repeat presses, twists, and shears, pairing tactile images
+                  with the resulting forces.</span
+                ></p
+              ></div
+            ></article
+          ></div
+        ></section
+      >
+      <section class="works inner" id="projects" data-part="projects"
+        ><div class="section-title"
+          ><h2
+            ><span data-ln="zh">做过的东西</span
+            ><span lang="en" data-ln="en">Things I’ve built</span></h2
+          ><span class="rule"></span></div
+        ><div class="work-grid"
+          ><article class="work" data-part="work-haptic"
+            ><a
+              class="cover"
+              href="projects/haptic.html"
+              data-project
+              aria-label="怎样把接触力传回操作者手上？"
+              ><img
+                loading="lazy"
+                src="assets/art/haptic.webp"
+                alt=""
+                width="1152"
+                height="720"
+              /><span class="figtag"
+                ><span data-ln="zh">原理示意</span
+                ><span lang="en" data-ln="en">Schematic</span></span
+              ></a
+            ><h3
+              ><a href="projects/haptic.html" data-project
+                ><span data-ln="zh">怎样把接触力传回操作者手上？</span
+                ><span lang="en" data-ln="en"
+                  >How can an operator feel contact at a distance?</span
+                ></a
+              ></h3
+            ><p
+              ><span data-ln="zh"
+                >我和小组搭起一套外骨骼与 Flexiv
+                机械臂的双边遥操作系统。主端带动从端，接触产生的力和力矩再回到主端。</span
+              ><span lang="en" data-ln="en"
+                >My team and I built a bilateral system with a haptic
+                exoskeleton and a Flexiv arm. Motion travels to the robot, and
+                the forces and torques at contact travel back.</span
+              ></p
+            ><a class="textlink" href="projects/haptic.html" data-project
+              ><span data-ln="zh">项目记录</span
+              ><span lang="en" data-ln="en">Project notes</span> ↗</a
+            ></article
+          ><article class="work" data-part="work-tactile"
+            ><a
+              class="cover"
+              href="projects/tactile.html"
+              data-project
+              aria-label="给触觉图像配上力的读数"
+              ><img
+                loading="lazy"
+                src="assets/art/tactile.webp"
+                alt=""
+                width="1152"
+                height="720"
+              /><span class="figtag"
+                ><span data-ln="zh">原理示意</span
+                ><span lang="en" data-ln="en">Schematic</span></span
+              ></a
+            ><h3
+              ><a href="projects/tactile.html" data-project
+                ><span data-ln="zh">给触觉图像配上力的读数</span
+                ><span lang="en" data-ln="en"
+                  >Putting a force reading next to a tactile image</span
+                ></a
+              ></h3
+            ><p
+              ><span data-ln="zh"
+                >从一次按压开始，我把接触位置、加载条件和图像记录下来，再用机器人参考力检查三轴力估计。</span
+              ><span lang="en" data-ln="en"
+                >Starting with a single press, I recorded the contact location,
+                loading conditions, and sensor image, then checked three-axis
+                force estimates against the robot’s reference signal.</span
+              ></p
+            ><a class="textlink" href="projects/tactile.html" data-project
+              ><span data-ln="zh">项目记录</span
+              ><span lang="en" data-ln="en">Project notes</span> ↗</a
+            ></article
+          ><article class="work" data-part="work-force"
+            ><a
+              class="cover"
+              href="projects/force.html"
+              data-project
+              aria-label="让机器人重做一次擦拭"
+              ><img
+                loading="lazy"
+                src="assets/art/force.webp"
+                alt=""
+                width="1152"
+                height="720"
+              /><span class="figtag"
+                ><span data-ln="zh">原理示意</span
+                ><span lang="en" data-ln="en">Schematic</span></span
+              ></a
+            ><h3
+              ><a href="projects/force.html" data-project
+                ><span data-ln="zh">让机器人重做一次擦拭</span
+                ><span lang="en" data-ln="en"
+                  >Teaching a robot a wiping motion</span
+                ></a
+              ></h3
+            ><p
+              ><span data-ln="zh"
+                >在 ForceTrace-CAFE
+                项目里，我负责采集示教、部署策略和真机实验。要看懂一次执行，还得把相机、位姿和六维力信号在时间上对齐。</span
+              ><span lang="en" data-ln="en"
+                >For ForceTrace-CAFE, I collected demonstrations, deployed
+                policies, and ran hardware experiments. To inspect a single
+                rollout, I had to align the camera, pose, and six-axis force
+                signals in time.</span
+              ></p
+            ><a class="textlink" href="projects/force.html" data-project
+              ><span data-ln="zh">项目记录</span
+              ><span lang="en" data-ln="en">Project notes</span> ↗</a
+            ></article
+          ></div
+        >
+        <p class="other"
+          ><span data-ln="zh">也做过</span
+          ><span lang="en" data-ln="en">Also explored</span>
+          <a data-project href="projects/hand.html"
+            ><span data-ln="zh">手套遥操作</span
+            ><span lang="en" data-ln="en">glove teleoperation</span></a
+          ><b> / </b
+          ><a data-project href="projects/sim.html"
+            ><span data-ln="zh">Isaac Lab 触觉仿真</span
+            ><span lang="en" data-ln="en"
+              >tactile simulation in Isaac Lab</span
+            ></a
+          ><b> / </b
+          ><a data-project href="projects/kineteach.html">KineTeach</a></p
+        ></section
+      >
+      <section id="publications" class="pub inner" data-part="publications"
+        ><details
+          ><summary
+            ><span
+              ><span data-ln="zh">合作论文与稿件</span
+              ><span lang="en" data-ln="en">Papers and manuscripts</span></span
+            ><span class="p-toggle" aria-hidden="true">+</span></summary
+          ><div class="plist"
+            ><article id="paper-1"
+              ><h3 lang="en"
+                >KineTeach for Robot-Free Real-to-Sim-to-Real Data Generation in
+                Cross-Embodiment Robotic Manipulation</h3
+              ><p
+                ><em>ICIRA 2026</em> ·
+                <span data-ln="zh">已录用 · 第四作者</span
+                ><span lang="en" data-ln="en">Accepted · Fourth author</span></p
+              ></article
+            ><article id="paper-2"
+              ><h3 lang="en"
+                >Towards Physical Intelligence in Contact-Rich Manufacturing: A
+                Visual-Force-Pose Demonstration and Phase-Aware Learning
+                Framework</h3
+              ><p
+                ><em>Robotics and Computer-Integrated Manufacturing</em> ·
+                <span data-ln="zh">已投稿 · 第四作者</span
+                ><span lang="en" data-ln="en"
+                  >Submitted · Fourth author</span
+                ></p
+              ></article
+            ><article id="paper-3"
+              ><h3 lang="en"
+                >Anti-Light-Variation, Detailed Camera-Based Tactile Sensing
+                With Continuous Binary Encoding</h3
+              ><p
+                ><em>IEEE Transactions on Industrial Electronics</em> ·
+                <span data-ln="zh">修回中 · 第六作者</span
+                ><span lang="en" data-ln="en"
+                  >Under revision · Sixth author</span
+                ></p
+              ></article
+            ></div
+          ></details
+        ></section
+      > </main
+    ><footer id="contact" data-part="contact"
+      ><div class="inner"
+        ><div class="section-title"
+          ><h2
+            ><span data-ln="zh">联系我</span
+            ><span lang="en" data-ln="en">Get in touch</span></h2
+          ><span class="rule"></span></div
+        ><div class="footerrow"
+          ><p
+            ><span data-ln="zh">想聊机器人、触觉或一起做点东西，欢迎来信。</span
+            ><span lang="en" data-ln="en"
+              >If you’d like to talk robots, tactile sensing, or building
+              something together, drop me a line.</span
+            ><br /><a href="mailto:shihao1126@sjtu.edu.cn"
+              >shihao1126@sjtu.edu.cn ↗</a
+            ></p
+          ><div
+            ><a href="https://github.com/ShiHao1126">GitHub ↗</a><br /><a
+              id="cv"
+              href="cv/hao-shi-zh.pdf"
+              ><span data-ln="zh">中文简历</span
+              ><span lang="en" data-ln="en">English CV</span> ↗</a
+            ></div
+          ></div
+        ><div class="bottom"
+          ><span>© 2026 Hao Shi</span
+          ><a href="#top"
+            ><span data-ln="zh">回到顶部</span
+            ><span lang="en" data-ln="en">Back to top</span> ↑</a
+          ></div
+        ></div
+      ></footer
+    ></body
+  ></html
+>
