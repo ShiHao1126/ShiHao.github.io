@@ -29,11 +29,11 @@
     document.body.classList.toggle("english", language === "en");
     root.lang = language === "en" ? "en" : "zh-CN";
     document.title =
-      language === "en" ? "Hao Shi · Personal homepage" : "石昊 · Hao Shi";
+      language === "en" ? "Hao Shi | 石昊" : "石昊 | Hao Shi";
     document.querySelector("meta[name=description]").content =
       language === "en"
-        ? "Hao Shi’s personal homepage. From studying automation in Shanghai to building robots and collecting tactile data."
-        : "石昊的个人主页。关于在交大学自动化、做机器人和记录触觉的经历。";
+        ? "Illustrated project notes by Hao Shi on tactile sensing, teleoperation, assembly and demonstration capture."
+        : "石昊的项目笔记。图解触觉感知、双边遥操作、装配仿真与机器人示教中的系统设计和实验。";
     document
       .querySelector("nav")
       .setAttribute("aria-label", language === "en" ? "Navigation" : "导航");
@@ -42,22 +42,12 @@
       .forEach((btn) =>
         btn.setAttribute("aria-pressed", String(btn.dataset.lang === language)),
       );
-    document.querySelectorAll("[data-project]").forEach((a) => {
-      const href = a.getAttribute("href").split("?")[0];
-      a.setAttribute(
-        "href",
-        href + (language === "en" ? "?lang=en" : "?lang=zh"),
-      );
-      if (a.classList.contains("cover"))
-        a.setAttribute(
-          "aria-label",
-          a.closest("article").querySelector('h3 [data-ln="' + language + '"]')
-            .textContent,
-        );
-    });
+    for (const image of document.querySelectorAll("img[data-zh-alt]")) {
+      image.alt = image.dataset[language + "Alt"];
+    }
     document
       .querySelector("#cv")
-      .setAttribute("href", "cv/hao-shi-" + language + ".pdf");
+      .setAttribute("href", "cv/hao-shi-en.pdf?v=20261120-ielts");
     if (remember) {
       try {
         localStorage.setItem(storageKey, language);
@@ -71,18 +61,12 @@
       });
     }
   }
-  function openPaper() {
-    if (
-      /^#paper-[1-3]$/.test(location.hash) ||
-      location.hash === "#publications"
-    ) {
-      document.querySelector("#publications details").open = true;
-      const target = document.getElementById(location.hash.slice(1));
-      if (target)
-        requestAnimationFrame(() =>
-          target.scrollIntoView({ block: "start", behavior: "instant" }),
-        );
-    }
+  function openSection(hash) {
+    const target = document.getElementById(hash.slice(1));
+    const section = target?.closest("details");
+    if (!section) return;
+    section.open = true;
+    requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
   }
   apply(active, requested === "en" || requested === "zh");
   document.querySelectorAll("[data-lang]").forEach((btn) =>
@@ -96,6 +80,9 @@
       apply(btn.dataset.lang, true, true);
     }),
   );
-  window.addEventListener("hashchange", openPaper);
-  openPaper();
+  document.querySelectorAll('.nav-row nav a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", () => openSection(link.hash));
+  });
+  window.addEventListener("hashchange", () => openSection(location.hash));
+  openSection(location.hash);
 })();

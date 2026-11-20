@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="开展移动机器人导航与语音交互开发，包括法奥四舵轮底盘的 Nav2 路径规划与跟踪，以及灵巧智能导览机器人的 ROS 2 语音交互和多站任务管理。">
+  <title>移动机器人导航与语音交互 · 石昊</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/project-archive.css">
+  <script defer src="../assets/project-language.js"></script>
+</head>
+<body data-zh-title="移动机器人导航与语音交互 · 石昊" data-en-title="Mobile robot navigation and voice interaction · Hao Shi">
+  <a class="skip" href="#article"><span class="zh" lang="zh-CN">跳到正文</span><span class="en" lang="en">Skip to article</span></a>
+  <header class="site-header">
+    <a href="../index.html" data-route="../index.html"><span class="zh" lang="zh-CN">石昊</span><span class="en" lang="en">Hao Shi</span></a>
+    <a href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">全部项目</span><span class="en" lang="en">All projects</span></a>
+    <nav class="switch" aria-label="语言 / Language">
+      <a data-lang="zh" lang="zh-CN" href="?lang=zh" aria-current="true">中文</a>
+      <span aria-hidden="true">/</span>
+      <a data-lang="en" lang="en" href="?lang=en">English</a>
+    </nav>
+  </header>
+  <main id="article" tabindex="-1">
+    <article>
+      <header class="article-intro" data-anchor>
+        <div>
+          <h1><span class="zh" lang="zh-CN"><span class="title-phrase">移动机器人导航</span><wbr><span class="title-phrase">与语音交互</span></span><span class="en" lang="en">Mobile robot navigation and voice interaction</span></h1>
+          <p class="deck"><span class="zh" lang="zh-CN">开展移动机器人导航与语音交互开发，包括法奥四舵轮底盘的 Nav2 路径规划与跟踪，以及灵巧智能导览机器人的 ROS 2 语音交互和多站任务管理。</span><span class="en" lang="en">Development spans Nav2 path planning and tracking for a FAIRINO base with four steerable wheels, and ROS 2 speech interaction and multi-stop task management for DexRobot’s tour-guide robot.</span></p>
+        </div>
+        <figure>
+          <a class="figure-link" href="../assets/figures/mobile.webp">
+            <img width="1200" height="800" src="../assets/figures/mobile.webp" decoding="async"
+                 alt="四舵轮移动底盘绕过障碍物的规划路径示意" data-zh-alt="四舵轮移动底盘绕过障碍物的规划路径示意" data-en-alt="Schematic of a path around an obstacle for a four-wheel-steering base">
+          </a>
+          <figcaption><span class="zh" lang="zh-CN">四舵轮移动底盘绕过障碍物的规划路径示意</span><span class="en" lang="en">Schematic of a path around an obstacle for a four-wheel-steering base</span></figcaption>
+        </figure>
+      </header>
+      <div class="reading-layout">
+        <nav class="contents" aria-label="本文目录 / In this article">
+          <p><span class="zh" lang="zh-CN">本文目录</span><span class="en" lang="en">In this article</span></p>
+          <ol>
+            <li><a href="#case"><span class="zh" lang="zh-CN">从一条直线到可跟踪的绕障路径</span><span class="en" lang="en">From a straight line to a trackable detour</span></a></li>
+            <li><a href="#section-1"><span class="zh" lang="zh-CN">四舵轮底盘的 Nav2 路径规划</span><span class="en" lang="en">Nav2 path planning for a four-wheel-steering base</span></a></li>
+<li><a href="#section-2"><span class="zh" lang="zh-CN">全向跟踪与障碍重规划</span><span class="en" lang="en">Omnidirectional tracking and obstacle-triggered replanning</span></a></li>
+<li><a href="#section-3"><span class="zh" lang="zh-CN">导览机器人的 ROS 2 语音交互</span><span class="en" lang="en">ROS 2 speech interaction for a guide robot</span></a></li>
+<li><a href="#section-4"><span class="zh" lang="zh-CN">多站导览与任务中断处理</span><span class="en" lang="en">Multi-stop tours and task interruption</span></a></li>
+          </ol>
+        </nav>
+        <div class="reading-body">
+          <section class="case-study" id="case" data-anchor>
+            <h2><span class="zh" lang="zh-CN">从一条直线到可跟踪的绕障路径</span><span class="en" lang="en">From a straight line to a trackable detour</span></h2>
+            <ol class="case-steps"><li><h3><span class="zh" lang="zh-CN">先检查车体能否通过</span><span class="en" lang="en">Check clearance for the vehicle</span></h3><p><span class="zh" lang="zh-CN">起点和目标之间的直线提供最直接的候选路径。通行性判断还要考虑车体在地面上的轮廓。即使路线中心避开了障碍，车体边缘仍可能与之相交。</span><span class="en" lang="en">The line between start and goal is the most direct candidate. Its clearance has to account for the vehicle footprint. An obstacle can intersect the side of the chassis even when it never crosses the path centreline.</span></p></li>
+<li><h3><span class="zh" lang="zh-CN">把绕行结果交给跟踪器</span><span class="en" lang="en">Turn a detour into tracking references</span></h3><p><span class="zh" lang="zh-CN">直线受阻时，Smac 从地图上搜索绕行路线。路径简化与重采样将疏密不同的路径点整理为间距较均匀的序列，全向前视控制器据此选择前方参考点并计算底盘运动指令。</span><span class="en" lang="en">If the direct path is obstructed, Smac searches the map for a detour. Simplification and resampling produce waypoints at more regular intervals. The omnidirectional controller selects a lookahead point on that sequence to compute base motion commands.</span></p></li>
+<li><h3><span class="zh" lang="zh-CN">让障碍在执行途中出现</span><span class="en" lang="en">Introduce an obstruction during tracking</span></h3><p><span class="zh" lang="zh-CN">离线检查可以在已有路线中加入障碍，再观察规划分支是否切换、输出路径是否更新，以及反馈异常时控制器是否停止发出运动指令。这些记录检验了软件逻辑，实际舵轮的跟踪误差需要实车测量。</span><span class="en" lang="en">An offline check can introduce an obstacle on an existing route and inspect the change in planning branch and output path. A separate feedback fault checks whether motion commands cease. These checks exercise the software logic. Wheel tracking error requires measurements on the physical base.</span></p></li></ol>
+          </section>
+                <section id="section-1" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">四舵轮底盘的 Nav2 路径规划</span><span class="en" lang="en">Nav2 path planning for a four-wheel-steering base</span></h2>
+        <p><span class="zh" lang="zh-CN">法奥四舵轮底盘的 Nav2 规划器优先检查起点至目标点的直线路径。直线受阻时，Smac 规划器搜索绕障路线。路径经简化和重采样后，全向前视跟踪器沿间距较均匀的路径点计算底盘运动指令。</span><span class="en" lang="en">The Nav2 planner for FAIRINO’s four-wheel-steering base first tests the straight path from start to goal. If an obstacle blocks that path, the Smac planner searches for a detour. Simplification and resampling provide regularly spaced waypoints from which an omnidirectional lookahead controller computes base motion commands.</span></p>
+      </section>
+      <section id="section-2" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">全向跟踪与障碍重规划</span><span class="en" lang="en">Omnidirectional tracking and obstacle-triggered replanning</span></h2>
+        <p><span class="zh" lang="zh-CN">跟踪控制器协调各舵轮转向，在接近终点时减速，并依据底盘足迹检查碰撞风险。新障碍阻断路径时触发重规划，反馈异常时停止输出运动指令。软件与离线测试覆盖规划和控制分支的触发条件、路径输出与异常处理。</span><span class="en" lang="en">The tracking controller coordinates wheel steering, decelerates near the goal and checks for collisions using the chassis footprint. A newly obstructed path triggers replanning, and abnormal feedback inhibits motion commands. Software and offline tests covered planning and control branch conditions, the resulting paths and fault handling.</span></p>
+      </section>
+      <section id="section-3" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">导览机器人的 ROS 2 语音交互</span><span class="en" lang="en">ROS 2 speech interaction for a guide robot</span></h2>
+        <p><span class="zh" lang="zh-CN">开发 ROS 2 语音交互模块，集成音频预处理、语音识别、意图理解与语音播报。通过状态机管理唤醒、监听、播报和用户打断，在播报结束或中止后恢复监听。</span><span class="en" lang="en">A ROS 2 speech interface integrates audio preprocessing, speech recognition, intent interpretation and spoken responses. A state machine manages wake-up, listening, playback and user interruptions, returning to listening when playback ends or is interrupted.</span></p>
+      </section>
+      <section id="section-4" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">多站导览与任务中断处理</span><span class="en" lang="en">Multi-stop tours and task interruption</span></h2>
+        <p><span class="zh" lang="zh-CN">基于 LangGraph 组织问答、对话与导航任务，支持单点导航、多站导览、到站讲解及站点切换。任务流程处理用户取消、超时返回和低电量事件，协调导航执行状态与语音播报。</span><span class="en" lang="en">LangGraph organises question answering, dialogue and navigation, supporting single-destination navigation, multi-stop tours, narration on arrival and transitions between stops. Task handling coordinates navigation and speech during user cancellation, return on timeout and low-battery events.</span></p>
+      </section>
+        </div>
+      </div>
+    </article>
+    <nav class="project-nav" aria-label="项目导航 / Project navigation">
+      <a href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">返回项目列表</span><span class="en" lang="en">Back to projects</span></a>
+      <a href="tactile.html" data-route="tactile.html"><small><span class="zh" lang="zh-CN">下一篇</span><span class="en" lang="en">Next project</span></small><span class="zh" lang="zh-CN">视触觉数据采集与三轴力估计</span><span class="en" lang="en">Visuotactile data acquisition and three-axis force estimation</span> →</a>
+    </nav>
+  </main>
+  <footer>
+    <a class="zh" lang="zh-CN" href="../cv/hao-shi-zh.pdf">中文简历</a>
+    <a class="en" lang="en" href="../cv/hao-shi-en.pdf">English CV</a>
+  </footer>
+</body>
+</html>

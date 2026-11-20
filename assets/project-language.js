@@ -14,8 +14,8 @@
     document.title = document.body.dataset[lang + "Title"];
     const desc = document.querySelector('meta[name="description"]');
     desc.content = document.querySelector(".deck ." + lang).textContent;
-    document.querySelector("img[data-zh-alt]").alt =
-      document.querySelector("img").dataset[lang + "Alt"];
+    const figure = document.querySelector("img[data-zh-alt]");
+    if (figure) figure.alt = figure.dataset[lang + "Alt"];
     for (const a of document.querySelectorAll("[data-lang]")) {
       if (a.dataset.lang === lang) a.setAttribute("aria-current", "true");
       else a.removeAttribute("aria-current");

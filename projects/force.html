@@ -1,2 +1,101 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#faf8f2"><meta name="description" content="从人手示教到机器人执行，记录擦拭、刮除与装配任务中的视觉、位姿和接触力。"><title>ForceTrace-CAFE · 石昊</title><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/project-archive.css"><script defer src="../assets/project-language.js"></script></head><body data-zh-title="ForceTrace-CAFE · 石昊" data-en-title="ForceTrace-CAFE · Hao Shi"><a class="skip" href="#article"><span class="zh" lang="zh-CN">跳到正文</span><span class="en" lang="en">Skip to article</span></a><header class="bar"><div class="bar-inner"><a class="signature" href="../index.html" data-route="../index.html"><i aria-hidden="true">✳</i> Hao Shi <small>石昊</small></a><a class="nav-back" href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">全部项目</span><span class="en" lang="en">All projects</span></a><nav class="switch" aria-label="中文 / English"><a data-lang="zh" lang="zh-CN" href="?lang=zh" aria-label="中文">中</a><span aria-hidden="true">/</span><a data-lang="en" lang="en" href="?lang=en" aria-label="English">EN</a></nav></div></header><main class="page" id="article"><article><header data-anchor><p class="byline"><span class="zh" lang="zh-CN">示教采集与真机部署</span><span class="en" lang="en">Demonstrations and deployment</span></p><h1><span class="zh" lang="zh-CN">ForceTrace-CAFE</span><span class="en" lang="en">ForceTrace-CAFE</span></h1><p class="deck"><span class="zh" lang="zh-CN">从人手示教到机器人执行，记录擦拭、刮除与装配任务中的视觉、位姿和接触力。</span><span class="en" lang="en">Human demonstrations and robot executions capture how vision, pose, and contact force change during wiping, scraping, and assembly.</span></p></header><figure data-anchor><div class="art"><img width="1152" height="720" src="../assets/art/force.webp" alt="擦拭过程和接触力方向示意" data-zh-alt="擦拭过程和接触力方向示意" data-en-alt="Schematic of wiping and the direction of contact force"></div><figcaption><span class="zh" lang="zh-CN">擦拭过程和接触力方向示意</span><span class="en" lang="en">Schematic of wiping and the direction of contact force</span></figcaption></figure><div class="body-copy"><section data-anchor><h2><span class="zh" lang="zh-CN">从人手擦拭到机器人执行</span><span class="en" lang="en">From a human demonstration to robot execution</span></h2><p><span class="zh" lang="zh-CN">擦拭任务里，工具沿着表面走过的路径只是记录的一部分。另一个问题是工具在什么时候贴上去，接触时施加了多少力。ForceTrace-CAFE 是我参与的团队项目，我做的工作横跨示教数据采集和机器人实验。</span><span class="en" lang="en">When someone wipes a surface, the tool path tells only part of the story. The point of contact and the force applied during the stroke also matter. I worked on demonstration capture and robot experiments as part of the ForceTrace-CAFE team.</span></p><p><span class="zh" lang="zh-CN">在团队项目中，我负责多模态示教采集、策略与基线的真机部署，以及操作实验和接触力分析。</span><span class="en" lang="en">My contributions to this team project were demonstration capture, hardware deployment of policies and baselines, and contact-force analysis during experiments.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">补偿工具对测力的影响</span><span class="en" lang="en">Compensate the force measurements</span></h2><p><span class="zh" lang="zh-CN">对工具重力、质心偏置及传感器零偏进行补偿，以便在示教工具姿态变化时分析物体接触产生的力和力矩。</span><span class="en" lang="en">I compensated for tool weight, centre-of-mass offset, and sensor bias to isolate the effect of contact as the demonstrator changed the tool’s orientation.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">整理示教数据</span><span class="en" lang="en">Prepare the demonstrations</span></h2><p><span class="zh" lang="zh-CN">对齐视觉、力和力矩、位姿及夹爪状态，标注接触阶段，为视觉和力觉策略准备训练数据接口。</span><span class="en" lang="en">I aligned visual observations, force and torque, pose, and gripper state in time, annotated contact phases, and prepared data interfaces for vision- and force-based policies.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">把策略接入真机</span><span class="en" lang="en">Run the policies on a robot</span></h2><p><span class="zh" lang="zh-CN">适配观测和动作接口，调试推理时序与动作执行，并在擦拭、刮除和装配中对照策略与基线的实际表现。</span><span class="en" lang="en">I adapted observation and action interfaces, debugged inference timing and action execution, and compared policies with baselines in wiping, scraping, and assembly experiments.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">从示教走到真机</span><span class="en" lang="en">Taking demonstrations onto hardware</span></h2><p><span class="zh" lang="zh-CN">我参与采集真人示教、运行真机策略并分析任务过程中的接触力。相关团队稿件已投稿至 Robotics and Computer-Integrated Manufacturing，我为第四作者。</span><span class="en" lang="en">My experiments covered human demonstration capture, policy execution on physical robots, and analysis of the resulting force traces. I am the fourth author of the associated manuscript submitted to Robotics and Computer-Integrated Manufacturing.</span></p></section><aside class="source" data-anchor><strong><span class="zh" lang="zh-CN">相关论文</span><span class="en" lang="en">Related paper</span></strong><p lang="en">Towards Physical Intelligence in Contact-Rich Manufacturing: A Visual-Force-Pose Demonstration and Phase-Aware Learning Framework</p><p><span class="zh" lang="zh-CN">已投稿</span><span class="en" lang="en">Submitted</span> · Robotics and Computer-Integrated Manufacturing · <span class="zh" lang="zh-CN">第四作者</span><span class="en" lang="en">Fourth author</span></p></aside><nav class="next"><a class="back-main" href="../index.html#projects" data-route="../index.html#projects">← <span class="zh" lang="zh-CN">回到主页</span><span class="en" lang="en">Back to homepage</span></a><a href="hand.html" data-route="hand.html"><span class="zh" lang="zh-CN">手套驱动的灵巧手遥操作</span><span class="en" lang="en">Glove-to-Hand Teleoperation</span> →</a></nav></div></article></main><footer><div class="footer-inner"><span>石昊 / Hao Shi</span><a class="zh" href="../cv/hao-shi-zh.pdf">中文简历</a><a class="en" href="../cv/hao-shi-en.pdf">English CV</a></div></footer></body></html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="参与 ForceTrace-CAFE 接触操作示教学习研究，负责视觉、力觉与位姿数据采集、工具载荷标定补偿，以及策略和对比基线的真机部署。实验覆盖擦拭、刮除与装配任务。">
+  <title>ForceTrace-CAFE：多模态示教采集与真机部署 · 石昊</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/project-archive.css">
+  <script defer src="../assets/project-language.js"></script>
+</head>
+<body data-zh-title="ForceTrace-CAFE：多模态示教采集与真机部署 · 石昊" data-en-title="ForceTrace-CAFE: multimodal demonstration capture and policy deployment · Hao Shi">
+  <a class="skip" href="#article"><span class="zh" lang="zh-CN">跳到正文</span><span class="en" lang="en">Skip to article</span></a>
+  <header class="site-header">
+    <a href="../index.html" data-route="../index.html"><span class="zh" lang="zh-CN">石昊</span><span class="en" lang="en">Hao Shi</span></a>
+    <a href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">全部项目</span><span class="en" lang="en">All projects</span></a>
+    <nav class="switch" aria-label="语言 / Language">
+      <a data-lang="zh" lang="zh-CN" href="?lang=zh" aria-current="true">中文</a>
+      <span aria-hidden="true">/</span>
+      <a data-lang="en" lang="en" href="?lang=en">English</a>
+    </nav>
+  </header>
+  <main id="article" tabindex="-1">
+    <article>
+      <header class="article-intro" data-anchor>
+        <div>
+          <h1><span class="zh" lang="zh-CN"><span class="title-phrase">ForceTrace-CAFE：</span><wbr><span class="title-phrase">多模态示教采集</span><wbr><span class="title-phrase">与真机部署</span></span><span class="en" lang="en">ForceTrace-CAFE: multimodal demonstration capture and policy deployment</span></h1>
+          <p class="deck"><span class="zh" lang="zh-CN">参与 ForceTrace-CAFE 接触操作示教学习研究，负责视觉、力觉与位姿数据采集、工具载荷标定补偿，以及策略和对比基线的真机部署。实验覆盖擦拭、刮除与装配任务。</span><span class="en" lang="en">Contributed to ForceTrace-CAFE through visual, force and pose data acquisition, tool-load calibration and compensation, and hardware deployment of the policy and comparison baselines. Experiments cover wiping, scraping and assembly.</span></p>
+        </div>
+        <figure>
+          <a class="figure-link" href="../assets/figures/force.webp">
+            <img width="1200" height="800" src="../assets/figures/force.webp" decoding="async"
+                 alt="手持示教工具记录运动轨迹与接触载荷示意" data-zh-alt="手持示教工具记录运动轨迹与接触载荷示意" data-en-alt="Schematic of handheld demonstration capture with tool motion and contact load">
+          </a>
+          <figcaption><span class="zh" lang="zh-CN">手持示教工具记录运动轨迹与接触载荷示意</span><span class="en" lang="en">Schematic of handheld demonstration capture with tool motion and contact load</span></figcaption>
+        </figure>
+      </header>
+      <div class="reading-layout">
+        <nav class="contents" aria-label="本文目录 / In this article">
+          <p><span class="zh" lang="zh-CN">本文目录</span><span class="en" lang="en">In this article</span></p>
+          <ol>
+            <li><a href="#case"><span class="zh" lang="zh-CN">沿着一次擦拭读懂接触力</span><span class="en" lang="en">Reading the force trace of a single wipe</span></a></li>
+            <li><a href="#section-1"><span class="zh" lang="zh-CN">手持示教的力、位姿与视觉测量</span><span class="en" lang="en">Force, pose and visual measurements during handheld demonstrations</span></a></li>
+<li><a href="#section-2"><span class="zh" lang="zh-CN">工具重力与传感器零偏补偿</span><span class="en" lang="en">Tool gravity and force/torque sensor bias compensation</span></a></li>
+<li><a href="#section-3"><span class="zh" lang="zh-CN">接触阶段标注与多频数据组织</span><span class="en" lang="en">Contact-phase annotation and multi-rate training data</span></a></li>
+<li><a href="#section-4"><span class="zh" lang="zh-CN">策略的真机部署与对照实验</span><span class="en" lang="en">Policy deployment and comparative hardware experiments</span></a></li>
+          </ol>
+        </nav>
+        <div class="reading-body">
+          <section class="case-study" id="case" data-anchor>
+            <h2><span class="zh" lang="zh-CN">沿着一次擦拭读懂接触力</span><span class="en" lang="en">Reading the force trace of a single wipe</span></h2>
+            <ol class="case-steps"><li><h3><span class="zh" lang="zh-CN">接触前的读数</span><span class="en" lang="en">Before the first contact</span></h3><p><span class="zh" lang="zh-CN">工具悬空时转动手柄，传感器就可能报告力和力矩变化。工具重量在各轴上的投影会变，质心到传感器原点的力臂还会引入力矩。先补偿这些量与传感器零偏，才能解释工具刚触及表面时的读数变化。</span><span class="en" lang="en">Rotating the tool in free space can change the measured force and torque. Its weight projects onto different sensor axes, and the offset centre of mass creates a moment. Compensating for these terms and sensor bias makes the change at first contact interpretable.</span></p></li>
+<li><h3><span class="zh" lang="zh-CN">划出擦拭区间</span><span class="en" lang="en">Identify the interval on the surface</span></h3><p><span class="zh" lang="zh-CN">沿对齐的图像、工具位姿和力信号标注接触、持续擦拭和抬离。这样可以在同一阶段比较两次示教的载荷，避免把一次仍在空中接近的轨迹与另一次已贴住表面的轨迹直接相减。</span><span class="en" lang="en">Aligned images, poses and force readings mark contact onset, the sustained wipe and lift-off. Comparing loads within the same phase avoids pairing a tool still approaching in one trial with a tool already on the surface in another.</span></p></li>
+<li><h3><span class="zh" lang="zh-CN">把同一问题带到真机</span><span class="en" lang="en">Ask the same question on the robot</span></h3><p><span class="zh" lang="zh-CN">策略及对比基线部署后，真机实验同时查看工具轨迹与接触力曲线。即使两种方法的路径很接近，持续接触段的载荷仍可说明它们是否以相近的力度执行擦拭。</span><span class="en" lang="en">Hardware trials record the tool trajectory and contact-force profile for the deployed policy and its baselines. Even when two methods trace similar paths, loads during sustained contact show whether they apply comparable forces through the wipe.</span></p></li></ol>
+          </section>
+                <section id="section-1" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">手持示教的力、位姿与视觉测量</span><span class="en" lang="en">Force, pose and visual measurements during handheld demonstrations</span></h2>
+        <p><span class="zh" lang="zh-CN">接入 RGB-D 相机、六维力／力矩传感器、双 Vive Tracker 和夹爪编码器，构建手持示教装置的多设备采集程序。根据跟踪数据恢复工具末端位姿，统一视觉、运动与受力数据的坐标表达，记录接触操作过程。</span><span class="en" lang="en">Acquisition software integrates an RGB-D camera, a six-axis force/torque sensor, two Vive Trackers and a gripper encoder on the handheld demonstration device. Tracker measurements recover tool poses, and coordinate transformations place visual, motion and force data in a common frame for recording contact-rich manipulation.</span></p>
+      </section>
+      <section id="section-2" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">工具重力与传感器零偏补偿</span><span class="en" lang="en">Tool gravity and force/torque sensor bias compensation</span></h2>
+        <p><span class="zh" lang="zh-CN">标定工具重量、质心相对传感器的偏置及传感器零偏，补偿工具在不同姿态下引入的重力和附加力矩。补偿后的六维力／力矩数据用于接触阶段标注、示教分析和策略执行对比。</span><span class="en" lang="en">Calibration estimates tool weight, the centre-of-mass offset relative to the sensor and sensor bias. Compensation removes the orientation-dependent contributions of tool weight and its moment. The compensated wrench data support contact-phase annotation, demonstration analysis and comparisons of policy execution.</span></p>
+        <figure class="load-diagram">
+          <figcaption><span class="zh" lang="zh-CN">力传感器读数的组成</span><span class="en" lang="en">What the force sensor measures</span></figcaption>
+          <div class="load-equation">
+            <span><span class="zh" lang="zh-CN">力的读数</span><span class="en" lang="en">Measured force</span></span><span>=</span>
+            <span><span class="zh" lang="zh-CN">接触力</span><span class="en" lang="en">Contact force</span></span><span>+</span>
+            <span><span class="zh" lang="zh-CN">工具重力分量</span><span class="en" lang="en">Tool weight in the sensor frame</span></span><span>+</span>
+            <span><span class="zh" lang="zh-CN">传感器零偏</span><span class="en" lang="en">Sensor bias</span></span>
+          </div>
+          <p><span class="zh" lang="zh-CN">上式描述缓慢运动时的力平衡，各分量均在传感器坐标系中表示。工具悬空时，接触力为零；翻转手腕，重力在各轴上的投影仍会变化。若质心偏离传感器原点，这个偏移还会产生力矩。</span><span class="en" lang="en">This quasi-static force balance uses the sensor frame throughout. With the tool clear of the surface, contact force is zero, yet rotating the wrist changes the weight projected onto each sensor axis. If the tool’s centre of mass is offset from the sensor origin, its weight also produces a moment.</span></p>
+        </figure>
+      </section>
+      <section id="section-3" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">接触阶段标注与多频数据组织</span><span class="en" lang="en">Contact-phase annotation and multi-rate training data</span></h2>
+        <p><span class="zh" lang="zh-CN">图像、工具位姿、夹爪状态与补偿后的力信号沿同一时间轴对齐。依据图像与力信号的对应变化，示教序列划分为初次接触、持续接触和释放阶段。批处理程序按视觉与力觉策略各自需要的频率整理动作序列，并将配对的观测与动作导出为 HDF5 数据。</span><span class="en" lang="en">Images, tool poses, gripper states and compensated force measurements share a common timeline. The aligned images and force signals support annotation of contact onset, sustained contact and release. Batch processing prepares action sequences at the rates required by the visual and force-based policies and exports the paired observations and actions to HDF5.</span></p>
+      </section>
+      <section id="section-4" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">策略的真机部署与对照实验</span><span class="en" lang="en">Policy deployment and comparative hardware experiments</span></h2>
+        <p><span class="zh" lang="zh-CN">完成策略及对比基线的机器人部署，适配观测与动作接口，调试传感器采样、模型推理和动作序列执行的时序。在擦拭、刮除及装配实验中，结合工具轨迹与实测接触力比较各方法的执行表现。</span><span class="en" lang="en">Hardware deployment adapts observation and action interfaces for the policy and comparison baselines and coordinates sensor sampling, inference and action-sequence execution. Wiping, scraping and assembly experiments compare execution using tool trajectories and measured contact forces.</span></p>
+      </section>
+      <aside class="publication" data-anchor>
+        <h2><span class="zh" lang="zh-CN">相关论文</span><span class="en" lang="en">Related paper</span></h2>
+        <p lang="en">Towards Physical Intelligence in Contact-Rich Manufacturing: A Visual-Force-Pose Demonstration and Phase-Aware Learning Framework</p>
+        <p class="paper-details"><span lang="en">Robotics and Computer-Integrated Manufacturing</span> · <span class="zh" lang="zh-CN">已投稿，第四作者</span><span class="en" lang="en">Submitted, fourth author</span></p>
+      </aside>
+        </div>
+      </div>
+    </article>
+    <nav class="project-nav" aria-label="项目导航 / Project navigation">
+      <a href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">返回项目列表</span><span class="en" lang="en">Back to projects</span></a>
+      <a href="hand.html" data-route="hand.html"><small><span class="zh" lang="zh-CN">下一篇</span><span class="en" lang="en">Next project</span></small><span class="zh" lang="zh-CN">灵巧智能 DexHand021 的数据手套遥操作与触觉采集</span><span class="en" lang="en">Glove teleoperation and tactile data collection for DexRobot’s DexHand021</span> →</a>
+    </nav>
+  </main>
+  <footer>
+    <a class="zh" lang="zh-CN" href="../cv/hao-shi-zh.pdf">中文简历</a>
+    <a class="en" lang="en" href="../cv/hao-shi-en.pdf">English CV</a>
+  </footer>
+</body>
+</html>

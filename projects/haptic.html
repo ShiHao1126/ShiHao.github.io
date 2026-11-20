@@ -1,2 +1,91 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#faf8f2"><meta name="description" content="操作者通过外骨骼控制 Flexiv 机械臂。夹爪接触物体时，末端力和力矩通过主端反馈给操作者。"><title>七自由度力反馈遥操作 · 石昊</title><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/project-archive.css"><script defer src="../assets/project-language.js"></script></head><body data-zh-title="七自由度力反馈遥操作 · 石昊" data-en-title="7-DoF Haptic Teleoperation · Hao Shi"><a class="skip" href="#article"><span class="zh" lang="zh-CN">跳到正文</span><span class="en" lang="en">Skip to article</span></a><header class="bar"><div class="bar-inner"><a class="signature" href="../index.html" data-route="../index.html"><i aria-hidden="true">✳</i> Hao Shi <small>石昊</small></a><a class="nav-back" href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">全部项目</span><span class="en" lang="en">All projects</span></a><nav class="switch" aria-label="中文 / English"><a data-lang="zh" lang="zh-CN" href="?lang=zh" aria-label="中文">中</a><span aria-hidden="true">/</span><a data-lang="en" lang="en" href="?lang=en" aria-label="English">EN</a></nav></div></header><main class="page" id="article"><article><header data-anchor><p class="byline"><span class="zh" lang="zh-CN">双边遥操作</span><span class="en" lang="en">Bilateral teleoperation</span></p><h1><span class="zh" lang="zh-CN">七自由度力反馈遥操作</span><span class="en" lang="en">7-DoF Haptic Teleoperation</span></h1><p class="deck"><span class="zh" lang="zh-CN">操作者通过外骨骼控制 Flexiv 机械臂。夹爪接触物体时，末端力和力矩通过主端反馈给操作者。</span><span class="en" lang="en">An operator guides a Flexiv arm through an exoskeleton and feels contact forces and torques through the master device.</span></p></header><figure data-anchor><div class="art"><img width="1152" height="720" src="../assets/art/haptic.webp" alt="主端外骨骼及其关节的原理示意" data-zh-alt="主端外骨骼及其关节的原理示意" data-en-alt="Conceptual illustration of the haptic master and its joints"></div><figcaption><span class="zh" lang="zh-CN">主端外骨骼及其关节的原理示意</span><span class="en" lang="en">Conceptual illustration of the haptic master and its joints</span></figcaption></figure><div class="body-copy"><section data-anchor><h2><span class="zh" lang="zh-CN">从人的手臂到机械臂</span><span class="en" lang="en">From the operator to the robot</span></h2><p><span class="zh" lang="zh-CN">遥操作有两个方向。主端要把操作者的运动传给机械臂，夹爪接触物体时，操作者还需要得到反馈。我在这套平台上把七自由度外骨骼和 Flexiv 机械臂连起来。</span><span class="en" lang="en">Teleoperation runs in two directions. Motion travels from the operator to the robot, and information about contact travels back. On this project I worked with a seven-degree-of-freedom exoskeleton and a Flexiv arm.</span></p><p><span class="zh" lang="zh-CN">我带领小组搭建主从平台，负责运动映射、力反馈控制、夹爪集成和多模态数据记录。</span><span class="en" lang="en">I led the team that built the platform and worked on motion mapping, force feedback, gripper integration, and multimodal recording.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">把人的运动映射到机械臂</span><span class="en" lang="en">Map the operator’s motion</span></h2><p><span class="zh" lang="zh-CN">建立七自由度主端的运动学模型，将主端位姿映射到 Flexiv 末端。结合导纳控制与重力补偿，通过标定实验调整跟随和反馈响应。</span><span class="en" lang="en">I modelled the seven-degree-of-freedom master, mapped its pose to the Flexiv end effector, and tuned admittance control and gravity compensation through calibration experiments.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">处理夹爪与物体的接触</span><span class="en" lang="en">Control contact at the gripper</span></h2><p><span class="zh" lang="zh-CN">接入力反馈与视触觉夹爪，编写接触检测、抓力调节和抓取释放逻辑，在真机上联调异常恢复流程。</span><span class="en" lang="en">I integrated haptic and vision-based tactile grippers, implemented contact detection and grasp-force regulation, and tested grasp, release, and fault recovery on hardware.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">记录一次完整操作</span><span class="en" lang="en">Record an entire interaction</span></h2><p><span class="zh" lang="zh-CN">用 Python 多进程和共享内存组织控制与记录，关联机器人状态、力和力矩、夹爪状态、触觉图与 RGB-D 图像，并检查记录完整性。</span><span class="en" lang="en">A Python multiprocessing framework uses shared memory to link robot state, force and torque, gripper state, tactile images, and RGB-D frames. Images are saved asynchronously and recordings checked for completeness.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">跟随、接触与记录</span><span class="en" lang="en">Following motion and recording contact</span></h2><p><span class="zh" lang="zh-CN">真机联调覆盖主从运动跟随、接触力反馈、抓取和释放。每次操作的多模态记录可用于回看接触前后的机器人与夹爪状态。</span><span class="en" lang="en">Hardware tests covered motion tracking, contact feedback, grasping, and release. The recordings make it possible to inspect the robot and gripper states before and after contact.</span></p></section><nav class="next"><a class="back-main" href="../index.html#projects" data-route="../index.html#projects">← <span class="zh" lang="zh-CN">回到主页</span><span class="en" lang="en">Back to homepage</span></a><a href="tactile.html" data-route="tactile.html"><span class="zh" lang="zh-CN">视触觉采集与三轴力估计</span><span class="en" lang="en">Tactile Data and Force Estimation</span> →</a></nav></div></article></main><footer><div class="footer-inner"><span>石昊 / Hao Shi</span><a class="zh" href="../cv/hao-shi-zh.pdf">中文简历</a><a class="en" href="../cv/hao-shi-en.pdf">English CV</a></div></footer></body></html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="以低成本、可灵活安装的七自由度力反馈外骨骼为主端，构建与 Flexiv 机械臂的双边遥操作平台，集成主从运动映射、接触力反馈、柔性重力补偿及多模态示教采集。">
+  <title>七自由度力反馈外骨骼与双边遥操作 · 石昊</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/project-archive.css">
+  <script defer src="../assets/project-language.js"></script>
+</head>
+<body data-zh-title="七自由度力反馈外骨骼与双边遥操作 · 石昊" data-en-title="Bilateral teleoperation with a seven-degree-of-freedom haptic exoskeleton · Hao Shi">
+  <a class="skip" href="#article"><span class="zh" lang="zh-CN">跳到正文</span><span class="en" lang="en">Skip to article</span></a>
+  <header class="site-header">
+    <a href="../index.html" data-route="../index.html"><span class="zh" lang="zh-CN">石昊</span><span class="en" lang="en">Hao Shi</span></a>
+    <a href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">全部项目</span><span class="en" lang="en">All projects</span></a>
+    <nav class="switch" aria-label="语言 / Language">
+      <a data-lang="zh" lang="zh-CN" href="?lang=zh" aria-current="true">中文</a>
+      <span aria-hidden="true">/</span>
+      <a data-lang="en" lang="en" href="?lang=en">English</a>
+    </nav>
+  </header>
+  <main id="article" tabindex="-1">
+    <article>
+      <header class="article-intro" data-anchor>
+        <div>
+          <h1><span class="zh" lang="zh-CN"><span class="title-phrase">七自由度力反馈外骨骼</span><wbr><span class="title-phrase">与双边遥操作</span></span><span class="en" lang="en">Bilateral teleoperation with a seven-degree-of-freedom haptic exoskeleton</span></h1>
+          <p class="deck"><span class="zh" lang="zh-CN">以低成本、可灵活安装的七自由度力反馈外骨骼为主端，构建与 Flexiv 机械臂的双边遥操作平台，集成主从运动映射、接触力反馈、柔性重力补偿及多模态示教采集。</span><span class="en" lang="en">A low-cost, seven-degree-of-freedom haptic exoskeleton with configurable mounting serves as the master device for bilateral teleoperation of a Flexiv arm. The platform integrates motion retargeting, contact-force feedback, flexible-link gravity compensation and multimodal demonstration capture.</span></p>
+        </div>
+        <figure>
+          <a class="figure-link" href="../assets/figures/haptic.webp">
+            <img width="1200" height="800" src="../assets/figures/haptic.webp" decoding="async"
+                 alt="外骨骼主端与机械臂从端的双边遥操作示意" data-zh-alt="外骨骼主端与机械臂从端的双边遥操作示意" data-en-alt="Schematic of bilateral teleoperation between an exoskeleton and a robot arm">
+          </a>
+          <figcaption><span class="zh" lang="zh-CN">外骨骼主端与机械臂从端的双边遥操作示意</span><span class="en" lang="en">Schematic of bilateral teleoperation between an exoskeleton and a robot arm</span></figcaption>
+        </figure>
+      </header>
+      <div class="reading-layout">
+        <nav class="contents" aria-label="本文目录 / In this article">
+          <p><span class="zh" lang="zh-CN">本文目录</span><span class="en" lang="en">In this article</span></p>
+          <ol>
+            <li><a href="#case"><span class="zh" lang="zh-CN">停止施力后，外骨骼为什么仍有输出力矩？</span><span class="en" lang="en">Why can the exoskeleton still produce torque when the operator stops pushing?</span></a></li>
+            <li><a href="#section-1"><span class="zh" lang="zh-CN">低成本结构与灵活安装</span><span class="en" lang="en">Low-cost construction and configurable mounting</span></a></li>
+<li><a href="#section-2"><span class="zh" lang="zh-CN">主从位姿映射与力反馈</span><span class="en" lang="en">Bilateral motion and force mapping</span></a></li>
+<li><a href="#section-3"><span class="zh" lang="zh-CN">柔性建模与重力补偿</span><span class="en" lang="en">Flexible-link modelling and gravity compensation</span></a></li>
+<li><a href="#section-4"><span class="zh" lang="zh-CN">双指接触检测与抓力调节</span><span class="en" lang="en">Dual-fingertip contact detection and grasp-force control</span></a></li>
+<li><a href="#section-5"><span class="zh" lang="zh-CN">多模态记录与完整性检查</span><span class="en" lang="en">Multimodal recording and integrity checks</span></a></li>
+          </ol>
+        </nav>
+        <div class="reading-body">
+          <section class="case-study" id="case" data-anchor>
+            <h2><span class="zh" lang="zh-CN">停止施力后，外骨骼为什么仍有输出力矩？</span><span class="en" lang="en">Why can the exoskeleton still produce torque when the operator stops pushing?</span></h2>
+            <ol class="case-steps"><li><h3><span class="zh" lang="zh-CN">从力信号定位撤力</span><span class="en" lang="en">Locate the release in the force signal</span></h3><p><span class="zh" lang="zh-CN">在同一段日志中对照原始力／力矩与补偿后的输入，定位操作者撤力的时间。手柄姿态变化会改变重力在传感器坐标系中的投影，因此仅凭原始某一轴是否回零，不能确定操作者是否仍在施力。</span><span class="en" lang="en">The raw wrench and compensated input give a time reference for load removal. A change in handle orientation also changes the projection of gravity into the sensor frame, so a raw component can remain nonzero after the operator stops applying force.</span></p></li>
+<li><h3><span class="zh" lang="zh-CN">沿控制指令追踪余量</span><span class="en" lang="en">Trace the remaining torque command</span></h3><p><span class="zh" lang="zh-CN">沿同一时间轴查看速度参考、位置反馈项和补偿力矩。主端仍需抵消自身重力，撤去外力后总力矩不必为零。值得追踪的是哪些分量仍沿原来的运动方向施加力矩，以及它们持续到何时。</span><span class="en" lang="en">Velocity references, position-feedback torque and compensation terms can be inspected on the same timeline. Gravity support remains necessary after release. The diagnostic question is which terms still drive the joint in the previous direction and for how long.</span></p></li>
+<li><h3><span class="zh" lang="zh-CN">对照关节实际运动</span><span class="en" lang="en">Compare the measured joint response</span></h3><p><span class="zh" lang="zh-CN">将指令变化与编码器记录的关节运动叠看，可区分指令仍在输出和指令变化后机构仍在运动两种情况。后一种现象能够缩小排查范围，单凭这条轨迹还不足以判定是结构柔顺性还是其他机械因素。</span><span class="en" lang="en">Comparing the command with encoder motion distinguishes a continuing drive command from motion that persists after the command changes. The latter narrows the diagnosis, though the trace alone cannot separate structural compliance from other mechanical effects.</span></p></li></ol>
+          </section>
+                <section id="section-1" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">低成本结构与灵活安装</span><span class="en" lang="en">Low-cost construction and configurable mounting</span></h2>
+        <p><span class="zh" lang="zh-CN">外骨骼采用关节电机与打印结构件组合的低成本构型，可在铝型材支架上采用底部安装、顶部吊装或侧向安装。通过调整基座位置与朝向，适配不同工位的操作空间及手臂活动范围，便于按实验需求重新布置遥操作平台。</span><span class="en" lang="en">The exoskeleton combines joint motors with 3D-printed structural components in a low-cost configuration. Its base supports bottom, overhead and side mounting on an aluminium-extrusion frame. Adjustable base placement and orientation accommodate different workstation layouts and arm workspaces, allowing the teleoperation setup to be reconfigured for different experiments.</span></p>
+      </section>
+      <section id="section-2" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">主从位姿映射与力反馈</span><span class="en" lang="en">Bilateral motion and force mapping</span></h2>
+        <p><span class="zh" lang="zh-CN">牵头平台搭建与真机联调，完成主端运动学建模、主从位姿映射、六维导纳控制与重力补偿。系统将手柄位姿转换为机械臂末端目标位姿，并通过外骨骼向操作者反馈从端接触力与力矩。</span><span class="en" lang="en">Led platform development and hardware integration, including exoskeleton kinematics, master–slave pose mapping, six-dimensional admittance control and gravity compensation. Handle poses define target end-effector poses, while contact forces and torques at the robot are returned to the operator through the exoskeleton.</span></p>
+      </section>
+      <section id="section-3" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">柔性建模与重力补偿</span><span class="en" lang="en">Flexible-link modelling and gravity compensation</span></h2>
+        <p><span class="zh" lang="zh-CN">针对外骨骼结构在自重与末端负载作用下的挠曲，建立准静态柔性模型，并利用多姿态力传感器数据标定柔度、安装旋转和测量零偏。运行时根据关节角与柔性参数估计传感器实际朝向，修正工具重力在传感器坐标系中的投影，完成六维力／力矩补偿。</span><span class="en" lang="en">A quasi-static flexible-link model represents deflection under link weight and the end-effector payload. Force-sensor measurements across multiple poses calibrate compliance, mounting rotation and measurement bias. At runtime, joint angles and calibrated compliance estimate the sensor orientation, correcting the projection of tool weight into the sensor frame for six-axis force/torque compensation.</span></p>
+      </section>
+      <section id="section-4" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">双指接触检测与抓力调节</span><span class="en" lang="en">Dual-fingertip contact detection and grasp-force control</span></h2>
+        <p><span class="zh" lang="zh-CN">集成主端力反馈夹爪与从端千觉双指视触觉夹爪，开发夹爪开合控制、指尖接触检测与目标抓力调节，并将从端抓取力反馈至主端夹爪。</span><span class="en" lang="en">Integrated a master-side haptic gripper with a slave-side Xense two-finger visuotactile gripper. Developed opening and closing control, fingertip contact detection and grasp-force regulation, with slave-side grasp forces rendered at the master gripper.</span></p>
+      </section>
+      <section id="section-5" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">多模态记录与完整性检查</span><span class="en" lang="en">Multimodal recording and integrity checks</span></h2>
+        <p><span class="zh" lang="zh-CN">基于 Python 多进程与共享内存构建控制和采集框架，关联记录多视角 RGB-D、指尖触觉、六维力／力矩、夹爪及机械臂状态。图像由独立进程异步写入，配套完整性检查记录丢帧、写入错误和异常结束原因，支持故障追踪与数据筛查。</span><span class="en" lang="en">A Python multiprocessing framework uses shared memory for control and acquisition, associating multi-view RGB-D, fingertip tactile images, six-axis force/torque, gripper state and arm state. Separate processes write images asynchronously. Integrity checks record dropped frames, write errors and abnormal termination to support fault diagnosis and dataset screening.</span></p>
+      </section>
+        </div>
+      </div>
+    </article>
+    <nav class="project-nav" aria-label="项目导航 / Project navigation">
+      <a href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">返回项目列表</span><span class="en" lang="en">Back to projects</span></a>
+      <a href="force.html" data-route="force.html"><small><span class="zh" lang="zh-CN">下一篇</span><span class="en" lang="en">Next project</span></small><span class="zh" lang="zh-CN">ForceTrace-CAFE：多模态示教采集与真机部署</span><span class="en" lang="en">ForceTrace-CAFE: multimodal demonstration capture and policy deployment</span> →</a>
+    </nav>
+  </main>
+  <footer>
+    <a class="zh" lang="zh-CN" href="../cv/hao-shi-zh.pdf">中文简历</a>
+    <a class="en" lang="en" href="../cv/hao-shi-en.pdf">English CV</a>
+  </footer>
+</body>
+</html>

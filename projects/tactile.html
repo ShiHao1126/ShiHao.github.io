@@ -1,2 +1,129 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#faf8f2"><meta name="description" content="用 Flexiv 机械臂重复执行按压、旋转和剪切动作，把触觉图像与接触载荷对应起来。"><title>视触觉采集与三轴力估计 · 石昊</title><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/project-archive.css"><script defer src="../assets/project-language.js"></script></head><body data-zh-title="视触觉采集与三轴力估计 · 石昊" data-en-title="Tactile Data and Force Estimation · Hao Shi"><a class="skip" href="#article"><span class="zh" lang="zh-CN">跳到正文</span><span class="en" lang="en">Skip to article</span></a><header class="bar"><div class="bar-inner"><a class="signature" href="../index.html" data-route="../index.html"><i aria-hidden="true">✳</i> Hao Shi <small>石昊</small></a><a class="nav-back" href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">全部项目</span><span class="en" lang="en">All projects</span></a><nav class="switch" aria-label="中文 / English"><a data-lang="zh" lang="zh-CN" href="?lang=zh" aria-label="中文">中</a><span aria-hidden="true">/</span><a data-lang="en" lang="en" href="?lang=en" aria-label="English">EN</a></nav></div></header><main class="page" id="article"><article><header data-anchor><p class="byline"><span class="zh" lang="zh-CN">触觉感知</span><span class="en" lang="en">Tactile sensing</span></p><h1><span class="zh" lang="zh-CN">视触觉采集与三轴力估计</span><span class="en" lang="en">Tactile Data and Force Estimation</span></h1><p class="deck"><span class="zh" lang="zh-CN">用 Flexiv 机械臂重复执行按压、旋转和剪切动作，把触觉图像与接触载荷对应起来。</span><span class="en" lang="en">A Flexiv arm repeats indentation, rotation, and shear motions so that tactile images can be paired with the loads that produced them.</span></p></header><figure data-anchor><div class="art"><img width="1152" height="720" src="../assets/art/tactile.webp" alt="接触引起传感器表面形变的原理示意" data-zh-alt="接触引起传感器表面形变的原理示意" data-en-alt="Conceptual illustration of surface deformation in a tactile sensor"></div><figcaption><span class="zh" lang="zh-CN">接触引起传感器表面形变的原理示意</span><span class="en" lang="en">Conceptual illustration of surface deformation in a tactile sensor</span></figcaption></figure><div class="body-copy"><section data-anchor><h2><span class="zh" lang="zh-CN">先把一次接触记录清楚</span><span class="en" lang="en">Recording a single contact</span></h2><p><span class="zh" lang="zh-CN">一张触觉图像能显示传感器表面的变化。为了用它估计力，还得知道那一刻机械臂在哪里、施加了多少载荷。我从采集流程着手，把每次接触的图像与这些信息放进同一份记录。</span><span class="en" lang="en">A tactile image shows how the sensor surface changes under contact. To use that image to estimate force, I also need to know the robot pose and the load at the time of capture. I started by building the acquisition procedure around those records.</span></p><p><span class="zh" lang="zh-CN">我搭建自动化采集平台，编写数据关联与质检流程，并实现、训练和部署三轴力估计模型。</span><span class="en" lang="en">I built the acquisition platform and its data checks, then implemented, trained, and deployed a model for three-axis contact force estimation.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">控制接触条件</span><span class="en" lang="en">Control the contact conditions</span></h2><p><span class="zh" lang="zh-CN">配置接触位置、压入深度或目标载荷，让机械臂在可复现的条件下按压、旋转或平移传感器接触面。</span><span class="en" lang="en">I parameterised the contact location, indentation depth, and target load so that experiments could be repeated under known conditions.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">为每张触觉图找到对应的载荷</span><span class="en" lang="en">Pair images with loads</span></h2><p><span class="zh" lang="zh-CN">将触觉图像、六维力和力矩、工具中心点位姿及加载条件关联存储，检查缺失记录并可视化采集轨迹。</span><span class="en" lang="en">The recorder associates tactile images with six-axis force and torque, tool-centre-point pose, and loading conditions. I added checks for missing data and tools to visualise the sampling paths.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">从图像估计三轴接触力</span><span class="en" lang="en">Estimate force from images</span></h2><p><span class="zh" lang="zh-CN">使用 MAE ViT 编码器与双头潜变量结构开展分阶段训练。将模型用于实时推理，并与机器人的参考力信号对照。</span><span class="en" lang="en">I trained a model with an MAE ViT encoder and a dual-head latent architecture in stages, then deployed it for real-time comparison with the robot’s force feedback.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">回到真机看预测</span><span class="en" lang="en">Comparing predictions with hardware readings</span></h2><p><span class="zh" lang="zh-CN">在真机上对照触觉模型的三轴输出与机器人参考力。另用 Blender 批量渲染形变网格，生成用于观察接触形变的图像。</span><span class="en" lang="en">I compared three-axis force predictions with the robot’s reference signals on hardware. A separate Blender pipeline rendered deformation meshes in batches for visual inspection.</span></p></section><nav class="next"><a class="back-main" href="../index.html#projects" data-route="../index.html#projects">← <span class="zh" lang="zh-CN">回到主页</span><span class="en" lang="en">Back to homepage</span></a><a href="force.html" data-route="force.html"><span class="zh" lang="zh-CN">ForceTrace-CAFE</span><span class="en" lang="en">ForceTrace-CAFE</span> →</a></nav></div></article></main><footer><div class="footer-inner"><span>石昊 / Hao Shi</span><a class="zh" href="../cv/hao-shi-zh.pdf">中文简历</a><a class="en" href="../cv/hao-shi-en.pdf">English CV</a></div></footer></body></html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="围绕视触觉传感器的接触力感知，搭建机械臂自动化采集平台，完成三轴力估计模型的训练与实时部署，并构建基于形变网格的触觉图像渲染流程。">
+  <title>视触觉数据采集与三轴力估计 · 石昊</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/project-archive.css">
+  <link rel="stylesheet" href="../assets/tactile-figure.css">
+  <script defer src="../assets/project-language.js"></script>
+</head>
+<body data-zh-title="视触觉数据采集与三轴力估计 · 石昊" data-en-title="Visuotactile data acquisition and three-axis force estimation · Hao Shi">
+  <a class="skip" href="#article"><span class="zh" lang="zh-CN">跳到正文</span><span class="en" lang="en">Skip to article</span></a>
+  <header class="site-header">
+    <a href="../index.html" data-route="../index.html"><span class="zh" lang="zh-CN">石昊</span><span class="en" lang="en">Hao Shi</span></a>
+    <a href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">全部项目</span><span class="en" lang="en">All projects</span></a>
+    <nav class="switch" aria-label="语言 / Language">
+      <a data-lang="zh" lang="zh-CN" href="?lang=zh" aria-current="true">中文</a>
+      <span aria-hidden="true">/</span>
+      <a data-lang="en" lang="en" href="?lang=en">English</a>
+    </nav>
+  </header>
+  <main id="article" tabindex="-1">
+    <article>
+      <header class="article-intro" data-anchor>
+        <div>
+          <h1><span class="zh" lang="zh-CN"><span class="title-phrase">视触觉数据采集</span><wbr><span class="title-phrase">与三轴力估计</span></span><span class="en" lang="en">Visuotactile data acquisition and three-axis force estimation</span></h1>
+          <p class="deck"><span class="zh" lang="zh-CN">围绕视触觉传感器的接触力感知，搭建机械臂自动化采集平台，完成三轴力估计模型的训练与实时部署，并构建基于形变网格的触觉图像渲染流程。</span><span class="en" lang="en">This project combines automated robotic data acquisition, training and real-time deployment of a three-axis contact force estimator, and tactile image rendering from simulated deformation meshes.</span></p>
+        </div>
+        <figure>
+          <a class="figure-link" href="../assets/figures/tactile.webp">
+            <img width="1200" height="800" src="../assets/figures/tactile.webp" decoding="async"
+                 alt="压头、弹性接触面与光学成像单元的剖面示意" data-zh-alt="压头、弹性接触面与光学成像单元的剖面示意" data-en-alt="Cross-sectional schematic of the indenter, compliant contact surface and imaging optics">
+          </a>
+          <figcaption><span class="zh" lang="zh-CN">压头、弹性接触面与光学成像单元的剖面示意</span><span class="en" lang="en">Cross-sectional schematic of the indenter, compliant contact surface and imaging optics</span></figcaption>
+        </figure>
+      </header>
+      <div class="reading-layout">
+        <nav class="contents" aria-label="本文目录 / In this article">
+          <p><span class="zh" lang="zh-CN">本文目录</span><span class="en" lang="en">In this article</span></p>
+          <ol>
+            <li><a href="#case"><span class="zh" lang="zh-CN">为什么按采集轮次划分训练集与验证集？</span><span class="en" lang="en">Why keep an entire acquisition run in one data split?</span></a></li>
+            <li><a href="#section-1"><span class="zh" lang="zh-CN">机械臂自动化采集</span><span class="en" lang="en">Automated robotic data acquisition</span></a></li>
+<li><a href="#section-2"><span class="zh" lang="zh-CN">触觉图像与力数据整理</span><span class="en" lang="en">Tactile image and force data preparation</span></a></li>
+<li><a href="#section-3"><span class="zh" lang="zh-CN">三轴力估计与实时部署</span><span class="en" lang="en">Three-axis force estimation and real-time deployment</span></a></li>
+<li><a href="#section-4"><span class="zh" lang="zh-CN">触觉仿真图像生成</span><span class="en" lang="en">Rendering simulated tactile images</span></a></li>
+          </ol>
+        </nav>
+        <div class="reading-body">
+          <section class="case-study" id="case" data-anchor>
+            <h2><span class="zh" lang="zh-CN">为什么按采集轮次划分训练集与验证集？</span><span class="en" lang="en">Why keep an entire acquisition run in one data split?</span></h2>
+            <ol class="case-steps"><li><h3><span class="zh" lang="zh-CN">一次按压的参照</span><span class="en" lang="en">The reference for one press</span></h3><p><span class="zh" lang="zh-CN">每轮先在无接触时采集参考图像并对力传感器清零。待压头停稳，同一个样本保存接触图像、工具位姿和实测力／力矩。设定的压入深度说明实验条件，传感器读数说明该条件下实际测得的载荷。</span><span class="en" lang="en">Each run begins with an unloaded image and a force tare. Once the indenter settles, the sample pairs a contact image with the tool pose and measured wrench. Indentation depth describes the test condition. The sensor reading gives the load measured under that condition.</span></p></li>
+<li><h3><span class="zh" lang="zh-CN">相邻样本的共同条件</span><span class="en" lang="en">What nearby samples share</span></h3><p><span class="zh" lang="zh-CN">一轮连续按压共享参考图像和清零基准。若把同一次加载中的相邻帧随机分进两组，训练和验证都可能看到几乎相同的形变，验证误差便难以反映模型在下一轮采集中的表现。</span><span class="en" lang="en">Samples from one loading sequence share the reference image and tare. A random frame-level split can put almost identical deformations into both sets, making validation error a poor guide to performance on the next acquisition run.</span></p></li>
+<li><h3><span class="zh" lang="zh-CN">分别看跨轮次验证与真机预测</span><span class="en" lang="en">Read the two evaluations separately</span></h3><p><span class="zh" lang="zh-CN">离线验证把整轮数据留出，考察模型在另一轮采集中能否保持表现。真机评估另外在按压和剪切时，逐轴对照实时预测与机械臂反馈的接触力读数。前者考察跨轮次表现，后者能看出一次实际加载中偏差出现在哪个阶段。</span><span class="en" lang="en">Offline validation holds out entire runs to test how the model performs on a separate acquisition. In a separate hardware evaluation, real-time predictions are compared axis by axis with forces reported by the robot during indentation and shear. One comparison tests transfer between runs. The other locates discrepancies within an actual loading sequence.</span></p></li></ol>
+          </section>
+                <section id="section-1" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">机械臂自动化采集</span><span class="en" lang="en">Automated robotic data acquisition</span></h2>
+        <p><span class="zh" lang="zh-CN">基于 Flexiv 机械臂实现定深按压、定力加载、双向旋转及多方向剪切，支持不同接触位置、载荷和运动路径的重复采集。采集流程包含力矩清零、无接触参考图像获取、到位停稳采样及中断续采。</span><span class="en" lang="en">The Flexiv-based acquisition platform supports depth-controlled indentation, force-controlled loading, bidirectional rotation and multidirectional shear across contact locations and loading paths. The acquisition workflow includes torque zeroing, non-contact reference-image capture, sampling after settling and resumption of interrupted runs.</span></p>
+        <figure class="tactile-loads" aria-labelledby="load-legend">
+      <fieldset>
+        <legend id="load-legend"><span class="zh" lang="zh-CN">两种接触加载方式</span><span class="en" lang="en">Two ways to load the sensor</span></legend>
+        <input class="load-choice" type="radio" name="tactile-load" id="load-press" aria-controls="load-view-press" checked>
+        <label for="load-press"><span class="zh" lang="zh-CN">法向按压</span><span class="en" lang="en">Normal indentation</span></label>
+        <input class="load-choice" type="radio" name="tactile-load" id="load-shear" aria-controls="load-view-shear">
+        <label for="load-shear"><span class="zh" lang="zh-CN">接触后剪切</span><span class="en" lang="en">Shear after contact</span></label>
+        <div class="load-view" id="load-view-press">
+          <div class="load-sketch" aria-hidden="true">
+            <span class="load-plane"><span class="zh" lang="zh-CN">压头轨迹 · 侧视</span><span class="en" lang="en">Indenter path · side view</span></span>
+            <span class="load-material"></span>
+            <span class="load-origin"></span>
+            <span class="load-descent"></span>
+            <span class="load-surface"><span class="zh" lang="zh-CN">未加载表面</span><span class="en" lang="en">Unloaded surface</span></span>
+            <span class="load-gel"><span class="zh" lang="zh-CN">弹性层</span><span class="en" lang="en">Elastomer</span></span>
+          </div>
+          <dl class="load-explanation">
+            <dt><span class="zh" lang="zh-CN">压头怎样运动</span><span class="en" lang="en">Indenter motion</span></dt>
+            <dd><span class="zh" lang="zh-CN">压头接触弹性表面后，沿表面法向继续压入。实验可指定压入深度或目标法向力。</span><span class="en" lang="en">After first contact, the indenter advances along the surface normal. The experiment specifies either an indentation depth or a target normal force.</span></dd>
+            <dt><span class="zh" lang="zh-CN">怎样核对力估计</span><span class="en" lang="en">Checking the force estimate</span></dt>
+            <dd><span class="zh" lang="zh-CN">在同一加载序列中，将触觉图像给出的法向力估计值与机械臂反馈的对应分量逐次对照。</span><span class="en" lang="en">Within the same loading sequence, compare the normal force estimated from each tactile image with the corresponding component reported by the robot.</span></dd>
+          </dl>
+        </div>
+        <div class="load-view" id="load-view-shear">
+          <div class="load-sketch" aria-hidden="true">
+            <span class="load-plane"><span class="zh" lang="zh-CN">压头轨迹 · 侧视</span><span class="en" lang="en">Indenter path · side view</span></span>
+            <span class="load-material"></span>
+            <span class="load-origin"></span>
+            <span class="load-descent"></span><span class="load-traverse"></span>
+            <span class="load-surface"><span class="zh" lang="zh-CN">未加载表面</span><span class="en" lang="en">Unloaded surface</span></span>
+            <span class="load-gel"><span class="zh" lang="zh-CN">弹性层</span><span class="en" lang="en">Elastomer</span></span>
+          </div>
+          <dl class="load-explanation">
+            <dt><span class="zh" lang="zh-CN">压头怎样运动</span><span class="en" lang="en">Indenter motion</span></dt>
+            <dd><span class="zh" lang="zh-CN">压头先建立接触，再沿表面切向移动。图中画出一个剪切方向，采集时可改变方向。</span><span class="en" lang="en">The indenter first establishes contact, then moves tangentially. The sketch shows one shear direction. The acquisition routine can vary this direction between trials.</span></dd>
+            <dt><span class="zh" lang="zh-CN">怎样核对力估计</span><span class="en" lang="en">Checking the force estimate</span></dt>
+            <dd><span class="zh" lang="zh-CN">对照切向力的预测值与机械臂读数，同时保留法向分量。这样可以分别检查模型对剪切和按压的响应。</span><span class="en" lang="en">Compare the estimated tangential force with the robot reading while retaining the normal component. This separates the checks on the model’s response to shear and indentation.</span></dd>
+          </dl>
+        </div>
+      </fieldset>
+      <figcaption><span class="zh" lang="zh-CN">运动路径示意。空心点为首次接触位置，箭头为压头运动方向。</span><span class="en" lang="en">Schematic indenter paths. The open circle marks first contact and the arrow indicates the direction of motion.</span></figcaption>
+    </figure>
+      </section>
+      <section id="section-2" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">触觉图像与力数据整理</span><span class="en" lang="en">Tactile image and force data preparation</span></h2>
+        <p><span class="zh" lang="zh-CN">关联保存触觉图像、六维力／力矩、工具中心点（TCP）位姿及加载参数。通过轨迹可视化核对采样位置，并将触觉图像与对应的三轴力读数整理为模型训练样本。</span><span class="en" lang="en">Tactile images are stored with six-axis force/torque measurements, tool centre point (TCP) poses and loading parameters. Trajectory visualisation supports inspection of sampling locations. The tactile images are paired with the corresponding three-axis force readings to form training samples for the force estimator.</span></p>
+      </section>
+      <section id="section-3" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">三轴力估计与实时部署</span><span class="en" lang="en">Three-axis force estimation and real-time deployment</span></h2>
+        <p><span class="zh" lang="zh-CN">实现基于 MAE ViT 编码器与双头潜变量结构的力估计模型，完成数据适配、分阶段训练及离线评估。模型部署于采集平台，根据触觉图像实时预测三轴接触力，并在按压与剪切实验中对照机械臂反馈的力读数，分析各分量随加载过程变化的预测误差。</span><span class="en" lang="en">A force estimator using an MAE ViT encoder and a dual-head latent architecture was implemented through data preparation, staged training and offline evaluation. Deployed on the acquisition platform, it predicts three-axis contact forces from tactile images in real time. Indentation and shear experiments compare these predictions with force readings reported by the robot to analyse component-wise errors throughout loading.</span></p>
+      </section>
+      <section id="section-4" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">触觉仿真图像生成</span><span class="en" lang="en">Rendering simulated tactile images</span></h2>
+        <p><span class="zh" lang="zh-CN">基于 Blender 搭建形变网格到触觉图像的批量渲染流程，完成接触表面提取、材质配置及参考表面 UV 坐标传递。不同形变状态使用一致的纹理映射，支持单样本预览与并行批量渲染。</span><span class="en" lang="en">A Blender pipeline converts simulated deformation meshes into tactile images through contact-surface extraction, material assignment and UV transfer from a reference surface. Consistent texture mapping across deformation states supports individual-sample previews and parallel batch rendering.</span></p>
+      </section>
+        </div>
+      </div>
+    </article>
+    <nav class="project-nav" aria-label="项目导航 / Project navigation">
+      <a href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">返回项目列表</span><span class="en" lang="en">Back to projects</span></a>
+      <a href="haptic.html" data-route="haptic.html"><small><span class="zh" lang="zh-CN">下一篇</span><span class="en" lang="en">Next project</span></small><span class="zh" lang="zh-CN">七自由度力反馈外骨骼与双边遥操作</span><span class="en" lang="en">Bilateral teleoperation with a seven-degree-of-freedom haptic exoskeleton</span> →</a>
+    </nav>
+  </main>
+  <footer>
+    <a class="zh" lang="zh-CN" href="../cv/hao-shi-zh.pdf">中文简历</a>
+    <a class="en" lang="en" href="../cv/hao-shi-en.pdf">English CV</a>
+  </footer>
+</body>
+</html>

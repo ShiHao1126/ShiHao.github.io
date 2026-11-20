@@ -1,2 +1,86 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#faf8f2"><meta name="description" content="将千觉 Xense SDK 接入 Isaac Lab，在装配场景中模拟夹爪接触与触觉响应。"><title>Isaac Lab 装配与触觉仿真 · 石昊</title><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/project-archive.css"><script defer src="../assets/project-language.js"></script></head><body data-zh-title="Isaac Lab 装配与触觉仿真 · 石昊" data-en-title="Tactile Assembly in Isaac Lab · Hao Shi"><a class="skip" href="#article"><span class="zh" lang="zh-CN">跳到正文</span><span class="en" lang="en">Skip to article</span></a><header class="bar"><div class="bar-inner"><a class="signature" href="../index.html" data-route="../index.html"><i aria-hidden="true">✳</i> Hao Shi <small>石昊</small></a><a class="nav-back" href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">全部项目</span><span class="en" lang="en">All projects</span></a><nav class="switch" aria-label="中文 / English"><a data-lang="zh" lang="zh-CN" href="?lang=zh" aria-label="中文">中</a><span aria-hidden="true">/</span><a data-lang="en" lang="en" href="?lang=en" aria-label="English">EN</a></nav></div></header><main class="page" id="article"><article><header data-anchor><p class="byline"><span class="zh" lang="zh-CN">机器人仿真</span><span class="en" lang="en">Robot simulation</span></p><h1><span class="zh" lang="zh-CN">Isaac Lab 装配与触觉仿真</span><span class="en" lang="en">Tactile Assembly in Isaac Lab</span></h1><p class="deck"><span class="zh" lang="zh-CN">将千觉 Xense SDK 接入 Isaac Lab，在装配场景中模拟夹爪接触与触觉响应。</span><span class="en" lang="en">The Xense SDK brings simulated gripper contact and tactile sensing into Isaac Lab assembly tasks.</span></p></header><figure data-anchor><div class="art"><img width="1152" height="720" src="../assets/art/sim.webp" alt="仿真装配插入位置和夹爪对位示意" data-zh-alt="仿真装配插入位置和夹爪对位示意" data-en-alt="Conceptual illustration of gripper alignment during simulated insertion"></div><figcaption><span class="zh" lang="zh-CN">仿真装配插入位置和夹爪对位示意</span><span class="en" lang="en">Conceptual illustration of gripper alignment during simulated insertion</span></figcaption></figure><div class="body-copy"><section data-anchor><h2><span class="zh" lang="zh-CN">在仿真里记录接触</span><span class="en" lang="en">Capturing contact in simulation</span></h2><p><span class="zh" lang="zh-CN">我在 Isaac Lab 里用机械臂和触觉夹爪搭了一套装配场景，把千觉的 Xense SDK 接入其中。在插入和按压这些动作里，我关心物体开始接触的那一刻，以及装配受阻后怎样调整动作。</span><span class="en" lang="en">I built an assembly scene in Isaac Lab with a robot arm and a tactile gripper and integrated the Xense SDK. During insertion and pressing, I was interested in the moment contact began and how the arm could correct its motion when an object failed to seat.</span></p><p><span class="zh" lang="zh-CN">我集成触觉 SDK，并为机械臂编写装配任务的自动示教流程。</span><span class="en" lang="en">I integrated the tactile SDK and programmed automated demonstrations for the assembly arm.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">编排装配动作</span><span class="en" lang="en">Generate assembly motions</span></h2><p><span class="zh" lang="zh-CN">搭建含机械臂与触觉夹爪的仿真场景，编写抓取、插入、按压和盒盖装配流程。</span><span class="en" lang="en">I set up an arm and tactile gripper for grasping, insertion, pressing, and lid assembly in simulation.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">处理装配受阻</span><span class="en" lang="en">Recover from obstructions</span></h2><p><span class="zh" lang="zh-CN">在示教中引入位姿扰动，并根据接触受阻情况执行重抓或纠偏。</span><span class="en" lang="en">I added pose perturbations, obstruction detection, regrasping, and corrective motions to the simulated demonstrations.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">查看一次装配</span><span class="en" lang="en">Reviewing an assembly attempt</span></h2><p><span class="zh" lang="zh-CN">在仿真装配任务中生成示教轨迹，并观察接触状态与恢复动作。</span><span class="en" lang="en">The simulated assembly tasks produced demonstration trajectories for inspecting contact and recovery behaviour.</span></p></section><nav class="next"><a class="back-main" href="../index.html#projects" data-route="../index.html#projects">← <span class="zh" lang="zh-CN">回到主页</span><span class="en" lang="en">Back to homepage</span></a><a href="kineteach.html" data-route="kineteach.html"><span class="zh" lang="zh-CN">KineTeach 跨本体示教</span><span class="en" lang="en">KineTeach</span> →</a></nav></div></article></main><footer><div class="footer-inner"><span>石昊 / Hao Shi</span><a class="zh" href="../cv/hao-shi-zh.pdf">中文简历</a><a class="en" href="../cv/hao-shi-en.pdf">English CV</a></div></footer></body></html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="基于 Isaac Lab 搭建机械臂接触装配场景，集成千觉机器人 Xense SDK 实现双指触觉仿真，开发自动示教、位姿扰动与受阻恢复流程，并记录多模态仿真数据。">
+  <title>Isaac Lab 中的装配示教与触觉仿真 · 石昊</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/project-archive.css">
+  <script defer src="../assets/project-language.js"></script>
+</head>
+<body data-zh-title="Isaac Lab 中的装配示教与触觉仿真 · 石昊" data-en-title="Assembly demonstrations and tactile simulation in Isaac Lab · Hao Shi">
+  <a class="skip" href="#article"><span class="zh" lang="zh-CN">跳到正文</span><span class="en" lang="en">Skip to article</span></a>
+  <header class="site-header">
+    <a href="../index.html" data-route="../index.html"><span class="zh" lang="zh-CN">石昊</span><span class="en" lang="en">Hao Shi</span></a>
+    <a href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">全部项目</span><span class="en" lang="en">All projects</span></a>
+    <nav class="switch" aria-label="语言 / Language">
+      <a data-lang="zh" lang="zh-CN" href="?lang=zh" aria-current="true">中文</a>
+      <span aria-hidden="true">/</span>
+      <a data-lang="en" lang="en" href="?lang=en">English</a>
+    </nav>
+  </header>
+  <main id="article" tabindex="-1">
+    <article>
+      <header class="article-intro" data-anchor>
+        <div>
+          <h1><span class="zh" lang="zh-CN"><span class="title-phrase">Isaac Lab 中的装配示教</span><wbr><span class="title-phrase">与触觉仿真</span></span><span class="en" lang="en">Assembly demonstrations and tactile simulation in Isaac Lab</span></h1>
+          <p class="deck"><span class="zh" lang="zh-CN">基于 Isaac Lab 搭建机械臂接触装配场景，集成千觉机器人 Xense SDK 实现双指触觉仿真，开发自动示教、位姿扰动与受阻恢复流程，并记录多模态仿真数据。</span><span class="en" lang="en">Built contact-rich assembly tasks in Isaac Lab with the Xense Robotics SDK for tactile simulation at both fingertips. The implementation includes scripted demonstrations, initial-pose perturbations, recovery from obstructions and multimodal episode recording.</span></p>
+        </div>
+        <figure>
+          <a class="figure-link" href="../assets/figures/sim.webp">
+            <img width="1200" height="800" src="../assets/figures/sim.webp" decoding="async"
+                 alt="双指触觉夹爪对准并插入工件的仿真示意" data-zh-alt="双指触觉夹爪对准并插入工件的仿真示意" data-en-alt="Schematic of part alignment and insertion with a simulated tactile gripper">
+          </a>
+          <figcaption><span class="zh" lang="zh-CN">双指触觉夹爪对准并插入工件的仿真示意</span><span class="en" lang="en">Schematic of part alignment and insertion with a simulated tactile gripper</span></figcaption>
+        </figure>
+      </header>
+      <div class="reading-layout">
+        <nav class="contents" aria-label="本文目录 / In this article">
+          <p><span class="zh" lang="zh-CN">本文目录</span><span class="en" lang="en">In this article</span></p>
+          <ol>
+            <li><a href="#case"><span class="zh" lang="zh-CN">回看一次受阻的仿真插入</span><span class="en" lang="en">Inspecting an obstructed insertion in simulation</span></a></li>
+            <li><a href="#section-1"><span class="zh" lang="zh-CN">装配工位与触觉传感仿真</span><span class="en" lang="en">Assembly workcell and tactile sensor simulation</span></a></li>
+<li><a href="#section-2"><span class="zh" lang="zh-CN">装配动作序列与自动示教</span><span class="en" lang="en">Automated assembly demonstrations</span></a></li>
+<li><a href="#section-3"><span class="zh" lang="zh-CN">位姿扰动与接触受阻恢复</span><span class="en" lang="en">Pose perturbations and recovery from obstructed contact</span></a></li>
+<li><a href="#section-4"><span class="zh" lang="zh-CN">多模态记录与动作观测配对</span><span class="en" lang="en">Multimodal recording and action–observation alignment</span></a></li>
+          </ol>
+        </nav>
+        <div class="reading-body">
+          <section class="case-study" id="case" data-anchor>
+            <h2><span class="zh" lang="zh-CN">回看一次受阻的仿真插入</span><span class="en" lang="en">Inspecting an obstructed insertion in simulation</span></h2>
+            <ol class="case-steps"><li><h3><span class="zh" lang="zh-CN">从初始位姿看对准偏差</span><span class="en" lang="en">Start with the alignment</span></h3><p><span class="zh" lang="zh-CN">比较相同装配动作在不同工件初始位姿下的回放。在插入前查看工件相对夹爪的位姿及相机图像，可以判断偏差是否在接触之前就已经存在。</span><span class="en" lang="en">Replay the same assembly routine with different initial part poses. Inspecting the part pose relative to the gripper and the camera views just before insertion shows whether a misalignment was already present before contact.</span></p></li>
+<li><h3><span class="zh" lang="zh-CN">对照指尖与腕部观测</span><span class="en" lang="en">Read fingertip and wrist observations together</span></h3><p><span class="zh" lang="zh-CN">两侧触觉观测描述各指尖与被夹工件的局部接触，腕部六维力／力矩描述经腕部传递的合力与合力矩。对照工件运动和插入指令，才能判断一次触觉变化发生在持件、推进还是回撤阶段。</span><span class="en" lang="en">The two tactile observations describe local fingertip contact with the grasped part. The wrist wrench describes the net force and moment transmitted at the wrist. Part motion and insertion commands place a change in either signal in the hold, advance or withdrawal phase.</span></p></li>
+<li><h3><span class="zh" lang="zh-CN">在回合记录中找恢复动作</span><span class="en" lang="en">Find the recovery in the recorded episode</span></h3><p><span class="zh" lang="zh-CN">检测到受阻后，示教程序按任务状态选择回撤、重新对位或重抓。恢复前后的动作与观测连续保存。回放时既能定位新的动作指令从哪一步开始，也能观察工件在指令改变后如何运动。</span><span class="en" lang="en">After an obstruction is detected, the routine withdraws, realigns or regrasps according to the task state. Keeping actions and observations on both sides of the transition makes it possible to identify the change in command and follow the subsequent part motion.</span></p></li></ol>
+          </section>
+                <section id="section-1" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">装配工位与触觉传感仿真</span><span class="en" lang="en">Assembly workcell and tactile sensor simulation</span></h2>
+        <p><span class="zh" lang="zh-CN">集成机械臂、双指触觉夹爪与装配工件，配置工位及传感器。通过 Xense SDK 获取两侧指尖的模拟触觉响应，并关联机器人和工件状态，记录抓取与插入过程中的接触变化。</span><span class="en" lang="en">The workcell integrates a robot arm, a two-finger tactile gripper, assembly parts and sensors. The Xense SDK provides simulated tactile responses at both fingertips, recorded alongside robot and workpiece states to capture changes in contact during grasping and insertion.</span></p>
+      </section>
+      <section id="section-2" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">装配动作序列与自动示教</span><span class="en" lang="en">Automated assembly demonstrations</span></h2>
+        <p><span class="zh" lang="zh-CN">开发覆盖工件抓取、插入、按压及盒盖装配的自动示教流程，将操作组织为拾取、搬运、对位和压合等阶段。各阶段记录动作与观测，支持在不同工件初始位姿下重复执行和回放。</span><span class="en" lang="en">Scripted demonstrations cover part grasping, insertion, pressing and lid assembly, with stages for pickup, transport, alignment and pressing into place. Actions and observations are recorded at each stage for repeated execution and replay under different initial part poses.</span></p>
+      </section>
+      <section id="section-3" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">位姿扰动与接触受阻恢复</span><span class="en" lang="en">Pose perturbations and recovery from obstructed contact</span></h2>
+        <p><span class="zh" lang="zh-CN">对工件初始位姿施加扰动，可在仿真中引入不同程度的对位偏差。检测到受阻后，控制器根据任务状态回撤、重新对准或重抓，再继续装配。示教序列保留受阻前后的动作和触觉观测，可据此回看接触变化与纠偏过程。</span><span class="en" lang="en">Perturbations to the initial part pose introduce variations in alignment. When the controller detects an obstruction, it retracts, realigns or regrasps the part according to the task state before resuming assembly. The demonstration retains actions and tactile observations before and after the obstruction so that changes in contact can be examined alongside the recovery motion.</span></p>
+      </section>
+      <section id="section-4" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">多模态记录与动作观测配对</span><span class="en" lang="en">Multimodal recording and action–observation alignment</span></h2>
+        <p><span class="zh" lang="zh-CN">每个仿真回合单独保存为 HDF5 记录，包含双相机图像、机器人状态与动作、腕部六维力／力矩以及双指触觉。时间戳、坐标系和动作与观测的配对遵循统一约定。批量采集支持过程预览、记录完整性检查和异常回合隔离，原始记录可进一步转换为训练数据格式。</span><span class="en" lang="en">Each simulated episode has an HDF5 record containing two camera views, robot states and actions, wrist force/torque measurements and tactile observations from both fingers. The records use consistent conventions for timestamps, coordinate frames and action–observation pairing. Batch collection supports previews, integrity checks and isolation of anomalous episodes before conversion to training formats.</span></p>
+      </section>
+        </div>
+      </div>
+    </article>
+    <nav class="project-nav" aria-label="项目导航 / Project navigation">
+      <a href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">返回项目列表</span><span class="en" lang="en">Back to projects</span></a>
+      <a href="kineteach.html" data-route="kineteach.html"><small><span class="zh" lang="zh-CN">下一篇</span><span class="en" lang="en">Next project</span></small><span class="zh" lang="zh-CN">KineTeach：跨本体示教回放与训练数据生成</span><span class="en" lang="en">KineTeach: demonstration replay and training data across robot embodiments</span> →</a>
+    </nav>
+  </main>
+  <footer>
+    <a class="zh" lang="zh-CN" href="../cv/hao-shi-zh.pdf">中文简历</a>
+    <a class="en" lang="en" href="../cv/hao-shi-en.pdf">English CV</a>
+  </footer>
+</body>
+</html>

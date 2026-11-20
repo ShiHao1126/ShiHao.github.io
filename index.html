@@ -1,542 +1,333 @@
 <!doctype html>
-<html lang="zh-CN"
-  ><head
-    ><meta charset="utf-8" /><meta
-      name="viewport"
-      content="width=device-width,initial-scale=1" /><meta
-      name="theme-color"
-      content="#faf8f2" /><meta
-      name="description"
-      content="石昊的个人主页。关于在交大学自动化、做机器人和记录触觉的经历。" /><meta
-      property="og:type"
-      content="website" /><meta
-      property="og:title"
-      content="石昊 · Hao Shi" /><meta
-      property="og:description"
-      content="在交大学自动化，从仿真走到机器人操作台边。这是我的经历和做过的东西。" /><meta
-      property="og:url"
-      content="https://shihao1126.github.io/" /><meta
-      property="og:image"
-      content="https://shihao1126.github.io/assets/art/hero.webp" /><title
-      >石昊 · Hao Shi</title
-    ><link rel="icon" type="image/svg+xml" href="assets/favicon.svg" /><link
-      rel="stylesheet"
-      href="home.css" /><script defer src="home.js"></script
-  ></head>
-  <body id="top"
-    ><a class="skip" href="#main"
-      ><span data-ln="zh">跳到正文</span
-      ><span lang="en" data-ln="en">Skip to content</span></a
-    >
-    <header
-      ><div class="mast"
-        ><a class="wordmark" href="#top"
-          ><i aria-hidden="true">✳</i> Hao Shi<span class="wordmark-zh"
-            >石昊</span
-          ></a
-        ><nav aria-label="导航"
-          ><a href="#experience"
-            ><span data-ln="zh">来时路</span
-            ><span lang="en" data-ln="en">Journey</span></a
-          ><a href="#projects"
-            ><span data-ln="zh">做过的东西</span
-            ><span lang="en" data-ln="en">Work</span></a
-          ><a href="#contact"
-            ><span data-ln="zh">联系</span
-            ><span lang="en" data-ln="en">Contact</span></a
-          ></nav
-        ><div class="lang" role="group" aria-label="中文 / English"
-          ><button
-            data-lang="zh"
-            lang="zh-CN"
-            aria-label="中文"
-            aria-pressed="true"
-            >中</button
-          ><span aria-hidden="true">/</span
-          ><button
-            data-lang="en"
-            lang="en"
-            aria-label="English"
-            aria-pressed="false"
-            >EN</button
-          ></div
-        ></div
-      ></header
-    >
-    <main id="main"
-      ><div class="intro inner" data-part="intro"
-        ><article class="hello"
-          ><h1
-            ><span data-ln="zh"
-              >你好，我是<span class="accent">石昊</span>。</span
-            ><span lang="en" data-ln="en"
-              >Hi, I’m <span class="accent">Hao Shi</span>.</span
-            ></h1
-          ><p class="lede"
-            ><span data-ln="zh"
-              >我在上海交通大学读自动化，喜欢亲手搭机器人。</span
-            ><span lang="en" data-ln="en"
-              >I study automation at Shanghai Jiao Tong University and like
-              building robots with my own hands.</span
-            ></p
-          ><p
-            ><span data-ln="zh"
-              >最早是在仿真里学着看机器人怎么动。后来做外骨骼、戴上数据手套，开始关心另一件事：机器人碰到东西的时候，手上究竟能感觉到什么？</span
-            ><span lang="en" data-ln="en"
-              >I first learned about robot motion in simulation. Working with
-              exoskeletons and data gloves led me to a different question: what
-              can you feel through a robot when it touches something?</span
-            ></p
-          ><p
-            ><span data-ln="zh"
-              >最近我在做视触觉采集，用机械臂按压传感器，把每一帧触觉图像和接触力对起来。</span
-            ><span lang="en" data-ln="en"
-              >Lately I’ve been working on tactile data collection, pressing a
-              sensor with a robot arm and matching each image to the force that
-              produced it.</span
-            ></p
-          ><div class="intro-links"
-            ><a href="mailto:shihao1126@sjtu.edu.cn"
-              ><span data-ln="zh">写信给我</span
-              ><span lang="en" data-ln="en">Email me</span> ↗</a
-            ><span>·</span
-            ><a href="https://github.com/ShiHao1126">GitHub ↗</a></div
-          ></article
-        >
-        <figure class="sketch"
-          ><div class="paper"
-            ><svg
-              viewBox="0 0 460 320"
-              role="img"
-              aria-labelledby="sk-title"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title id="sk-title">
-                机械臂与触觉接触概念手绘 / Robot arm and tactile contact sketch
-              </title>
-              <defs>
-                <pattern
-                  id="dots"
-                  width="15"
-                  height="15"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <circle cx="2" cy="2" r=".7" fill="#aca79a" opacity=".58" />
-                </pattern>
-                <pattern
-                  id="hatch"
-                  width="7"
-                  height="7"
-                  patternTransform="rotate(-28)"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <path
-                    d="M0 0V7"
-                    stroke="#626c69"
-                    stroke-width="1"
-                    opacity=".3"
-                  />
-                </pattern>
-              </defs>
-              <rect width="460" height="320" fill="#f1ede0" />
-              <rect width="460" height="320" fill="url(#dots)" />
-              <g
-                fill="none"
-                stroke="#b8b4a7"
-                stroke-width="1"
-                stroke-dasharray="4 4"
-              >
-                <path
-                  d="M40 251l207 35 152-71M79 224l165-54 161 34M103 200V88M250 282V99"
-                />
-              </g>
-              <g
-                fill="none"
-                stroke="#384a49"
-                stroke-width="2.1"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-              >
-                <path d="M46 222l58-20 51 10-58 24z" fill="#e4e1d3" />
-                <path
-                  d="M46 222v12l51 14v-12m0 12l58-24v-12"
-                  fill="url(#hatch)"
-                />
-                <path d="M64 211v12c8 8 40 10 61-2l2-14" fill="#dddccf" />
-                <ellipse
-                  cx="96"
-                  cy="209"
-                  rx="32"
-                  ry="10"
-                  transform="rotate(-6 96 209)"
-                  fill="#f0ecde"
-                />
-                <path
-                  d="M80 205l5-47c1-15 19-19 26-6l6 42-6 13c-10 4-21 4-31-2z"
-                  fill="#e0dfd1"
-                />
-                <path
-                  d="M95 150l53-75c9-9 24-6 27 4l-9 17-56 70"
-                  fill="#eee9d9"
-                />
-                <path
-                  d="M107 156l53-72 10-4m-68 68l43-61"
-                  stroke="#8d9287"
-                  stroke-width="1.2"
-                />
-                <circle cx="98" cy="159" r="16" fill="#d1d3c5" />
-                <circle cx="98" cy="159" r="10" fill="#f7f1e3" />
-                <circle cx="98" cy="159" r="3.5" fill="#536964" />
-                <path
-                  d="M159 71l19-4 78 40 5 14-12 10-17-6-74-39z"
-                  fill="#e7e4d6"
-                />
-                <path
-                  d="M174 77l68 35m-67-29l61 31"
-                  stroke="#90938b"
-                  stroke-width="1"
-                />
-                <circle cx="163" cy="84" r="16" fill="#d2d4c7" />
-                <circle cx="163" cy="84" r="10" fill="#f6f0df" />
-                <circle cx="163" cy="84" r="3.5" fill="#536964" />
-                <path d="M241 124l4 18 24 13 13-9-6-20-17-10z" fill="#e1dfcf" />
-                <circle cx="251" cy="118" r="13" fill="#d1d3c6" />
-                <circle cx="251" cy="118" r="7" fill="#f5efdf" />
-                <path
-                  d="M258 149l1 17 8 5 4-4-3-14m9-8l11 13-4 14-6 1-1-7 3-6-9-10"
-                  fill="#e2e1d2"
-                />
-                <path d="M226 211l46-19 48 11-45 22z" fill="#dfdbca" />
-                <path d="M226 211v9l49 15 45-22v-10m-45 22v10" fill="#eae4d4" />
-                <path d="M247 203l23-10 25 6-22 11z" fill="#9baeac" />
-                <path d="M247 203v4l26 8 22-12v-4" />
-              </g>
-              <g
-                stroke="#bc623e"
-                fill="none"
-                stroke-width="1.6"
-                stroke-linecap="round"
-              >
-                <path d="M272 178v12m-4-4l4 5 4-5" />
-                <path d="M287 191c23-10 37-17 47-33" stroke-dasharray="4 4" />
-                <circle cx="355" cy="127" r="34" fill="#f1eddf" />
-                <g transform="rotate(-18 355 127)">
-                  <ellipse cx="355" cy="127" rx="22" ry="13" />
-                  <ellipse cx="355" cy="127" rx="16" ry="9" />
-                  <ellipse cx="355" cy="127" rx="9" ry="5" />
-                </g>
-              </g>
-              <g fill="none" stroke="#78847c" stroke-width="1.3">
-                <path d="M48 269v-27m0 27l23 6m-23-6l16-9" />
-              </g>
-              <g font-size="12" fill="#777e72" font-family="monospace">
-                <text x="29" y="254">z</text>
-                <text x="74" y="279">x</text>
-              </g>
-            </svg></div
-          ><figcaption
-            ><span data-ln="zh">机械臂与触觉接触 · 原理示意</span
-            ><span lang="en" data-ln="en"
-              >A robot arm and tactile contact · schematic</span
-            ></figcaption
-          ></figure
-        ></div
-      >
-      <section class="journey inner" id="experience" data-part="experience"
-        ><div class="section-title"
-          ><h2
-            ><span data-ln="zh">一路走来</span
-            ><span lang="en" data-ln="en">Along the way</span></h2
-          ><span class="rule"></span
-          ><span class="yearspan">2023 — 2026</span></div
-        ><div class="years"
-          ><article class="year" data-part="year-2023"
-            ><div class="date">2023</div
-            ><div class="entry"
-              ><h3
-                ><span data-ln="zh">从自动化开始</span
-                ><span lang="en" data-ln="en"
-                  >Starting with automation</span
-                ></h3
-              ><p
-                ><span data-ln="zh"
-                  >我来到上海交通大学读自动化。之后做过的机器人项目，把课堂里的运动学、控制和感知联系到了一起。</span
-                ><span lang="en" data-ln="en"
-                  >I came to Shanghai Jiao Tong University to study automation.
-                  Working on robots later brought kinematics, control, and
-                  sensing together for me.</span
-                ></p
-              ></div
-            ></article
-          ><article class="year" data-part="year-2024"
-            ><div class="date">2024</div
-            ><div class="entry"
-              ><h3
-                ><span data-ln="zh">在仿真里接触机器人</span
-                ><span lang="en" data-ln="en"
-                  >My first steps in simulation</span
-                ></h3
-              ><p
-                ><span data-ln="zh"
-                  >在 MVIG，我开始学 MuJoCo，也试着用 3D Gaussian Splatting
-                  重建场景。那是我第一次接触科研。</span
-                ><span lang="en" data-ln="en"
-                  >At MVIG I began learning MuJoCo and exploring how 3D Gaussian
-                  Splatting reconstructs a scene. It was my first experience of
-                  research.</span
-                ></p
-              ></div
-            ></article
-          ><article class="year" data-part="year-2025"
-            ><div class="date">2025</div
-            ><div class="entry"
-              ><h3
-                ><span data-ln="zh">从仿真走到操作台边</span
-                ><span lang="en" data-ln="en"
-                  >From simulation to the workbench</span
-                ></h3
-              ><p
-                ><span data-ln="zh"
-                  >在唐鼎老师的课题组，我开始做力反馈外骨骼，也采集人手示教数据。同一个擦拭动作，除了工具走过的轨迹，还得记录它沿途用了多大的力。</span
-                ><span lang="en" data-ln="en"
-                  >In Ding Tang’s group I began working on a force-feedback
-                  exoskeleton and recording human demonstrations. For a wiping
-                  task, the tool’s path tells only part of the story. We also
-                  needed to measure how hard it pressed.</span
-                ></p
-              ></div
-            ></article
-          ><article class="year" data-part="year-2026"
-            ><div class="date">2026</div
-            ><div class="entry"
-              ><h3
-                ><span data-ln="zh">把接触记录下来</span
-                ><span lang="en" data-ln="en">Recording contact</span></h3
-              ><p
-                ><span data-ln="zh"
-                  >在灵巧智能，我把手套动作映射到灵巧手上。在千觉机器人和交大
-                  MPI
-                  Lab，我开始让机械臂重复按压、旋转和剪切，把触觉图像与力信号一一对应。</span
-                ><span lang="en" data-ln="en"
-                  >At DexRobot I mapped glove motion to a dexterous hand. At
-                  Xense Robotics and SJTU’s MPI Lab, I started using a robot arm
-                  to repeat presses, twists, and shears, pairing tactile images
-                  with the resulting forces.</span
-                ></p
-              ></div
-            ></article
-          ></div
-        ></section
-      >
-      <section class="works inner" id="projects" data-part="projects"
-        ><div class="section-title"
-          ><h2
-            ><span data-ln="zh">做过的东西</span
-            ><span lang="en" data-ln="en">Things I’ve built</span></h2
-          ><span class="rule"></span></div
-        ><div class="work-grid"
-          ><article class="work" data-part="work-haptic"
-            ><a
-              class="cover"
-              href="projects/haptic.html"
-              data-project
-              aria-label="怎样把接触力传回操作者手上？"
-              ><img
-                loading="lazy"
-                src="assets/art/haptic.webp"
-                alt=""
-                width="1152"
-                height="720"
-              /><span class="figtag"
-                ><span data-ln="zh">原理示意</span
-                ><span lang="en" data-ln="en">Schematic</span></span
-              ></a
-            ><h3
-              ><a href="projects/haptic.html" data-project
-                ><span data-ln="zh">怎样把接触力传回操作者手上？</span
-                ><span lang="en" data-ln="en"
-                  >How can an operator feel contact at a distance?</span
-                ></a
-              ></h3
-            ><p
-              ><span data-ln="zh"
-                >我和小组搭起一套外骨骼与 Flexiv
-                机械臂的双边遥操作系统。主端带动从端，接触产生的力和力矩再回到主端。</span
-              ><span lang="en" data-ln="en"
-                >My team and I built a bilateral system with a haptic
-                exoskeleton and a Flexiv arm. Motion travels to the robot, and
-                the forces and torques at contact travel back.</span
-              ></p
-            ><a class="textlink" href="projects/haptic.html" data-project
-              ><span data-ln="zh">项目记录</span
-              ><span lang="en" data-ln="en">Project notes</span> ↗</a
-            ></article
-          ><article class="work" data-part="work-tactile"
-            ><a
-              class="cover"
-              href="projects/tactile.html"
-              data-project
-              aria-label="给触觉图像配上力的读数"
-              ><img
-                loading="lazy"
-                src="assets/art/tactile.webp"
-                alt=""
-                width="1152"
-                height="720"
-              /><span class="figtag"
-                ><span data-ln="zh">原理示意</span
-                ><span lang="en" data-ln="en">Schematic</span></span
-              ></a
-            ><h3
-              ><a href="projects/tactile.html" data-project
-                ><span data-ln="zh">给触觉图像配上力的读数</span
-                ><span lang="en" data-ln="en"
-                  >Putting a force reading next to a tactile image</span
-                ></a
-              ></h3
-            ><p
-              ><span data-ln="zh"
-                >从一次按压开始，我把接触位置、加载条件和图像记录下来，再用机器人参考力检查三轴力估计。</span
-              ><span lang="en" data-ln="en"
-                >Starting with a single press, I recorded the contact location,
-                loading conditions, and sensor image, then checked three-axis
-                force estimates against the robot’s reference signal.</span
-              ></p
-            ><a class="textlink" href="projects/tactile.html" data-project
-              ><span data-ln="zh">项目记录</span
-              ><span lang="en" data-ln="en">Project notes</span> ↗</a
-            ></article
-          ><article class="work" data-part="work-force"
-            ><a
-              class="cover"
-              href="projects/force.html"
-              data-project
-              aria-label="让机器人重做一次擦拭"
-              ><img
-                loading="lazy"
-                src="assets/art/force.webp"
-                alt=""
-                width="1152"
-                height="720"
-              /><span class="figtag"
-                ><span data-ln="zh">原理示意</span
-                ><span lang="en" data-ln="en">Schematic</span></span
-              ></a
-            ><h3
-              ><a href="projects/force.html" data-project
-                ><span data-ln="zh">让机器人重做一次擦拭</span
-                ><span lang="en" data-ln="en"
-                  >Teaching a robot a wiping motion</span
-                ></a
-              ></h3
-            ><p
-              ><span data-ln="zh"
-                >在 ForceTrace-CAFE
-                项目里，我负责采集示教、部署策略和真机实验。要看懂一次执行，还得把相机、位姿和六维力信号在时间上对齐。</span
-              ><span lang="en" data-ln="en"
-                >For ForceTrace-CAFE, I collected demonstrations, deployed
-                policies, and ran hardware experiments. To inspect a single
-                rollout, I had to align the camera, pose, and six-axis force
-                signals in time.</span
-              ></p
-            ><a class="textlink" href="projects/force.html" data-project
-              ><span data-ln="zh">项目记录</span
-              ><span lang="en" data-ln="en">Project notes</span> ↗</a
-            ></article
-          ></div
-        >
-        <p class="other"
-          ><span data-ln="zh">也做过</span
-          ><span lang="en" data-ln="en">Also explored</span>
-          <a data-project href="projects/hand.html"
-            ><span data-ln="zh">手套遥操作</span
-            ><span lang="en" data-ln="en">glove teleoperation</span></a
-          ><b> / </b
-          ><a data-project href="projects/sim.html"
-            ><span data-ln="zh">Isaac Lab 触觉仿真</span
-            ><span lang="en" data-ln="en"
-              >tactile simulation in Isaac Lab</span
-            ></a
-          ><b> / </b
-          ><a data-project href="projects/kineteach.html">KineTeach</a></p
-        ></section
-      >
-      <section id="publications" class="pub inner" data-part="publications"
-        ><details
-          ><summary
-            ><span
-              ><span data-ln="zh">合作论文与稿件</span
-              ><span lang="en" data-ln="en">Papers and manuscripts</span></span
-            ><span class="p-toggle" aria-hidden="true">+</span></summary
-          ><div class="plist"
-            ><article id="paper-1"
-              ><h3 lang="en"
-                >KineTeach for Robot-Free Real-to-Sim-to-Real Data Generation in
-                Cross-Embodiment Robotic Manipulation</h3
-              ><p
-                ><em>ICIRA 2026</em> ·
-                <span data-ln="zh">已录用 · 第四作者</span
-                ><span lang="en" data-ln="en">Accepted · Fourth author</span></p
-              ></article
-            ><article id="paper-2"
-              ><h3 lang="en"
-                >Towards Physical Intelligence in Contact-Rich Manufacturing: A
-                Visual-Force-Pose Demonstration and Phase-Aware Learning
-                Framework</h3
-              ><p
-                ><em>Robotics and Computer-Integrated Manufacturing</em> ·
-                <span data-ln="zh">已投稿 · 第四作者</span
-                ><span lang="en" data-ln="en"
-                  >Submitted · Fourth author</span
-                ></p
-              ></article
-            ><article id="paper-3"
-              ><h3 lang="en"
-                >Anti-Light-Variation, Detailed Camera-Based Tactile Sensing
-                With Continuous Binary Encoding</h3
-              ><p
-                ><em>IEEE Transactions on Industrial Electronics</em> ·
-                <span data-ln="zh">修回中 · 第六作者</span
-                ><span lang="en" data-ln="en"
-                  >Under revision · Sixth author</span
-                ></p
-              ></article
-            ></div
-          ></details
-        ></section
-      > </main
-    ><footer id="contact" data-part="contact"
-      ><div class="inner"
-        ><div class="section-title"
-          ><h2
-            ><span data-ln="zh">联系我</span
-            ><span lang="en" data-ln="en">Get in touch</span></h2
-          ><span class="rule"></span></div
-        ><div class="footerrow"
-          ><p
-            ><span data-ln="zh">想聊机器人、触觉或一起做点东西，欢迎来信。</span
-            ><span lang="en" data-ln="en"
-              >If you’d like to talk robots, tactile sensing, or building
-              something together, drop me a line.</span
-            ><br /><a href="mailto:shihao1126@sjtu.edu.cn"
-              >shihao1126@sjtu.edu.cn ↗</a
-            ></p
-          ><div
-            ><a href="https://github.com/ShiHao1126">GitHub ↗</a><br /><a
-              id="cv"
-              href="cv/hao-shi-zh.pdf"
-              ><span data-ln="zh">中文简历</span
-              ><span lang="en" data-ln="en">English CV</span> ↗</a
-            ></div
-          ></div
-        ><div class="bottom"
-          ><span>© 2026 Hao Shi</span
-          ><a href="#top"
-            ><span data-ln="zh">回到顶部</span
-            ><span lang="en" data-ln="en">Back to top</span> ↑</a
-          ></div
-        ></div
-      ></footer
-    ></body
-  ></html
->
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eaf4fc">
+  <meta name="description" content="石昊的项目笔记。图解触觉感知、双边遥操作、装配仿真与机器人示教中的系统设计和实验。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="石昊 | Hao Shi">
+  <meta property="og:description" content="上海交通大学自动化专业本科生，主要做力反馈遥操作、触觉感知与机器人示教采集。">
+  <meta property="og:url" content="https://shihao1126.github.io/ShiHao.github.io/">
+  <meta property="og:image" content="https://shihao1126.github.io/ShiHao.github.io/assets/figures/haptic.webp">
+  <title>石昊 | Hao Shi</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="home.css?v=20261120-project-divider">
+  <script defer src="home.js?v=20261120-latest-cv"></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main"><span data-ln="zh">跳到正文</span><span data-ln="en">Skip to content</span></a>
+  <header class="site-header">
+    <div class="page-width nav-row">
+      <nav aria-label="导航">
+        <a href="#top"><span data-ln="zh">主页</span><span data-ln="en">Home</span></a>
+        <a href="#experience"><span data-ln="zh">经历</span><span data-ln="en">Experience</span></a>
+        <a href="#projects"><span data-ln="zh">项目</span><span data-ln="en">Projects</span></a>
+        <a href="#publications"><span data-ln="zh">论文</span><span data-ln="en">Papers</span></a>
+      </nav>
+      <div class="languages" role="group" aria-label="中文 / English">
+        <button data-lang="zh" aria-label="中文" aria-pressed="true" lang="zh-CN">中文</button>
+        <span aria-hidden="true">/</span>
+        <button data-lang="en" aria-label="English" aria-pressed="false" lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section id="about" class="profile" data-part="about" aria-labelledby="name">
+      <div class="profile-identity">
+        <div class="portrait-frame">
+          <img class="profile-portrait" src="assets/hao-shi-portrait.webp" width="360" height="466" alt="石昊的证件照" data-zh-alt="石昊的证件照" data-en-alt="Portrait of Hao Shi">
+        </div>
+        <h1 id="name"><span data-ln="zh">石昊 <small lang="en">Hao Shi</small></span><span data-ln="en">Hao Shi <small lang="zh-CN">石昊</small></span></h1>
+      </div>
+      <div class="profile-info">
+        <dl class="profile-facts">
+          <div class="profile-fact"><dt><span data-ln="zh">教育</span><span data-ln="en">Education</span></dt>
+          <dd><span data-ln="zh">上海交通大学 · 自动化本科，预计 2027 年毕业</span><span data-ln="en">B.Eng. in Automation, Shanghai Jiao Tong University (expected 2027)</span></dd></div>
+          <div class="profile-fact"><dt><span data-ln="zh">方向</span><span data-ln="en">Interests</span></dt>
+          <dd><span data-ln="zh">力反馈遥操作、视触觉感知与接触操作示教</span><span data-ln="en">Haptic teleoperation, visuotactile sensing and demonstration capture for contact-rich manipulation</span></dd></div>
+          <div class="profile-fact"><dt><span data-ln="zh">当前</span><span data-ln="en">Current work</span></dt>
+          <dd><span data-ln="zh">千觉机器人、上海交大 MPI Lab · 视触觉采集与接触力估计</span><span data-ln="en">Xense Robotics and SJTU MPI Lab · Visuotactile data acquisition and force estimation</span></dd></div>
+        </dl>
+        <div class="profile-links" id="contact">
+          <a href="mailto:shihao1126@sjtu.edu.cn">shihao1126@sjtu.edu.cn</a>
+          <a href="https://github.com/ShiHao1126">GitHub</a>
+          <a id="cv" href="cv/hao-shi-en.pdf?v=20261120-ielts"><span data-ln="zh">简历（PDF）</span><span data-ln="en">CV (PDF)</span></a>
+        </div>
+      </div>
+    </section>
+    <details id="experience" class="background-section page-width" data-part="experience" open>
+      <summary><h2 id="experience-title"><span data-ln="zh">实习与研究经历</span><span data-ln="en">Research and engineering experience</span></h2></summary>
+      <dl class="experience">
+        <dt><span data-ln="zh">2026.05 至今</span><span data-ln="en">May 2026 – present</span></dt>
+        <dd><strong><span data-ln="zh">千觉机器人、上海交大 MPI Lab（马道林课题组）</span><span data-ln="en">Xense Robotics and the SJTU MPI Lab (Daolin Ma’s group)</span></strong><span data-ln="zh">科研实习生，负责视触觉传感器自动化数据采集与接触力估计。</span><span data-ln="en">Research intern in automated visuotactile data acquisition and contact force estimation.</span></dd>
+        <dt><span data-ln="zh">2026.03 至今</span><span data-ln="en">Mar 2026 – present</span></dt>
+        <dd><strong><span data-ln="zh">灵巧智能（DexRobot）</span><span data-ln="en">DexRobot</span></strong><span data-ln="zh">机器人工程实习生，开发灵巧手遥操作系统与导览机器人语音交互模块。</span><span data-ln="en">Robotics engineering intern in dexterous hand teleoperation and speech interaction for mobile robots.</span></dd>
+        <dt>2025.09 – 2026.05</dt>
+        <dd><strong><span data-ln="zh">上海交大机械与动力工程学院（唐鼎课题组）</span><span data-ln="en">School of Mechanical Engineering, SJTU (Ding Tang’s group)</span></strong><span data-ln="zh">科研实习生，参与力反馈外骨骼开发，负责接触操作示教采集与策略真机部署。</span><span data-ln="en">Research intern in haptic teleoperation, contact-rich demonstration capture and policy deployment on hardware.</span></dd>
+        <dt>2024.11 – 2025.09</dt>
+        <dd><strong><span data-ln="zh">上海交大 MVIG（卢策吾课题组）</span><span data-ln="en">MVIG, SJTU (Cewu Lu’s group)</span></strong><span data-ln="zh">科研实习生，学习 MuJoCo 机器人仿真，探索基于三维高斯的场景重建。</span><span data-ln="en">Research intern exploring robot simulation in MuJoCo and scene reconstruction with 3D Gaussian Splatting.</span></dd>
+      </dl>
+    </details>
+
+    <section id="projects" class="page-width" data-part="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title"><span data-ln="zh">项目笔记</span><span data-ln="en">Project notes</span></h2>
+      <div class="project-list">
+        <article id="project-tactile" class="project" data-part="tactile" aria-labelledby="title-tactile">
+          <div class="project-visual tactile-media">
+            <div class="tactile-photos">
+              <figure>
+                <a href="assets/tactile/setup.webp" target="_blank" rel="noopener"><img src="assets/tactile/setup.webp" alt="机械臂触觉采集装置" data-zh-alt="机械臂触觉采集装置" data-en-alt="Robot-based tactile acquisition setup" loading="lazy" decoding="async"></a>
+                <figcaption><span data-ln="zh">机械臂触觉采集装置</span><span data-ln="en">Robot-based tactile acquisition setup</span></figcaption>
+              </figure><figure>
+                <a href="assets/tactile/contact.webp" target="_blank" rel="noopener"><img src="assets/tactile/contact.webp" alt="球形压头与传感器接触" data-zh-alt="球形压头与传感器接触" data-en-alt="Spherical indenter contacting the sensor" loading="lazy" decoding="async"></a>
+                <figcaption><span data-ln="zh">球形压头与传感器接触</span><span data-ln="en">Spherical indenter contacting the sensor</span></figcaption>
+              </figure>
+            </div>
+            <figure class="tactile-monitor">
+              <a href="assets/tactile/monitor.webp" target="_blank" rel="noopener"><img src="assets/tactile/monitor.webp" alt="触觉图像、三轴力读数与采集状态监控" data-zh-alt="触觉图像、三轴力读数与采集状态监控" data-en-alt="Tactile images, three-axis force readings and acquisition status" width="1760" height="728" loading="lazy" decoding="async"></a>
+              <figcaption><span data-ln="zh">触觉图像、三轴力读数与采集状态</span><span data-ln="en">Tactile images, three-axis force readings and acquisition status</span></figcaption>
+            </figure>
+            <p class="media-hint"><span data-ln="zh">（点击放大）</span><span data-ln="en">(Click to enlarge)</span></p>
+          </div>
+          <div class="project-copy">
+            <h3 id="title-tactile"><span data-ln="zh">视触觉数据采集与三轴力估计</span><span data-ln="en">Visuotactile data acquisition and three-axis force estimation</span></h3>
+            <p class="project-lead"><span data-ln="zh">围绕视触觉传感器的接触力感知，搭建机械臂自动化采集平台，完成三轴力估计模型的训练与实时部署，并构建基于形变网格的触觉图像渲染流程。</span><span data-ln="en">This project combines automated robotic data acquisition, training and real-time deployment of a three-axis contact force estimator, and tactile image rendering from simulated deformation meshes.</span></p>
+
+              <section class="project-section">
+                <h4><span data-ln="zh">机械臂自动化采集</span><span data-ln="en">Automated robotic data acquisition</span></h4>
+                <p><span data-ln="zh">基于 Flexiv 机械臂实现定深按压、定力加载、双向旋转及多方向剪切，支持不同接触位置、载荷和运动路径的重复采集。采集流程包含力矩清零、无接触参考图像获取、到位停稳采样及中断续采。</span><span data-ln="en">The Flexiv-based acquisition platform supports depth-controlled indentation, force-controlled loading, bidirectional rotation and multidirectional shear across contact locations and loading paths. The acquisition workflow includes torque zeroing, non-contact reference-image capture, sampling after settling and resumption of interrupted runs.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">触觉图像与力数据整理</span><span data-ln="en">Tactile image and force data preparation</span></h4>
+                <p><span data-ln="zh">关联保存触觉图像、六维力／力矩、工具中心点（TCP）位姿及加载参数。通过轨迹可视化核对采样位置，并将触觉图像与对应的三轴力读数整理为模型训练样本。</span><span data-ln="en">Tactile images are stored with six-axis force/torque measurements, tool centre point (TCP) poses and loading parameters. Trajectory visualisation supports inspection of sampling locations. The tactile images are paired with the corresponding three-axis force readings to form training samples for the force estimator.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">三轴力估计与实时部署</span><span data-ln="en">Three-axis force estimation and real-time deployment</span></h4>
+                <p><span data-ln="zh">实现基于 MAE ViT 编码器与双头潜变量结构的力估计模型，完成数据适配、分阶段训练及离线评估。模型部署于采集平台，根据触觉图像实时预测三轴接触力，并在按压与剪切实验中对照机械臂反馈的力读数，分析各分量随加载过程变化的预测误差。</span><span data-ln="en">A force estimator using an MAE ViT encoder and a dual-head latent architecture was implemented through data preparation, staged training and offline evaluation. Deployed on the acquisition platform, it predicts three-axis contact forces from tactile images in real time. Indentation and shear experiments compare these predictions with force readings reported by the robot to analyse component-wise errors throughout loading.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">触觉仿真图像生成</span><span data-ln="en">Rendering simulated tactile images</span></h4>
+                <p><span data-ln="zh">基于 Blender 搭建形变网格到触觉图像的批量渲染流程，完成接触表面提取、材质配置及参考表面 UV 坐标传递。不同形变状态使用一致的纹理映射，支持单样本预览与并行批量渲染。</span><span data-ln="en">A Blender pipeline converts simulated deformation meshes into tactile images through contact-surface extraction, material assignment and UV transfer from a reference surface. Consistent texture mapping across deformation states supports individual-sample previews and parallel batch rendering.</span></p>
+              </section>
+          </div>
+        </article>
+
+        <article id="project-haptic" class="project" data-part="haptic" aria-labelledby="title-haptic">
+          <div class="project-visual haptic-media">
+            <figure>
+              <video controls playsinline preload="metadata" poster="assets/haptic/poster.jpg" aria-label="Exoskeleton teleoperation demonstration">
+                <source src="assets/haptic/demo.mp4" type="video/mp4">
+                <a href="assets/haptic/demo.mp4"><span data-ln="zh">播放演示视频</span><span data-ln="en">Play demonstration video</span></a>
+              </video>
+              <figcaption><span data-ln="zh">外骨骼遥操作实机演示</span><span data-ln="en">Exoskeleton teleoperation demonstration</span></figcaption>
+            </figure>
+            <div class="mounting-gallery">
+              <figure>
+                <a href="assets/haptic/bottom.webp" target="_blank" rel="noopener"><img src="assets/haptic/bottom.webp" alt="底部安装" data-zh-alt="底部安装" data-en-alt="Bottom mounting" width="1200" height="1600" loading="lazy" decoding="async"></a>
+                <figcaption><span data-ln="zh">底部安装</span><span data-ln="en">Bottom mounting</span></figcaption>
+              </figure><figure>
+                <a href="assets/haptic/overhead.webp" target="_blank" rel="noopener"><img src="assets/haptic/overhead.webp" alt="顶部吊装" data-zh-alt="顶部吊装" data-en-alt="Overhead mounting" width="1200" height="1600" loading="lazy" decoding="async"></a>
+                <figcaption><span data-ln="zh">顶部吊装</span><span data-ln="en">Overhead mounting</span></figcaption>
+              </figure><figure>
+                <a href="assets/haptic/side.webp" target="_blank" rel="noopener"><img src="assets/haptic/side.webp" alt="侧向安装" data-zh-alt="侧向安装" data-en-alt="Side mounting" width="1200" height="1600" loading="lazy" decoding="async"></a>
+                <figcaption><span data-ln="zh">侧向安装</span><span data-ln="en">Side mounting</span></figcaption>
+              </figure>
+            </div>
+            <p class="media-hint"><span data-ln="zh">同一外骨骼的不同安装方式</span><span data-ln="en">Different mounting configurations of the same exoskeleton</span></p>
+          </div>
+          <div class="project-copy">
+            <h3 id="title-haptic"><span data-ln="zh">七自由度力反馈外骨骼与双边遥操作</span><span data-ln="en">Bilateral teleoperation with a seven-degree-of-freedom haptic exoskeleton</span></h3>
+            <p class="project-lead"><span data-ln="zh">以低成本、可灵活安装的七自由度力反馈外骨骼为主端，构建与 Flexiv 机械臂的双边遥操作平台，集成主从运动映射、接触力反馈、柔性重力补偿及多模态示教采集。</span><span data-ln="en">A low-cost, seven-degree-of-freedom haptic exoskeleton with configurable mounting serves as the master device for bilateral teleoperation of a Flexiv arm. The platform integrates motion retargeting, contact-force feedback, flexible-link gravity compensation and multimodal demonstration capture.</span></p>
+
+              <section class="project-section">
+                <h4><span data-ln="zh">低成本结构与灵活安装</span><span data-ln="en">Low-cost construction and configurable mounting</span></h4>
+                <p><span data-ln="zh">外骨骼采用关节电机与打印结构件组合的低成本构型，可在铝型材支架上采用底部安装、顶部吊装或侧向安装。通过调整基座位置与朝向，适配不同工位的操作空间及手臂活动范围，便于按实验需求重新布置遥操作平台。</span><span data-ln="en">The exoskeleton combines joint motors with 3D-printed structural components in a low-cost configuration. Its base supports bottom, overhead and side mounting on an aluminium-extrusion frame. Adjustable base placement and orientation accommodate different workstation layouts and arm workspaces, allowing the teleoperation setup to be reconfigured for different experiments.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">主从位姿映射与力反馈</span><span data-ln="en">Bilateral motion and force mapping</span></h4>
+                <p><span data-ln="zh">牵头平台搭建与真机联调，完成主端运动学建模、主从位姿映射、六维导纳控制与重力补偿。系统将手柄位姿转换为机械臂末端目标位姿，并通过外骨骼向操作者反馈从端接触力与力矩。</span><span data-ln="en">Led platform development and hardware integration, including exoskeleton kinematics, master–slave pose mapping, six-dimensional admittance control and gravity compensation. Handle poses define target end-effector poses, while contact forces and torques at the robot are returned to the operator through the exoskeleton.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">柔性建模与重力补偿</span><span data-ln="en">Flexible-link modelling and gravity compensation</span></h4>
+                <p><span data-ln="zh">针对外骨骼结构在自重与末端负载作用下的挠曲，建立准静态柔性模型，并利用多姿态力传感器数据标定柔度、安装旋转和测量零偏。运行时根据关节角与柔性参数估计传感器实际朝向，修正工具重力在传感器坐标系中的投影，完成六维力／力矩补偿。</span><span data-ln="en">A quasi-static flexible-link model represents deflection under link weight and the end-effector payload. Force-sensor measurements across multiple poses calibrate compliance, mounting rotation and measurement bias. At runtime, joint angles and calibrated compliance estimate the sensor orientation, correcting the projection of tool weight into the sensor frame for six-axis force/torque compensation.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">双指接触检测与抓力调节</span><span data-ln="en">Dual-fingertip contact detection and grasp-force control</span></h4>
+                <p><span data-ln="zh">集成主端力反馈夹爪与从端千觉双指视触觉夹爪，开发夹爪开合控制、指尖接触检测与目标抓力调节，并将从端抓取力反馈至主端夹爪。</span><span data-ln="en">Integrated a master-side haptic gripper with a slave-side Xense two-finger visuotactile gripper. Developed opening and closing control, fingertip contact detection and grasp-force regulation, with slave-side grasp forces rendered at the master gripper.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">多模态记录与完整性检查</span><span data-ln="en">Multimodal recording and integrity checks</span></h4>
+                <p><span data-ln="zh">基于 Python 多进程与共享内存构建控制和采集框架，关联记录多视角 RGB-D、指尖触觉、六维力／力矩、夹爪及机械臂状态。图像由独立进程异步写入，配套完整性检查记录丢帧、写入错误和异常结束原因，支持故障追踪与数据筛查。</span><span data-ln="en">A Python multiprocessing framework uses shared memory for control and acquisition, associating multi-view RGB-D, fingertip tactile images, six-axis force/torque, gripper state and arm state. Separate processes write images asynchronously. Integrity checks record dropped frames, write errors and abnormal termination to support fault diagnosis and dataset screening.</span></p>
+              </section>
+          </div>
+        </article>
+
+        <article id="project-force" class="project" data-part="force" aria-labelledby="title-force">
+          <div class="project-visual force-media">
+            <figure>
+              <a href="assets/force/system.webp" target="_blank" rel="noopener"><img src="assets/force/system.webp" alt="实验平台、示教采集与策略部署" data-zh-alt="实验平台、示教采集与策略部署" data-en-alt="Experimental setup, demonstration collection and policy deployment" loading="lazy" decoding="async"></a>
+              <figcaption><span data-ln="zh">实验平台、示教采集与策略部署</span><span data-ln="en">Experimental setup, demonstration collection and policy deployment</span></figcaption>
+            </figure><figure>
+              <a href="assets/force/compensation.webp" target="_blank" rel="noopener"><img src="assets/force/compensation.webp" alt="重力补偿前后的六维力／力矩对比" data-zh-alt="重力补偿前后的六维力／力矩对比" data-en-alt="Six-axis force/torque measurements before and after gravity compensation" loading="lazy" decoding="async"></a>
+              <figcaption><span data-ln="zh">重力补偿前后的六维力／力矩对比</span><span data-ln="en">Six-axis force/torque measurements before and after gravity compensation</span></figcaption>
+            </figure><figure>
+              <a href="assets/force/task-progress.webp" target="_blank" rel="noopener"><img src="assets/force/task-progress.webp" alt="擦拭任务执行阶段与不同策略的接触力对比" data-zh-alt="擦拭任务执行阶段与不同策略的接触力对比" data-en-alt="Wiping task phases and contact-force comparison across policies" loading="lazy" decoding="async"></a>
+              <figcaption><span data-ln="zh">擦拭任务执行阶段与不同策略的接触力对比</span><span data-ln="en">Wiping task phases and contact-force comparison across policies</span></figcaption>
+            </figure>
+          </div>
+          <div class="project-copy">
+            <h3 id="title-force"><span data-ln="zh">ForceTrace-CAFE：多模态示教采集与真机部署</span><span data-ln="en">ForceTrace-CAFE: multimodal demonstration capture and policy deployment</span></h3>
+            <p class="project-lead"><span data-ln="zh">参与 ForceTrace-CAFE 接触操作示教学习研究，负责视觉、力觉与位姿数据采集、工具载荷标定补偿，以及策略和对比基线的真机部署。实验覆盖擦拭、刮除与装配任务。</span><span data-ln="en">Contributed to ForceTrace-CAFE through visual, force and pose data acquisition, tool-load calibration and compensation, and hardware deployment of the policy and comparison baselines. Experiments cover wiping, scraping and assembly.</span></p>
+
+              <section class="project-section">
+                <h4><span data-ln="zh">手持示教的力、位姿与视觉测量</span><span data-ln="en">Force, pose and visual measurements during handheld demonstrations</span></h4>
+                <p><span data-ln="zh">接入 RGB-D 相机、六维力／力矩传感器、双 Vive Tracker 和夹爪编码器，构建手持示教装置的多设备采集程序。根据跟踪数据恢复工具末端位姿，统一视觉、运动与受力数据的坐标表达，记录接触操作过程。</span><span data-ln="en">Acquisition software integrates an RGB-D camera, a six-axis force/torque sensor, two Vive Trackers and a gripper encoder on the handheld demonstration device. Tracker measurements recover tool poses, and coordinate transformations place visual, motion and force data in a common frame for recording contact-rich manipulation.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">工具重力与传感器零偏补偿</span><span data-ln="en">Tool gravity and force/torque sensor bias compensation</span></h4>
+                <p><span data-ln="zh">标定工具重量、质心相对传感器的偏置及传感器零偏，补偿工具在不同姿态下引入的重力和附加力矩。补偿后的六维力／力矩数据用于接触阶段标注、示教分析和策略执行对比。</span><span data-ln="en">Calibration estimates tool weight, the centre-of-mass offset relative to the sensor and sensor bias. Compensation removes the orientation-dependent contributions of tool weight and its moment. The compensated wrench data support contact-phase annotation, demonstration analysis and comparisons of policy execution.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">接触阶段标注与多频数据组织</span><span data-ln="en">Contact-phase annotation and multi-rate training data</span></h4>
+                <p><span data-ln="zh">图像、工具位姿、夹爪状态与补偿后的力信号沿同一时间轴对齐。依据图像与力信号的对应变化，示教序列划分为初次接触、持续接触和释放阶段。批处理程序按视觉与力觉策略各自需要的频率整理动作序列，并将配对的观测与动作导出为 HDF5 数据。</span><span data-ln="en">Images, tool poses, gripper states and compensated force measurements share a common timeline. The aligned images and force signals support annotation of contact onset, sustained contact and release. Batch processing prepares action sequences at the rates required by the visual and force-based policies and exports the paired observations and actions to HDF5.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">策略的真机部署与对照实验</span><span data-ln="en">Policy deployment and comparative hardware experiments</span></h4>
+                <p><span data-ln="zh">完成策略及对比基线的机器人部署，适配观测与动作接口，调试传感器采样、模型推理和动作序列执行的时序。在擦拭、刮除及装配实验中，结合工具轨迹与实测接触力比较各方法的执行表现。</span><span data-ln="en">Hardware deployment adapts observation and action interfaces for the policy and comparison baselines and coordinates sensor sampling, inference and action-sequence execution. Wiping, scraping and assembly experiments compare execution using tool trajectories and measured contact forces.</span></p>
+              </section>
+          </div>
+        </article>
+
+        <article id="project-hand" class="project" data-part="hand" aria-labelledby="title-hand">
+          <figure class="project-visual hand-media">
+            <video controls playsinline preload="metadata" poster="assets/hand/teleop-poster.jpg" aria-label="DexCap to DexHand021 recorded motion replay">
+              <source src="assets/hand/teleop.mp4" type="video/mp4">
+              <a href="assets/hand/teleop.mp4"><span data-ln="zh">播放动作回放</span><span data-ln="en">Play motion replay</span></a>
+            </video>
+            <figcaption><span data-ln="zh">DexCap → DexHand021：历史动作离线回放</span><span data-ln="en">DexCap → DexHand021: recorded motion replay</span></figcaption>
+            <p class="media-hint"><span data-ln="zh">左侧为从手，右侧为主端手套；圆球标记指尖。</span><span data-ln="en">Left: robot hand; right: master glove. Spheres mark fingertips.</span></p>
+          </figure>
+          <div class="project-copy">
+            <h3 id="title-hand"><span data-ln="zh">灵巧智能 DexHand021 的数据手套遥操作与触觉采集</span><span data-ln="en">Glove teleoperation and tactile data collection for DexRobot’s DexHand021</span></h3>
+            <p class="project-lead"><span data-ln="zh">开发 DexCap 数据手套到灵巧智能 DexHand021 的遥操作系统，完成指尖位姿重定向、关节控制接口、真机回放及触觉数据记录。</span><span data-ln="en">Developed a DexCap-to-DexRobot DexHand021 teleoperation system with fingertip pose retargeting, joint control, hardware replay and tactile recording.</span></p>
+
+              <section class="project-section">
+                <h4><span data-ln="zh">指尖位姿约束下的运动重定向</span><span data-ln="en">Motion retargeting with fingertip pose constraints</span></h4>
+                <p><span data-ln="zh">解析手套测量数据，完成坐标对齐与运动尺度映射。结合 DexHand021 正运动学，在指尖位置与指腹朝向约束下求解目标关节角，适配人手和机械手的指长差异及关节活动范围。</span><span data-ln="en">Glove measurements are decoded, transformed into the robot hand frame and rescaled to account for differences in finger length. An inverse-kinematics solver uses the DexHand021 forward model to satisfy fingertip-position and fingerpad-orientation constraints within the hand’s joint limits.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">控制接口与硬件回放</span><span data-ln="en">Hardware control and trajectory replay</span></h4>
+                <p><span data-ln="zh">集成 DexHand021 控制接口，加入关节位置限制、速度限制和指令超时检测。实时逆运动学预览、离线轨迹转换与真机回放共用记录数据，用于核对运动映射与实际执行结果。</span><span data-ln="en">The DexHand021 control interface enforces joint-position and velocity limits and detects command timeouts. Live inverse-kinematics previews, offline trajectory conversion and hardware replay use the same recorded data to compare retargeted motion with physical execution.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">手套输入、关节指令与触觉记录</span><span data-ln="en">Glove, joint-command and tactile recording</span></h4>
+                <p><span data-ln="zh">关联保存手套原始测量、指尖位姿、关节指令及指尖触觉反馈，构建遥操作记录与回放工具。记录覆盖手指闭合、初次接触与抓取保持阶段，支持运动指令与接触状态的对照分析。</span><span data-ln="en">Recording and replay tools associate raw glove measurements, fingertip poses, joint commands and tactile feedback. Records span finger closure, initial contact and grasp holding, supporting comparisons between commanded motion and observed contact states.</span></p>
+              </section>
+          </div>
+        </article>
+
+        <article id="project-sim" class="project project-wide" data-part="sim" aria-labelledby="title-sim">
+          <header class="sim-intro">
+            <h3 id="title-sim"><span data-ln="zh">Isaac Lab 中的装配示教与触觉仿真</span><span data-ln="en">Assembly demonstrations and tactile simulation in Isaac Lab</span></h3>
+            <p class="project-lead"><span data-ln="zh">基于 Isaac Lab 搭建机械臂接触装配场景，集成千觉机器人 Xense SDK 实现双指触觉仿真，开发自动示教、位姿扰动与受阻恢复流程，并记录多模态仿真数据。</span><span data-ln="en">Built contact-rich assembly tasks in Isaac Lab with the Xense Robotics SDK for tactile simulation at both fingertips. The implementation includes scripted demonstrations, initial-pose perturbations, recovery from obstructions and multimodal episode recording.</span></p>
+          </header>
+          <figure class="project-visual sim-media">
+            <video controls playsinline preload="metadata" poster="assets/sim/poster.jpg" aria-label="Isaac Lab simulation episode">
+              <source src="assets/sim/episode_00000011142.mp4" type="video/mp4">
+              <a href="assets/sim/episode_00000011142.mp4"><span data-ln="zh">播放仿真视频</span><span data-ln="en">Play simulation video</span></a>
+            </video>
+            <figcaption><span data-ln="zh">Isaac Lab 仿真数据片段</span><span data-ln="en">Isaac Lab simulation data episode</span></figcaption>
+          </figure>
+          <div class="sim-details">
+              <section class="project-section">
+                <h4><span data-ln="zh">装配工位与触觉传感仿真</span><span data-ln="en">Assembly workcell and tactile sensor simulation</span></h4>
+                <p><span data-ln="zh">集成机械臂、双指触觉夹爪与装配工件，配置工位及传感器。通过 Xense SDK 获取两侧指尖的模拟触觉响应，并关联机器人和工件状态，记录抓取与插入过程中的接触变化。</span><span data-ln="en">The workcell integrates a robot arm, a two-finger tactile gripper, assembly parts and sensors. The Xense SDK provides simulated tactile responses at both fingertips, recorded alongside robot and workpiece states to capture changes in contact during grasping and insertion.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">装配动作序列与自动示教</span><span data-ln="en">Automated assembly demonstrations</span></h4>
+                <p><span data-ln="zh">开发覆盖工件抓取、插入、按压及盒盖装配的自动示教流程，将操作组织为拾取、搬运、对位和压合等阶段。各阶段记录动作与观测，支持在不同工件初始位姿下重复执行和回放。</span><span data-ln="en">Scripted demonstrations cover part grasping, insertion, pressing and lid assembly, with stages for pickup, transport, alignment and pressing into place. Actions and observations are recorded at each stage for repeated execution and replay under different initial part poses.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">位姿扰动与接触受阻恢复</span><span data-ln="en">Pose perturbations and recovery from obstructed contact</span></h4>
+                <p><span data-ln="zh">对工件初始位姿施加扰动，可在仿真中引入不同程度的对位偏差。检测到受阻后，控制器根据任务状态回撤、重新对准或重抓，再继续装配。示教序列保留受阻前后的动作和触觉观测，可据此回看接触变化与纠偏过程。</span><span data-ln="en">Perturbations to the initial part pose introduce variations in alignment. When the controller detects an obstruction, it retracts, realigns or regrasps the part according to the task state before resuming assembly. The demonstration retains actions and tactile observations before and after the obstruction so that changes in contact can be examined alongside the recovery motion.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">多模态记录与动作观测配对</span><span data-ln="en">Multimodal recording and action–observation alignment</span></h4>
+                <p><span data-ln="zh">每个仿真回合单独保存为 HDF5 记录，包含双相机图像、机器人状态与动作、腕部六维力／力矩以及双指触觉。时间戳、坐标系和动作与观测的配对遵循统一约定。批量采集支持过程预览、记录完整性检查和异常回合隔离，原始记录可进一步转换为训练数据格式。</span><span data-ln="en">Each simulated episode has an HDF5 record containing two camera views, robot states and actions, wrist force/torque measurements and tactile observations from both fingers. The records use consistent conventions for timestamps, coordinate frames and action–observation pairing. Batch collection supports previews, integrity checks and isolation of anomalous episodes before conversion to training formats.</span></p>
+              </section></div>
+        </article>
+
+        <article id="project-kineteach" class="project project-wide" data-part="kineteach" aria-labelledby="title-kineteach">
+          <header><h3 id="title-kineteach"><span data-ln="zh">KineTeach：跨本体示教回放与训练数据生成</span><span data-ln="en">KineTeach: demonstration replay and training data across robot embodiments</span></h3><p class="project-lead"><span data-ln="zh">参与 KineTeach 跨本体示教数据生成研究，负责真实示教采集、三维资产构建和场景渲染，并参与轨迹增强与运动学重定向，生成用于模仿学习的视觉、状态和动作数据。</span><span data-ln="en">Contributed to KineTeach through real-world demonstration capture, 3D asset construction and scene rendering, with additional contributions to trajectory augmentation and kinematic retargeting. The workflow generates visual observations, states and actions for imitation learning.</span></p></header>
+          <div class="kine-shared"><section class="project-section"><h5><span data-ln="zh">真实示教采集与位姿跟踪</span><span data-ln="en">Real-world demonstrations and object pose tracking</span></h5><p><span data-ln="zh">采集真实操作示教，使用 SAM 2 分割操作物体，并通过 FoundationPose 跟踪六自由度位姿。结合相机外参与机器人运动学，将物体位姿和示教轨迹转换到统一坐标系，为轨迹重定向与场景回放提供空间基准。</span><span data-ln="en">Real-world demonstrations are processed with SAM 2 for object segmentation and FoundationPose for six-degree-of-freedom pose tracking. Camera extrinsics and robot kinematics transform object poses and demonstration trajectories into a common frame for retargeting and scene replay.</span></p></section></div>
+          <div class="kine-branches">
+            <section class="kine-branch">
+              <section class="project-section"><h5><span data-ln="zh">跨本体重定向与 MuJoCo 数据生成</span><span data-ln="en">Cross-embodiment retargeting and MuJoCo data generation</span></h5><p><span data-ln="zh">运动学重定向将示教动作映射至目标机器人的关节结构。MuJoCo 结合三维网格资产回放增强和重定向后的轨迹，沿各时间步生成视觉观测与语义标注，并关联对应的机器人状态和动作，形成用于模仿学习的训练序列。</span><span data-ln="en">Kinematic retargeting maps demonstrated motion to the target robot’s joint structure. MuJoCo replays the augmented and retargeted trajectories with 3D mesh assets. Visual observations and semantic labels at each step are paired with robot states and actions to form training sequences for imitation learning.</span></p></section>
+              <figure class="kine-figure kine-overview">
+      <a href="assets/kineteach/mujoco-overview.webp" target="_blank" rel="noopener"><img src="assets/kineteach/mujoco-overview.webp" alt="示教、轨迹增强与离屏渲染流程" data-zh-alt="示教、轨迹增强与离屏渲染流程" data-en-alt="Demonstration, trajectory augmentation and offscreen rendering" loading="lazy" decoding="async"></a>
+      <figcaption><span data-ln="zh">示教、轨迹增强与离屏渲染流程</span><span data-ln="en">Demonstration, trajectory augmentation and offscreen rendering</span></figcaption></figure>
+            </section>
+            <section class="kine-branch">
+              <section class="project-section"><h5><span data-ln="zh">多视角采样与三维高斯表示</span><span data-ln="en">Multi-view sampling and 3D Gaussian scene representation</span></h5><p><span data-ln="zh">三维高斯泼溅（3D Gaussian Splatting）分支在 SAPIEN 中采集多视角数据，并整理机器人连杆、夹爪、物体与背景的材质及 UV 坐标。逐帧回放时，根据 URDF 中的运动学模型和关节角计算各连杆位姿，并读取 FoundationPose 在同一时刻跟踪到的物体位姿。</span><span data-ln="en">The 3D Gaussian Splatting workflow samples multiple views in SAPIEN and prepares mesh formats, materials and UV coordinates for robot links, grippers, objects and backgrounds. During replay, forward kinematics from the URDF supplies the robot link poses, while FoundationPose supplies the object poses for the corresponding demonstration frame.</span></p></section>
+              <figure class="kine-figure kine-overview">
+      <a href="assets/kineteach/gs-pipeline.webp" target="_blank" rel="noopener"><img src="assets/kineteach/gs-pipeline.webp" alt="高斯重建、机器人运动学与物体位姿融合流程" data-zh-alt="高斯重建、机器人运动学与物体位姿融合流程" data-en-alt="Gaussian reconstruction with robot kinematics and object poses" loading="lazy" decoding="async"></a>
+      <figcaption><span data-ln="zh">高斯重建、机器人运动学与物体位姿融合流程</span><span data-ln="en">Gaussian reconstruction with robot kinematics and object poses</span></figcaption></figure>
+            </section>
+          </div>
+          <div class="kine-results">
+            <div class="kine-results-copy"><section class="project-section"><h5><span data-ln="zh">固定与腕部视角的 RGB-D 渲染</span><span data-ln="en">RGB-D rendering from fixed and wrist-mounted cameras</span></h5><p><span data-ln="zh">开发固定相机与腕部相机的批量 RGB-D 渲染流程，沿同一示教轨迹生成全局工作空间与末端局部视角的观测。渲染支持颜色和场景位置扰动，输出图像与机器人状态、动作配对，并可转换为 LeRobot 格式。</span><span data-ln="en">Batch RGB-D rendering produces workspace and end-effector views from fixed and wrist-mounted cameras along the same demonstration trajectory. Colour and scene-placement variations augment the rendered observations, which are paired with robot states and actions and can be exported in LeRobot format.</span></p></section>
+              <figure class="kine-figure">
+      <a href="assets/kineteach/appearance-variants.webp" target="_blank" rel="noopener"><img src="assets/kineteach/appearance-variants.webp" alt="视角、背景、物体颜色与光照变化示例" data-zh-alt="视角、背景、物体颜色与光照变化示例" data-en-alt="Examples of viewpoint, background, object color and lighting variations" loading="lazy" decoding="async"></a>
+      <figcaption><span data-ln="zh">视角、背景、物体颜色与光照变化示例</span><span data-ln="en">Examples of viewpoint, background, object color and lighting variations</span></figcaption></figure>
+            </div>
+            <div class="kine-result-images">
+              <figure class="kine-figure">
+      <a href="assets/kineteach/exo-to-gs.webp" target="_blank" rel="noopener"><img src="assets/kineteach/exo-to-gs.webp" alt="真实示教场景到高斯场景的重建与运动映射" data-zh-alt="真实示教场景到高斯场景的重建与运动映射" data-en-alt="Reconstruction and motion mapping from real demonstrations to Gaussian scenes" loading="lazy" decoding="async"></a>
+      <figcaption><span data-ln="zh">真实示教场景到高斯场景的重建与运动映射</span><span data-ln="en">Reconstruction and motion mapping from real demonstrations to Gaussian scenes</span></figcaption></figure>
+            </div>
+          </div>
+        </article>
+
+        <article id="project-mobile" class="project" data-part="mobile" aria-labelledby="title-mobile">
+          <figure class="project-visual mobile-media">
+            <a href="assets/mobile/fairino-model.webp?v=2" target="_blank" rel="noopener"><img src="assets/mobile/fairino-model.webp?v=2" alt="法奥机器人示意" data-zh-alt="法奥机器人示意" data-en-alt="Fairino robot illustration" width="612" height="862" loading="lazy" decoding="async"></a>
+            <figcaption><span data-ln="zh">法奥机器人示意</span><span data-ln="en">Fairino robot illustration</span></figcaption>
+          </figure>
+          <div class="project-copy">
+            <h3 id="title-mobile"><span data-ln="zh">移动机器人导航与语音交互</span><span data-ln="en">Mobile robot navigation and voice interaction</span></h3>
+            <p class="project-lead"><span data-ln="zh">开展移动机器人导航与语音交互开发，包括法奥四舵轮底盘的 Nav2 路径规划与跟踪，以及灵巧智能导览机器人的 ROS 2 语音交互和多站任务管理。</span><span data-ln="en">Development spans Nav2 path planning and tracking for a FAIRINO base with four steerable wheels, and ROS 2 speech interaction and multi-stop task management for DexRobot’s tour-guide robot.</span></p>
+
+              <section class="project-section">
+                <h4><span data-ln="zh">四舵轮底盘的 Nav2 路径规划</span><span data-ln="en">Nav2 path planning for a four-wheel-steering base</span></h4>
+                <p><span data-ln="zh">法奥四舵轮底盘的 Nav2 规划器优先检查起点至目标点的直线路径。直线受阻时，Smac 规划器搜索绕障路线。路径经简化和重采样后，全向前视跟踪器沿间距较均匀的路径点计算底盘运动指令。</span><span data-ln="en">The Nav2 planner for FAIRINO’s four-wheel-steering base first tests the straight path from start to goal. If an obstacle blocks that path, the Smac planner searches for a detour. Simplification and resampling provide regularly spaced waypoints from which an omnidirectional lookahead controller computes base motion commands.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">全向跟踪与障碍重规划</span><span data-ln="en">Omnidirectional tracking and obstacle-triggered replanning</span></h4>
+                <p><span data-ln="zh">跟踪控制器协调各舵轮转向，在接近终点时减速，并依据底盘足迹检查碰撞风险。新障碍阻断路径时触发重规划，反馈异常时停止输出运动指令。软件与离线测试覆盖规划和控制分支的触发条件、路径输出与异常处理。</span><span data-ln="en">The tracking controller coordinates wheel steering, decelerates near the goal and checks for collisions using the chassis footprint. A newly obstructed path triggers replanning, and abnormal feedback inhibits motion commands. Software and offline tests covered planning and control branch conditions, the resulting paths and fault handling.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">导览机器人的 ROS 2 语音交互</span><span data-ln="en">ROS 2 speech interaction for a guide robot</span></h4>
+                <p><span data-ln="zh">开发 ROS 2 语音交互模块，集成音频预处理、语音识别、意图理解与语音播报。通过状态机管理唤醒、监听、播报和用户打断，在播报结束或中止后恢复监听。</span><span data-ln="en">A ROS 2 speech interface integrates audio preprocessing, speech recognition, intent interpretation and spoken responses. A state machine manages wake-up, listening, playback and user interruptions, returning to listening when playback ends or is interrupted.</span></p>
+              </section>
+              <section class="project-section">
+                <h4><span data-ln="zh">多站导览与任务中断处理</span><span data-ln="en">Multi-stop tours and task interruption</span></h4>
+                <p><span data-ln="zh">基于 LangGraph 组织问答、对话与导航任务，支持单点导航、多站导览、到站讲解及站点切换。任务流程处理用户取消、超时返回和低电量事件，协调导航执行状态与语音播报。</span><span data-ln="en">LangGraph organises question answering, dialogue and navigation, supporting single-destination navigation, multi-stop tours, narration on arrival and transitions between stops. Task handling coordinates navigation and speech during user cancellation, return on timeout and low-battery events.</span></p>
+              </section>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <details id="publications" class="background-section page-width" data-part="publications" open>
+      <summary><h2 id="papers-title"><span data-ln="zh">合作论文与稿件</span><span data-ln="en">Papers and manuscripts</span></h2></summary>
+      <ol class="papers">
+        <li id="paper-1"><h3 lang="en">KineTeach for Robot-Free Real-to-Sim-to-Real Data Generation in Cross-Embodiment Robotic Manipulation</h3><p><em>ICIRA 2026</em> · <span data-ln="zh">已录用，第四作者</span><span data-ln="en">Accepted, fourth author</span> · <a href="#project-kineteach"><span data-ln="zh">项目</span><span data-ln="en">Project</span></a> · <a href="assets/papers/kineteach.pdf" target="_blank" rel="noopener" aria-label="KineTeach PDF">PDF</a></p></li>
+        <li id="paper-2"><h3 lang="en">Towards Physical Intelligence in Contact-Rich Manufacturing: A Visual-Force-Pose Demonstration and Phase-Aware Learning Framework</h3><p><em>Robotics and Computer-Integrated Manufacturing</em> · <span data-ln="zh">已投稿，第四作者</span><span data-ln="en">Submitted, fourth author</span> · <a href="#project-force"><span data-ln="zh">项目</span><span data-ln="en">Project</span></a> · <a href="assets/papers/forcetrace.pdf" target="_blank" rel="noopener" aria-label="ForceTrace PDF">PDF</a></p></li>
+        <li id="paper-3"><h3 lang="en">Anti-Light-Variation, Detailed Camera-Based Tactile Sensing With Continuous Binary Encoding</h3><p><em>IEEE Transactions on Industrial Electronics</em> · <span data-ln="zh">已录用，第六作者</span><span data-ln="en">Accepted, sixth author</span></p></li>
+      </ol>
+    </details>
+  </main>
+  <footer class="page-width"><span>© 2026 Hao Shi</span><a href="#top"><span data-ln="zh">回到顶部</span><span data-ln="en">Back to top</span></a></footer>
+</body>
+</html>

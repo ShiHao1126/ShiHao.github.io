@@ -1,2 +1,81 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#faf8f2"><meta name="description" content="将 DexCap 手套采集的手部运动映射到灵巧智能 DexHand021 灵巧手。"><title>手套驱动的灵巧手遥操作 · 石昊</title><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/project-archive.css"><script defer src="../assets/project-language.js"></script></head><body data-zh-title="手套驱动的灵巧手遥操作 · 石昊" data-en-title="Glove-to-Hand Teleoperation · Hao Shi"><a class="skip" href="#article"><span class="zh" lang="zh-CN">跳到正文</span><span class="en" lang="en">Skip to article</span></a><header class="bar"><div class="bar-inner"><a class="signature" href="../index.html" data-route="../index.html"><i aria-hidden="true">✳</i> Hao Shi <small>石昊</small></a><a class="nav-back" href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">全部项目</span><span class="en" lang="en">All projects</span></a><nav class="switch" aria-label="中文 / English"><a data-lang="zh" lang="zh-CN" href="?lang=zh" aria-label="中文">中</a><span aria-hidden="true">/</span><a data-lang="en" lang="en" href="?lang=en" aria-label="English">EN</a></nav></div></header><main class="page" id="article"><article><header data-anchor><p class="byline"><span class="zh" lang="zh-CN">灵巧操作</span><span class="en" lang="en">Dexterous manipulation</span></p><h1><span class="zh" lang="zh-CN">手套驱动的灵巧手遥操作</span><span class="en" lang="en">Glove-to-Hand Teleoperation</span></h1><p class="deck"><span class="zh" lang="zh-CN">将 DexCap 手套采集的手部运动映射到灵巧智能 DexHand021 灵巧手。</span><span class="en" lang="en">Hand motion captured by a DexCap glove drives DexRobot’s DexHand021 dexterous hand.</span></p></header><figure data-anchor><div class="art"><img width="1152" height="720" src="../assets/art/hand.webp" alt="灵巧手指尖和手指关节示意" data-zh-alt="灵巧手指尖和手指关节示意" data-en-alt="Conceptual illustration of a dexterous hand and its finger joints"></div><figcaption><span class="zh" lang="zh-CN">灵巧手指尖和手指关节示意</span><span class="en" lang="en">Conceptual illustration of a dexterous hand and its finger joints</span></figcaption></figure><div class="body-copy"><section data-anchor><h2><span class="zh" lang="zh-CN">手套数据怎样成为灵巧手动作</span><span class="en" lang="en">Turning glove data into hand motions</span></h2><p><span class="zh" lang="zh-CN">这个项目的输入来自 DexCap 手套，输出是灵巧智能 DexHand021 的关节指令。两边的手指尺寸、坐标和可动范围不同，映射时需要决定保留哪些动作特征。我的入口是指尖的位置和指腹朝向。</span><span class="en" lang="en">The input comes from a DexCap glove, and the output is a set of joint commands for DexRobot’s DexHand021. Because the two hands differ in scale, coordinate frames and range of motion, I used fingertip position and fingerpad orientation to define the mapping.</span></p><p><span class="zh" lang="zh-CN">我开发手部运动映射、控制接口以及记录与回放工具。</span><span class="en" lang="en">I developed the motion mapping, hand-control interface, and recording and replay tools.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">从手套到指尖</span><span class="en" lang="en">Map glove motion to fingertips</span></h2><p><span class="zh" lang="zh-CN">解析手套数据，完成坐标对齐和尺度映射，通过正逆运动学匹配指尖位置与指腹方向。</span><span class="en" lang="en">I parsed glove data, aligned coordinate frames, applied motion scaling, and used forward and inverse kinematics to match fingertip positions and fingerpad orientations.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">记录与回放</span><span class="en" lang="en">Record and replay</span></h2><p><span class="zh" lang="zh-CN">加入关节与速度限制，联调控制接口，关联记录手套信号、指尖位姿、关节指令与触觉反馈。</span><span class="en" lang="en">I integrated joint and speed limits and linked glove signals, fingertip poses, joint commands, and tactile feedback in the recordings.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">把手的动作存下来</span><span class="en" lang="en">Keeping a record of each movement</span></h2><p><span class="zh" lang="zh-CN">在 DexHand021 上集成并测试了手套控制接口和运动限制。</span><span class="en" lang="en">I integrated and tested the glove-control interface and motion limits on the DexHand021.</span></p></section><nav class="next"><a class="back-main" href="../index.html#projects" data-route="../index.html#projects">← <span class="zh" lang="zh-CN">回到主页</span><span class="en" lang="en">Back to homepage</span></a><a href="sim.html" data-route="sim.html"><span class="zh" lang="zh-CN">Isaac Lab 装配与触觉仿真</span><span class="en" lang="en">Tactile Assembly in Isaac Lab</span> →</a></nav></div></article></main><footer><div class="footer-inner"><span>石昊 / Hao Shi</span><a class="zh" href="../cv/hao-shi-zh.pdf">中文简历</a><a class="en" href="../cv/hao-shi-en.pdf">English CV</a></div></footer></body></html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="开发 DexCap 数据手套到灵巧智能 DexHand021 的遥操作系统，完成指尖位姿重定向、关节控制接口、真机回放及触觉数据记录。">
+  <title>灵巧智能 DexHand021 的数据手套遥操作与触觉采集 · 石昊</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/project-archive.css">
+  <script defer src="../assets/project-language.js"></script>
+</head>
+<body data-zh-title="灵巧智能 DexHand021 的数据手套遥操作与触觉采集 · 石昊" data-en-title="Glove teleoperation and tactile data collection for DexRobot’s DexHand021 · Hao Shi">
+  <a class="skip" href="#article"><span class="zh" lang="zh-CN">跳到正文</span><span class="en" lang="en">Skip to article</span></a>
+  <header class="site-header">
+    <a href="../index.html" data-route="../index.html"><span class="zh" lang="zh-CN">石昊</span><span class="en" lang="en">Hao Shi</span></a>
+    <a href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">全部项目</span><span class="en" lang="en">All projects</span></a>
+    <nav class="switch" aria-label="语言 / Language">
+      <a data-lang="zh" lang="zh-CN" href="?lang=zh" aria-current="true">中文</a>
+      <span aria-hidden="true">/</span>
+      <a data-lang="en" lang="en" href="?lang=en">English</a>
+    </nav>
+  </header>
+  <main id="article" tabindex="-1">
+    <article>
+      <header class="article-intro" data-anchor>
+        <div>
+          <h1><span class="zh" lang="zh-CN"><span class="title-phrase">灵巧智能 DexHand021 的数据手套遥操作</span><wbr><span class="title-phrase">与触觉采集</span></span><span class="en" lang="en">Glove teleoperation and tactile data collection for DexRobot’s DexHand021</span></h1>
+          <p class="deck"><span class="zh" lang="zh-CN">开发 DexCap 数据手套到灵巧智能 DexHand021 的遥操作系统，完成指尖位姿重定向、关节控制接口、真机回放及触觉数据记录。</span><span class="en" lang="en">Developed a DexCap-to-DexRobot DexHand021 teleoperation system with fingertip pose retargeting, joint control, hardware replay and tactile recording.</span></p>
+        </div>
+        <figure>
+          <a class="figure-link" href="../assets/figures/hand.webp">
+            <img width="1200" height="800" src="../assets/figures/hand.webp" decoding="async"
+                 alt="数据手套指尖与灵巧手指尖的运动映射示意" data-zh-alt="数据手套指尖与灵巧手指尖的运动映射示意" data-en-alt="Schematic of fingertip motion retargeting from a data glove to a dexterous hand">
+          </a>
+          <figcaption><span class="zh" lang="zh-CN">数据手套指尖与灵巧手指尖的运动映射示意</span><span class="en" lang="en">Schematic of fingertip motion retargeting from a data glove to a dexterous hand</span></figcaption>
+        </figure>
+      </header>
+      <div class="reading-layout">
+        <nav class="contents" aria-label="本文目录 / In this article">
+          <p><span class="zh" lang="zh-CN">本文目录</span><span class="en" lang="en">In this article</span></p>
+          <ol>
+            <li><a href="#case"><span class="zh" lang="zh-CN">一次闭指动作，三个可对照的记录</span><span class="en" lang="en">Three records of the same closing motion</span></a></li>
+            <li><a href="#section-1"><span class="zh" lang="zh-CN">指尖位姿约束下的运动重定向</span><span class="en" lang="en">Motion retargeting with fingertip pose constraints</span></a></li>
+<li><a href="#section-2"><span class="zh" lang="zh-CN">控制接口与硬件回放</span><span class="en" lang="en">Hardware control and trajectory replay</span></a></li>
+<li><a href="#section-3"><span class="zh" lang="zh-CN">手套输入、关节指令与触觉记录</span><span class="en" lang="en">Glove, joint-command and tactile recording</span></a></li>
+          </ol>
+        </nav>
+        <div class="reading-body">
+          <section class="case-study" id="case" data-anchor>
+            <h2><span class="zh" lang="zh-CN">一次闭指动作，三个可对照的记录</span><span class="en" lang="en">Three records of the same closing motion</span></h2>
+            <ol class="case-steps"><li><h3><span class="zh" lang="zh-CN">手套给出的目标</span><span class="en" lang="en">What the glove specifies</span></h3><p><span class="zh" lang="zh-CN">从一段闭指记录开始，先把手套指尖位姿转换至机械手坐标系，再按指长差异调整运动尺度。这样得到的是机械手指尖应到达的位置和朝向，能够直接与求解器预览中的姿态比较。</span><span class="en" lang="en">Start with a recorded finger closure. The glove poses are transformed into the robot hand’s frame and the motion is scaled for its finger lengths. The resulting fingertip positions and orientations provide explicit targets for comparison with the solver preview.</span></p></li>
+<li><h3><span class="zh" lang="zh-CN">求解器生成的手姿</span><span class="en" lang="en">What the solver can reproduce</span></h3><p><span class="zh" lang="zh-CN">预览由求得的关节角生成。若闭合方向在预览里已经偏离手套目标，就可以先检查坐标对齐、尺度或指腹朝向约束。这一环节可以仅依靠记录完成，且不受重新做一遍手势造成的差异干扰。</span><span class="en" lang="en">The preview reconstructs a hand pose from the solved joint angles. If the closing direction is already wrong there, coordinate alignment, scale and pad-orientation constraints can be examined from the recording without variation from a second performance of the gesture.</span></p></li>
+<li><h3><span class="zh" lang="zh-CN">真机上的接触时刻</span><span class="en" lang="en">When contact occurs on hardware</span></h3><p><span class="zh" lang="zh-CN">在真机上回放同一关节序列，并将闭合指令与指尖触觉并排观察。关节目标描述的是期望手姿，触觉变化则提供指尖实际碰到物体的证据，两者结合才便于解释抓取过程。</span><span class="en" lang="en">Replay the same joint sequence on the physical hand and inspect closure commands alongside fingertip tactile readings. The commands specify the intended pose. The tactile response supplies evidence of contact with the object during execution.</span></p></li></ol>
+          </section>
+                <section id="section-1" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">指尖位姿约束下的运动重定向</span><span class="en" lang="en">Motion retargeting with fingertip pose constraints</span></h2>
+        <p><span class="zh" lang="zh-CN">解析手套测量数据，完成坐标对齐与运动尺度映射。结合 DexHand021 正运动学，在指尖位置与指腹朝向约束下求解目标关节角，适配人手和机械手的指长差异及关节活动范围。</span><span class="en" lang="en">Glove measurements are decoded, transformed into the robot hand frame and rescaled to account for differences in finger length. An inverse-kinematics solver uses the DexHand021 forward model to satisfy fingertip-position and fingerpad-orientation constraints within the hand’s joint limits.</span></p>
+      </section>
+      <section id="section-2" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">控制接口与硬件回放</span><span class="en" lang="en">Hardware control and trajectory replay</span></h2>
+        <p><span class="zh" lang="zh-CN">集成 DexHand021 控制接口，加入关节位置限制、速度限制和指令超时检测。实时逆运动学预览、离线轨迹转换与真机回放共用记录数据，用于核对运动映射与实际执行结果。</span><span class="en" lang="en">The DexHand021 control interface enforces joint-position and velocity limits and detects command timeouts. Live inverse-kinematics previews, offline trajectory conversion and hardware replay use the same recorded data to compare retargeted motion with physical execution.</span></p>
+      </section>
+      <section id="section-3" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">手套输入、关节指令与触觉记录</span><span class="en" lang="en">Glove, joint-command and tactile recording</span></h2>
+        <p><span class="zh" lang="zh-CN">关联保存手套原始测量、指尖位姿、关节指令及指尖触觉反馈，构建遥操作记录与回放工具。记录覆盖手指闭合、初次接触与抓取保持阶段，支持运动指令与接触状态的对照分析。</span><span class="en" lang="en">Recording and replay tools associate raw glove measurements, fingertip poses, joint commands and tactile feedback. Records span finger closure, initial contact and grasp holding, supporting comparisons between commanded motion and observed contact states.</span></p>
+      </section>
+        </div>
+      </div>
+    </article>
+    <nav class="project-nav" aria-label="项目导航 / Project navigation">
+      <a href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">返回项目列表</span><span class="en" lang="en">Back to projects</span></a>
+      <a href="sim.html" data-route="sim.html"><small><span class="zh" lang="zh-CN">下一篇</span><span class="en" lang="en">Next project</span></small><span class="zh" lang="zh-CN">Isaac Lab 中的装配示教与触觉仿真</span><span class="en" lang="en">Assembly demonstrations and tactile simulation in Isaac Lab</span> →</a>
+    </nav>
+  </main>
+  <footer>
+    <a class="zh" lang="zh-CN" href="../cv/hao-shi-zh.pdf">中文简历</a>
+    <a class="en" lang="en" href="../cv/hao-shi-en.pdf">English CV</a>
+  </footer>
+</body>
+</html>

@@ -1,2 +1,91 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#faf8f2"><meta name="description" content="从真实示教中重建三维场景，再为不同机器人生成视觉观测、状态与动作数据。"><title>KineTeach 跨本体示教 · 石昊</title><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/project-archive.css"><script defer src="../assets/project-language.js"></script></head><body data-zh-title="KineTeach 跨本体示教 · 石昊" data-en-title="KineTeach · Hao Shi"><a class="skip" href="#article"><span class="zh" lang="zh-CN">跳到正文</span><span class="en" lang="en">Skip to article</span></a><header class="bar"><div class="bar-inner"><a class="signature" href="../index.html" data-route="../index.html"><i aria-hidden="true">✳</i> Hao Shi <small>石昊</small></a><a class="nav-back" href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">全部项目</span><span class="en" lang="en">All projects</span></a><nav class="switch" aria-label="中文 / English"><a data-lang="zh" lang="zh-CN" href="?lang=zh" aria-label="中文">中</a><span aria-hidden="true">/</span><a data-lang="en" lang="en" href="?lang=en" aria-label="English">EN</a></nav></div></header><main class="page" id="article"><article><header data-anchor><p class="byline"><span class="zh" lang="zh-CN">示教数据生成</span><span class="en" lang="en">Cross-embodiment demonstrations</span></p><h1><span class="zh" lang="zh-CN">KineTeach 跨本体示教</span><span class="en" lang="en">KineTeach</span></h1><p class="deck"><span class="zh" lang="zh-CN">从真实示教中重建三维场景，再为不同机器人生成视觉观测、状态与动作数据。</span><span class="en" lang="en">Real demonstrations are reconstructed in 3D to generate visual observations, robot states, and actions for different embodiments.</span></p></header><figure data-anchor><div class="art"><img width="1152" height="720" src="../assets/art/kineteach.webp" alt="多个相机视角、物体位姿和示教轨迹的几何示意" data-zh-alt="多个相机视角、物体位姿和示教轨迹的几何示意" data-en-alt="Geometric illustration of camera views, object poses and a demonstrated trajectory"></div><figcaption><span class="zh" lang="zh-CN">多个相机视角、物体位姿和示教轨迹的几何示意</span><span class="en" lang="en">Geometric illustration of camera views, object poses and a demonstrated trajectory</span></figcaption></figure><div class="body-copy"><section data-anchor><h2><span class="zh" lang="zh-CN">让一段示教在另一个本体中重现</span><span class="en" lang="en">Replaying a demonstration on another embodiment</span></h2><p><span class="zh" lang="zh-CN">同一段真实示教，要用另一台机器人重现，先得把物体、场景与轨迹放在共同的坐标系里。我的工作从采集示教、跟踪物体位姿和构建三维资产开始。</span><span class="en" lang="en">To replay a real demonstration on a different robot, the objects, scene and trajectory must share a coordinate frame. My part began with collecting the demonstrations, tracking object poses and building the 3D assets.</span></p><p><span class="zh" lang="zh-CN">我采集真实示教、构建三维资产与渲染流程，并参与轨迹增强和跨本体运动学重定向。</span><span class="en" lang="en">I collected demonstrations, built 3D assets and a rendering pipeline, and contributed to trajectory augmentation and kinematic retargeting.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">重建场景</span><span class="en" lang="en">Reconstruct the scene</span></h2><p><span class="zh" lang="zh-CN">用 SAM 2 和 FoundationPose 分割并跟踪物体；结合 SAPIEN 多视角采样与 3D Gaussian Splatting 生成三维资产。</span><span class="en" lang="en">I used SAM 2 and FoundationPose for segmentation and object pose tracking, and combined SAPIEN multi-view sampling with 3D Gaussian Splatting to build assets.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">生成不同本体的示教</span><span class="en" lang="en">Generate demonstrations</span></h2><p><span class="zh" lang="zh-CN">按轨迹重建场景并批量渲染，参与运动学重定向与 MuJoCo 数据生成，为模仿学习组织观测和动作。</span><span class="en" lang="en">I built trajectory-driven scene reconstruction and batch rendering and contributed to kinematic retargeting and MuJoCo data generation for imitation learning.</span></p></section><section data-anchor><h2><span class="zh" lang="zh-CN">从场景到机器人数据</span><span class="en" lang="en">From reconstructed scenes to robot data</span></h2><p><span class="zh" lang="zh-CN">团队论文获 ICIRA 2026 录用，我为第四作者。</span><span class="en" lang="en">The team’s paper was accepted at ICIRA 2026. I am the fourth author.</span></p></section><aside class="source" data-anchor><strong><span class="zh" lang="zh-CN">相关论文</span><span class="en" lang="en">Related paper</span></strong><p lang="en">KineTeach for Robot-Free Real-to-Sim-to-Real Data Generation in Cross-Embodiment Robotic Manipulation</p><p><span class="zh" lang="zh-CN">已录用</span><span class="en" lang="en">Accepted</span> · ICIRA 2026 · <span class="zh" lang="zh-CN">第四作者</span><span class="en" lang="en">Fourth author</span></p></aside><nav class="next"><a class="back-main" href="../index.html#projects" data-route="../index.html#projects">← <span class="zh" lang="zh-CN">回到主页</span><span class="en" lang="en">Back to homepage</span></a><a href="haptic.html" data-route="haptic.html"><span class="zh" lang="zh-CN">七自由度力反馈遥操作</span><span class="en" lang="en">7-DoF Haptic Teleoperation</span> →</a></nav></div></article></main><footer><div class="footer-inner"><span>石昊 / Hao Shi</span><a class="zh" href="../cv/hao-shi-zh.pdf">中文简历</a><a class="en" href="../cv/hao-shi-en.pdf">English CV</a></div></footer></body></html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="参与 KineTeach 跨本体示教数据生成研究，负责真实示教采集、三维资产构建和场景渲染，并参与轨迹增强与运动学重定向，生成用于模仿学习的视觉、状态和动作数据。">
+  <title>KineTeach：跨本体示教回放与训练数据生成 · 石昊</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/project-archive.css">
+  <script defer src="../assets/project-language.js"></script>
+</head>
+<body data-zh-title="KineTeach：跨本体示教回放与训练数据生成 · 石昊" data-en-title="KineTeach: demonstration replay and training data across robot embodiments · Hao Shi">
+  <a class="skip" href="#article"><span class="zh" lang="zh-CN">跳到正文</span><span class="en" lang="en">Skip to article</span></a>
+  <header class="site-header">
+    <a href="../index.html" data-route="../index.html"><span class="zh" lang="zh-CN">石昊</span><span class="en" lang="en">Hao Shi</span></a>
+    <a href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">全部项目</span><span class="en" lang="en">All projects</span></a>
+    <nav class="switch" aria-label="语言 / Language">
+      <a data-lang="zh" lang="zh-CN" href="?lang=zh" aria-current="true">中文</a>
+      <span aria-hidden="true">/</span>
+      <a data-lang="en" lang="en" href="?lang=en">English</a>
+    </nav>
+  </header>
+  <main id="article" tabindex="-1">
+    <article>
+      <header class="article-intro" data-anchor>
+        <div>
+          <h1><span class="zh" lang="zh-CN"><span class="title-phrase">KineTeach：</span><wbr><span class="title-phrase">跨本体示教回放</span><wbr><span class="title-phrase">与训练数据生成</span></span><span class="en" lang="en">KineTeach: demonstration replay and training data across robot embodiments</span></h1>
+          <p class="deck"><span class="zh" lang="zh-CN">参与 KineTeach 跨本体示教数据生成研究，负责真实示教采集、三维资产构建和场景渲染，并参与轨迹增强与运动学重定向，生成用于模仿学习的视觉、状态和动作数据。</span><span class="en" lang="en">Contributed to KineTeach through real-world demonstration capture, 3D asset construction and scene rendering, with additional contributions to trajectory augmentation and kinematic retargeting. The workflow generates visual observations, states and actions for imitation learning.</span></p>
+        </div>
+        <figure>
+          <a class="figure-link" href="../assets/figures/kineteach.webp">
+            <img width="1200" height="800" src="../assets/figures/kineteach.webp" decoding="async"
+                 alt="多视角场景重建与机器人示教轨迹回放示意" data-zh-alt="多视角场景重建与机器人示教轨迹回放示意" data-en-alt="Schematic of multi-view scene reconstruction and replay of a robot demonstration">
+          </a>
+          <figcaption><span class="zh" lang="zh-CN">多视角场景重建与机器人示教轨迹回放示意</span><span class="en" lang="en">Schematic of multi-view scene reconstruction and replay of a robot demonstration</span></figcaption>
+        </figure>
+      </header>
+      <div class="reading-layout">
+        <nav class="contents" aria-label="本文目录 / In this article">
+          <p><span class="zh" lang="zh-CN">本文目录</span><span class="en" lang="en">In this article</span></p>
+          <ol>
+            <li><a href="#case"><span class="zh" lang="zh-CN">同一时刻如何得到两幅对应的 RGB-D 图像？</span><span class="en" lang="en">How does one instant yield two matching RGB-D views?</span></a></li>
+            <li><a href="#section-1"><span class="zh" lang="zh-CN">真实示教采集与位姿跟踪</span><span class="en" lang="en">Real-world demonstrations and object pose tracking</span></a></li>
+<li><a href="#section-2"><span class="zh" lang="zh-CN">跨本体重定向与 MuJoCo 数据生成</span><span class="en" lang="en">Cross-embodiment retargeting and MuJoCo data generation</span></a></li>
+<li><a href="#section-3"><span class="zh" lang="zh-CN">多视角采样与三维高斯表示</span><span class="en" lang="en">Multi-view sampling and 3D Gaussian scene representation</span></a></li>
+<li><a href="#section-4"><span class="zh" lang="zh-CN">固定与腕部视角的 RGB-D 渲染</span><span class="en" lang="en">RGB-D rendering from fixed and wrist-mounted cameras</span></a></li>
+          </ol>
+        </nav>
+        <div class="reading-body">
+          <section class="case-study" id="case" data-anchor>
+            <h2><span class="zh" lang="zh-CN">同一时刻如何得到两幅对应的 RGB-D 图像？</span><span class="en" lang="en">How does one instant yield two matching RGB-D views?</span></h2>
+            <ol class="case-steps"><li><h3><span class="zh" lang="zh-CN">确定这一帧的物体位姿</span><span class="en" lang="en">Place the object for this frame</span></h3><p><span class="zh" lang="zh-CN">在真实示教视频里取一个时刻。SAM 2 给出物体在图像中的区域，FoundationPose 跟踪它的三维位置与朝向。相机外参把这个位姿转换到场景坐标系，使物体的位置能够与机器人轨迹对应。</span><span class="en" lang="en">Take one instant in the real demonstration. SAM 2 identifies the object in the image, and FoundationPose tracks its 3D position and orientation. Camera extrinsics place that pose in the scene frame used for the robot trajectory.</span></p></li>
+<li><h3><span class="zh" lang="zh-CN">放置目标机器人的各个连杆</span><span class="en" lang="en">Pose the target robot</span></h3><p><span class="zh" lang="zh-CN">重定向后的关节角描述目标机器人在该时刻的构型。依据 URDF 定义的关节关系，通过正运动学更新各连杆位姿，再与同一时刻的物体位姿组合，得到可供渲染的完整场景。</span><span class="en" lang="en">Retargeted joint angles specify the target robot’s configuration at that instant. Forward kinematics uses the joint relationships in its URDF to place the links. Combining these with the object pose for the same instant gives a scene ready to render.</span></p></li>
+<li><h3><span class="zh" lang="zh-CN">保留场景，更换观察位置</span><span class="en" lang="en">Hold the scene fixed and change the camera</span></h3><p><span class="zh" lang="zh-CN">固定相机从工作空间外观察，腕部相机随末端移动。两个视角渲染同一份场景状态，因此画面中的遮挡和尺度可以不同，却仍可与同一个机器人状态和动作配对。</span><span class="en" lang="en">The fixed camera looks over the workspace, while the wrist camera follows the end effector. Both render the same scene state. Occlusion and apparent scale can differ across the two images while both remain paired with the same robot state and action.</span></p></li></ol>
+          </section>
+                <section id="section-1" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">真实示教采集与位姿跟踪</span><span class="en" lang="en">Real-world demonstrations and object pose tracking</span></h2>
+        <p><span class="zh" lang="zh-CN">采集真实操作示教，使用 SAM 2 分割操作物体，并通过 FoundationPose 跟踪六自由度位姿。结合相机外参与机器人运动学，将物体位姿和示教轨迹转换到统一坐标系，为轨迹重定向与场景回放提供空间基准。</span><span class="en" lang="en">Real-world demonstrations are processed with SAM 2 for object segmentation and FoundationPose for six-degree-of-freedom pose tracking. Camera extrinsics and robot kinematics transform object poses and demonstration trajectories into a common frame for retargeting and scene replay.</span></p>
+      </section>
+      <section id="section-2" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">跨本体重定向与 MuJoCo 数据生成</span><span class="en" lang="en">Cross-embodiment retargeting and MuJoCo data generation</span></h2>
+        <p><span class="zh" lang="zh-CN">运动学重定向将示教动作映射至目标机器人的关节结构。MuJoCo 结合三维网格资产回放增强和重定向后的轨迹，沿各时间步生成视觉观测与语义标注，并关联对应的机器人状态和动作，形成用于模仿学习的训练序列。</span><span class="en" lang="en">Kinematic retargeting maps demonstrated motion to the target robot’s joint structure. MuJoCo replays the augmented and retargeted trajectories with 3D mesh assets. Visual observations and semantic labels at each step are paired with robot states and actions to form training sequences for imitation learning.</span></p>
+      </section>
+      <section id="section-3" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">多视角采样与三维高斯表示</span><span class="en" lang="en">Multi-view sampling and 3D Gaussian scene representation</span></h2>
+        <p><span class="zh" lang="zh-CN">三维高斯泼溅（3D Gaussian Splatting）分支在 SAPIEN 中采集多视角数据，并整理机器人连杆、夹爪、物体与背景的材质及 UV 坐标。逐帧回放时，根据 URDF 中的运动学模型和关节角计算各连杆位姿，并读取 FoundationPose 在同一时刻跟踪到的物体位姿。</span><span class="en" lang="en">The 3D Gaussian Splatting workflow samples multiple views in SAPIEN and prepares mesh formats, materials and UV coordinates for robot links, grippers, objects and backgrounds. During replay, forward kinematics from the URDF supplies the robot link poses, while FoundationPose supplies the object poses for the corresponding demonstration frame.</span></p>
+      </section>
+      <section id="section-4" data-anchor class="reading-section">
+        <h2><span class="zh" lang="zh-CN">固定与腕部视角的 RGB-D 渲染</span><span class="en" lang="en">RGB-D rendering from fixed and wrist-mounted cameras</span></h2>
+        <p><span class="zh" lang="zh-CN">开发固定相机与腕部相机的批量 RGB-D 渲染流程，沿同一示教轨迹生成全局工作空间与末端局部视角的观测。渲染支持颜色和场景位置扰动，输出图像与机器人状态、动作配对，并可转换为 LeRobot 格式。</span><span class="en" lang="en">Batch RGB-D rendering produces workspace and end-effector views from fixed and wrist-mounted cameras along the same demonstration trajectory. Colour and scene-placement variations augment the rendered observations, which are paired with robot states and actions and can be exported in LeRobot format.</span></p>
+      </section>
+      <aside class="publication" data-anchor>
+        <h2><span class="zh" lang="zh-CN">相关论文</span><span class="en" lang="en">Related paper</span></h2>
+        <p lang="en">KineTeach for Robot-Free Real-to-Sim-to-Real Data Generation in Cross-Embodiment Robotic Manipulation</p>
+        <p class="paper-details"><span lang="en">ICIRA 2026</span> · <span class="zh" lang="zh-CN">已录用，第四作者</span><span class="en" lang="en">Accepted, fourth author</span></p>
+      </aside>
+        </div>
+      </div>
+    </article>
+    <nav class="project-nav" aria-label="项目导航 / Project navigation">
+      <a href="../index.html#projects" data-route="../index.html#projects"><span class="zh" lang="zh-CN">返回项目列表</span><span class="en" lang="en">Back to projects</span></a>
+      <a href="mobile.html" data-route="mobile.html"><small><span class="zh" lang="zh-CN">下一篇</span><span class="en" lang="en">Next project</span></small><span class="zh" lang="zh-CN">移动机器人导航与语音交互</span><span class="en" lang="en">Mobile robot navigation and voice interaction</span> →</a>
+    </nav>
+  </main>
+  <footer>
+    <a class="zh" lang="zh-CN" href="../cv/hao-shi-zh.pdf">中文简历</a>
+    <a class="en" lang="en" href="../cv/hao-shi-en.pdf">English CV</a>
+  </footer>
+</body>
+</html>
