@@ -193,7 +193,7 @@ for (const [index, project] of projects.entries()) {
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="${escapeHtml(lead[0])}">
   <title>${escapeHtml(title[0])} · 石昊</title>
-  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/favicon.svg?v=20261120-sunrise" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/project-archive.css">${id === "tactile" ? '\n  <link rel="stylesheet" href="../assets/tactile-figure.css">' : ""}
   <script defer src="../assets/project-language.js"></script>
 </head>
