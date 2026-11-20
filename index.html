@@ -43,7 +43,7 @@
       <div class="profile-info">
         <dl class="profile-facts">
           <div class="profile-fact"><dt><span data-ln="zh">教育</span><span data-ln="en">Education</span></dt>
-          <dd><span data-ln="zh">上海交通大学 · 自动化本科，预计 2027 年毕业</span><span data-ln="en">B.Eng. in Automation, Shanghai Jiao Tong University (expected 2027)</span></dd></div>
+          <dd><span data-ln="zh">上海交通大学 · 自动化本科，预计 2027 年毕业</span><span data-ln="en">B.Eng. candidate in Automation, Shanghai Jiao Tong University (expected graduation: 2027)</span></dd></div>
           <div class="profile-fact"><dt><span data-ln="zh">方向</span><span data-ln="en">Interests</span></dt>
           <dd><span data-ln="zh">力反馈遥操作、视触觉感知与接触操作示教</span><span data-ln="en">Haptic teleoperation, visuotactile sensing and demonstration capture for contact-rich manipulation</span></dd></div>
           <div class="profile-fact"><dt><span data-ln="zh">当前</span><span data-ln="en">Current work</span></dt>
@@ -104,11 +104,11 @@
               </section>
               <section class="project-section">
                 <h4><span data-ln="zh">三轴力估计与实时部署</span><span data-ln="en">Three-axis force estimation and real-time deployment</span></h4>
-                <p><span data-ln="zh">实现基于 MAE ViT 编码器与双头潜变量结构的力估计模型，完成数据适配、分阶段训练及离线评估。模型部署于采集平台，根据触觉图像实时预测三轴接触力，并在按压与剪切实验中对照机械臂反馈的力读数，分析各分量随加载过程变化的预测误差。</span><span data-ln="en">A force estimator using an MAE ViT encoder and a dual-head latent architecture was implemented through data preparation, staged training and offline evaluation. Deployed on the acquisition platform, it predicts three-axis contact forces from tactile images in real time. Indentation and shear experiments compare these predictions with force readings reported by the robot to analyse component-wise errors throughout loading.</span></p>
+                <p><span data-ln="zh">实现基于 MAE ViT 编码器与双头潜变量结构的力估计模型，完成数据适配、分阶段训练及离线评估。模型部署于采集平台，根据触觉图像实时预测三轴接触力，并在按压与剪切实验中对照机械臂反馈的力读数，分析各分量随加载过程变化的预测误差。</span><span data-ln="en">A force estimator with a masked autoencoder (MAE)–based Vision Transformer (ViT) encoder and a dual-head latent architecture was implemented, trained in stages and evaluated offline. Deployed on the acquisition platform, it predicts three-axis contact forces from tactile images in real time. Indentation and shear experiments compare these predictions with force readings reported by the robot to analyse component-wise errors throughout loading.</span></p>
               </section>
               <section class="project-section">
                 <h4><span data-ln="zh">触觉仿真图像生成</span><span data-ln="en">Rendering simulated tactile images</span></h4>
-                <p><span data-ln="zh">基于 Blender 搭建形变网格到触觉图像的批量渲染流程，完成接触表面提取、材质配置及参考表面 UV 坐标传递。不同形变状态使用一致的纹理映射，支持单样本预览与并行批量渲染。</span><span data-ln="en">A Blender pipeline converts simulated deformation meshes into tactile images through contact-surface extraction, material assignment and UV transfer from a reference surface. Consistent texture mapping across deformation states supports individual-sample previews and parallel batch rendering.</span></p>
+                <p><span data-ln="zh">基于 Blender 搭建形变网格到触觉图像的批量渲染流程，完成接触表面提取、材质配置及参考表面 UV 坐标传递。不同形变状态使用一致的纹理映射，支持单样本预览与并行批量渲染。</span><span data-ln="en">A Blender pipeline converts simulated deformation meshes into tactile images through contact-surface extraction, material assignment and UV transfer from a reference surface. Consistent texture mapping across deformation states supports single-sample previews and parallel batch rendering.</span></p>
               </section>
           </div>
         </article>
@@ -146,15 +146,15 @@
               </section>
               <section class="project-section">
                 <h4><span data-ln="zh">主从位姿映射与力反馈</span><span data-ln="en">Bilateral motion and force mapping</span></h4>
-                <p><span data-ln="zh">牵头平台搭建与真机联调，完成主端运动学建模、主从位姿映射、六维导纳控制与重力补偿。系统将手柄位姿转换为机械臂末端目标位姿，并通过外骨骼向操作者反馈从端接触力与力矩。</span><span data-ln="en">Led platform development and hardware integration, including exoskeleton kinematics, master–slave pose mapping, six-dimensional admittance control and gravity compensation. Handle poses define target end-effector poses, while contact forces and torques at the robot are returned to the operator through the exoskeleton.</span></p>
+                <p><span data-ln="zh">牵头平台搭建与真机联调，完成主端运动学建模、主从位姿映射、六维导纳控制与重力补偿。系统将手柄位姿转换为机械臂末端目标位姿，并通过外骨骼向操作者反馈从端接触力与力矩。</span><span data-ln="en">I led platform development and hardware integration, including exoskeleton kinematics, master–slave pose mapping, six-dimensional admittance control and gravity compensation. Handle poses define target end-effector poses, while contact forces and torques at the robot are returned to the operator through the exoskeleton.</span></p>
               </section>
               <section class="project-section">
                 <h4><span data-ln="zh">柔性建模与重力补偿</span><span data-ln="en">Flexible-link modelling and gravity compensation</span></h4>
-                <p><span data-ln="zh">针对外骨骼结构在自重与末端负载作用下的挠曲，建立准静态柔性模型，并利用多姿态力传感器数据标定柔度、安装旋转和测量零偏。运行时根据关节角与柔性参数估计传感器实际朝向，修正工具重力在传感器坐标系中的投影，完成六维力／力矩补偿。</span><span data-ln="en">A quasi-static flexible-link model represents deflection under link weight and the end-effector payload. Force-sensor measurements across multiple poses calibrate compliance, mounting rotation and measurement bias. At runtime, joint angles and calibrated compliance estimate the sensor orientation, correcting the projection of tool weight into the sensor frame for six-axis force/torque compensation.</span></p>
+                <p><span data-ln="zh">针对外骨骼结构在自重与末端负载作用下的挠曲，建立准静态柔性模型，并利用多姿态力传感器数据标定柔度、安装旋转和测量零偏。运行时根据关节角与柔性参数估计传感器实际朝向，修正工具重力在传感器坐标系中的投影，完成六维力／力矩补偿。</span><span data-ln="en">A quasi-static flexible-link model represents deflection under link weight and the end-effector payload. Force-sensor measurements across multiple poses are used to calibrate compliance, mounting rotation and measurement bias. At runtime, sensor orientation is estimated from joint angles and the calibrated flexible-link model. This corrects the projection of tool weight into the sensor frame for six-axis force/torque compensation.</span></p>
               </section>
               <section class="project-section">
                 <h4><span data-ln="zh">双指接触检测与抓力调节</span><span data-ln="en">Dual-fingertip contact detection and grasp-force control</span></h4>
-                <p><span data-ln="zh">集成主端力反馈夹爪与从端千觉双指视触觉夹爪，开发夹爪开合控制、指尖接触检测与目标抓力调节，并将从端抓取力反馈至主端夹爪。</span><span data-ln="en">Integrated a master-side haptic gripper with a slave-side Xense two-finger visuotactile gripper. Developed opening and closing control, fingertip contact detection and grasp-force regulation, with slave-side grasp forces rendered at the master gripper.</span></p>
+                <p><span data-ln="zh">集成主端力反馈夹爪与从端千觉双指视触觉夹爪，开发夹爪开合控制、指尖接触检测与目标抓力调节，并将从端抓取力反馈至主端夹爪。</span><span data-ln="en">I integrated a master-side haptic gripper with a slave-side Xense two-finger visuotactile gripper and developed opening and closing control, fingertip contact detection and grasp-force regulation. Grasp forces measured at the slave gripper are rendered at the master gripper.</span></p>
               </section>
               <section class="project-section">
                 <h4><span data-ln="zh">多模态记录与完整性检查</span><span data-ln="en">Multimodal recording and integrity checks</span></h4>
@@ -178,7 +178,7 @@
           </div>
           <div class="project-copy">
             <h3 id="title-force"><span data-ln="zh">ForceTrace-CAFE：多模态示教采集与真机部署</span><span data-ln="en">ForceTrace-CAFE: multimodal demonstration capture and policy deployment</span></h3>
-            <p class="project-lead"><span data-ln="zh">参与 ForceTrace-CAFE 接触操作示教学习研究，负责视觉、力觉与位姿数据采集、工具载荷标定补偿，以及策略和对比基线的真机部署。实验覆盖擦拭、刮除与装配任务。</span><span data-ln="en">Contributed to ForceTrace-CAFE through visual, force and pose data acquisition, tool-load calibration and compensation, and hardware deployment of the policy and comparison baselines. Experiments cover wiping, scraping and assembly.</span></p>
+            <p class="project-lead"><span data-ln="zh">参与 ForceTrace-CAFE 接触操作示教学习研究，负责视觉、力觉与位姿数据采集、工具载荷标定补偿，以及策略和对比基线的真机部署。实验覆盖擦拭、刮除与装配任务。</span><span data-ln="en">I contributed to ForceTrace-CAFE through visual, force and pose data acquisition, tool-load calibration and compensation, and hardware deployment of the policy and comparison baselines. Experiments cover wiping, scraping and assembly.</span></p>
 
               <section class="project-section">
                 <h4><span data-ln="zh">手持示教的力、位姿与视觉测量</span><span data-ln="en">Force, pose and visual measurements during handheld demonstrations</span></h4>
@@ -210,7 +210,7 @@
           </figure>
           <div class="project-copy">
             <h3 id="title-hand"><span data-ln="zh">灵巧智能 DexHand021 的数据手套遥操作与触觉采集</span><span data-ln="en">Glove teleoperation and tactile data collection for DexRobot’s DexHand021</span></h3>
-            <p class="project-lead"><span data-ln="zh">开发 DexCap 数据手套到灵巧智能 DexHand021 的遥操作系统，完成指尖位姿重定向、关节控制接口、真机回放及触觉数据记录。</span><span data-ln="en">Developed a DexCap-to-DexRobot DexHand021 teleoperation system with fingertip pose retargeting, joint control, hardware replay and tactile recording.</span></p>
+            <p class="project-lead"><span data-ln="zh">开发 DexCap 数据手套到灵巧智能 DexHand021 的遥操作系统，完成指尖位姿重定向、关节控制接口、真机回放及触觉数据记录。</span><span data-ln="en">I developed a teleoperation system that maps DexCap glove motion to DexRobot’s DexHand021 hand. It supports fingertip pose retargeting, joint control, hardware replay and tactile recording.</span></p>
 
               <section class="project-section">
                 <h4><span data-ln="zh">指尖位姿约束下的运动重定向</span><span data-ln="en">Motion retargeting with fingertip pose constraints</span></h4>
@@ -222,7 +222,7 @@
               </section>
               <section class="project-section">
                 <h4><span data-ln="zh">手套输入、关节指令与触觉记录</span><span data-ln="en">Glove, joint-command and tactile recording</span></h4>
-                <p><span data-ln="zh">关联保存手套原始测量、指尖位姿、关节指令及指尖触觉反馈，构建遥操作记录与回放工具。记录覆盖手指闭合、初次接触与抓取保持阶段，支持运动指令与接触状态的对照分析。</span><span data-ln="en">Recording and replay tools associate raw glove measurements, fingertip poses, joint commands and tactile feedback. Records span finger closure, initial contact and grasp holding, supporting comparisons between commanded motion and observed contact states.</span></p>
+                <p><span data-ln="zh">关联保存手套原始测量、指尖位姿、关节指令及指尖触觉反馈，构建遥操作记录与回放工具。记录覆盖手指闭合、初次接触与抓取保持阶段，支持运动指令与接触状态的对照分析。</span><span data-ln="en">Recording and replay tools associate raw glove measurements, fingertip poses, joint commands and tactile feedback. Records span finger closure, initial contact and sustained grasps, supporting comparisons between commanded motion and observed contact states.</span></p>
               </section>
           </div>
         </article>
@@ -230,14 +230,14 @@
         <article id="project-sim" class="project project-wide" data-part="sim" aria-labelledby="title-sim">
           <header class="sim-intro">
             <h3 id="title-sim"><span data-ln="zh">Isaac Lab 中的装配示教与触觉仿真</span><span data-ln="en">Assembly demonstrations and tactile simulation in Isaac Lab</span></h3>
-            <p class="project-lead"><span data-ln="zh">基于 Isaac Lab 搭建机械臂接触装配场景，集成千觉机器人 Xense SDK 实现双指触觉仿真，开发自动示教、位姿扰动与受阻恢复流程，并记录多模态仿真数据。</span><span data-ln="en">Built contact-rich assembly tasks in Isaac Lab with the Xense Robotics SDK for tactile simulation at both fingertips. The implementation includes scripted demonstrations, initial-pose perturbations, recovery from obstructions and multimodal episode recording.</span></p>
+            <p class="project-lead"><span data-ln="zh">基于 Isaac Lab 搭建机械臂接触装配场景，集成千觉机器人 Xense SDK 实现双指触觉仿真，开发自动示教、位姿扰动与受阻恢复流程，并记录多模态仿真数据。</span><span data-ln="en">I built contact-rich assembly tasks in Isaac Lab with the Xense Robotics SDK for tactile simulation at both fingertips. The implementation includes scripted demonstrations, initial-pose perturbations, recovery from obstructions and multimodal episode recording.</span></p>
           </header>
           <figure class="project-visual sim-media">
             <video controls playsinline preload="metadata" poster="assets/sim/poster.jpg" aria-label="Isaac Lab simulation episode">
               <source src="assets/sim/episode_00000011142.mp4" type="video/mp4">
               <a href="assets/sim/episode_00000011142.mp4"><span data-ln="zh">播放仿真视频</span><span data-ln="en">Play simulation video</span></a>
             </video>
-            <figcaption><span data-ln="zh">Isaac Lab 仿真数据片段</span><span data-ln="en">Isaac Lab simulation data episode</span></figcaption>
+            <figcaption><span data-ln="zh">Isaac Lab 仿真数据片段</span><span data-ln="en">Isaac Lab simulation excerpt</span></figcaption>
           </figure>
           <div class="sim-details">
               <section class="project-section">
@@ -249,7 +249,7 @@
                 <p><span data-ln="zh">开发覆盖工件抓取、插入、按压及盒盖装配的自动示教流程，将操作组织为拾取、搬运、对位和压合等阶段。各阶段记录动作与观测，支持在不同工件初始位姿下重复执行和回放。</span><span data-ln="en">Scripted demonstrations cover part grasping, insertion, pressing and lid assembly, with stages for pickup, transport, alignment and pressing into place. Actions and observations are recorded at each stage for repeated execution and replay under different initial part poses.</span></p>
               </section>
               <section class="project-section">
-                <h4><span data-ln="zh">位姿扰动与接触受阻恢复</span><span data-ln="en">Pose perturbations and recovery from obstructed contact</span></h4>
+                <h4><span data-ln="zh">位姿扰动与接触受阻恢复</span><span data-ln="en">Pose perturbations and recovery from assembly obstructions</span></h4>
                 <p><span data-ln="zh">对工件初始位姿施加扰动，可在仿真中引入不同程度的对位偏差。检测到受阻后，控制器根据任务状态回撤、重新对准或重抓，再继续装配。示教序列保留受阻前后的动作和触觉观测，可据此回看接触变化与纠偏过程。</span><span data-ln="en">Perturbations to the initial part pose introduce variations in alignment. When the controller detects an obstruction, it retracts, realigns or regrasps the part according to the task state before resuming assembly. The demonstration retains actions and tactile observations before and after the obstruction so that changes in contact can be examined alongside the recovery motion.</span></p>
               </section>
               <section class="project-section">
@@ -259,7 +259,7 @@
         </article>
 
         <article id="project-kineteach" class="project project-wide" data-part="kineteach" aria-labelledby="title-kineteach">
-          <header><h3 id="title-kineteach"><span data-ln="zh">KineTeach：跨本体示教回放与训练数据生成</span><span data-ln="en">KineTeach: demonstration replay and training data across robot embodiments</span></h3><p class="project-lead"><span data-ln="zh">参与 KineTeach 跨本体示教数据生成研究，负责真实示教采集、三维资产构建和场景渲染，并参与轨迹增强与运动学重定向，生成用于模仿学习的视觉、状态和动作数据。</span><span data-ln="en">Contributed to KineTeach through real-world demonstration capture, 3D asset construction and scene rendering, with additional contributions to trajectory augmentation and kinematic retargeting. The workflow generates visual observations, states and actions for imitation learning.</span></p></header>
+          <header><h3 id="title-kineteach"><span data-ln="zh">KineTeach：跨本体示教回放与训练数据生成</span><span data-ln="en">KineTeach: demonstration replay and training data across robot embodiments</span></h3><p class="project-lead"><span data-ln="zh">参与 KineTeach 跨本体示教数据生成研究，负责真实示教采集、三维资产构建和场景渲染，并参与轨迹增强与运动学重定向，生成用于模仿学习的视觉、状态和动作数据。</span><span data-ln="en">I contributed to KineTeach through real-world demonstration capture, 3D asset construction and scene rendering, and participated in trajectory augmentation and kinematic retargeting. The workflow generates visual observations, states and actions for imitation learning.</span></p></header>
           <div class="kine-shared"><section class="project-section"><h5><span data-ln="zh">真实示教采集与位姿跟踪</span><span data-ln="en">Real-world demonstrations and object pose tracking</span></h5><p><span data-ln="zh">采集真实操作示教，使用 SAM 2 分割操作物体，并通过 FoundationPose 跟踪六自由度位姿。结合相机外参与机器人运动学，将物体位姿和示教轨迹转换到统一坐标系，为轨迹重定向与场景回放提供空间基准。</span><span data-ln="en">Real-world demonstrations are processed with SAM 2 for object segmentation and FoundationPose for six-degree-of-freedom pose tracking. Camera extrinsics and robot kinematics transform object poses and demonstration trajectories into a common frame for retargeting and scene replay.</span></p></section></div>
           <div class="kine-branches">
             <section class="kine-branch">
@@ -278,8 +278,8 @@
           <div class="kine-results">
             <div class="kine-results-copy"><section class="project-section"><h5><span data-ln="zh">固定与腕部视角的 RGB-D 渲染</span><span data-ln="en">RGB-D rendering from fixed and wrist-mounted cameras</span></h5><p><span data-ln="zh">开发固定相机与腕部相机的批量 RGB-D 渲染流程，沿同一示教轨迹生成全局工作空间与末端局部视角的观测。渲染支持颜色和场景位置扰动，输出图像与机器人状态、动作配对，并可转换为 LeRobot 格式。</span><span data-ln="en">Batch RGB-D rendering produces workspace and end-effector views from fixed and wrist-mounted cameras along the same demonstration trajectory. Colour and scene-placement variations augment the rendered observations, which are paired with robot states and actions and can be exported in LeRobot format.</span></p></section>
               <figure class="kine-figure">
-      <a href="assets/kineteach/appearance-variants.webp" target="_blank" rel="noopener"><img src="assets/kineteach/appearance-variants.webp" alt="视角、背景、物体颜色与光照变化示例" data-zh-alt="视角、背景、物体颜色与光照变化示例" data-en-alt="Examples of viewpoint, background, object color and lighting variations" loading="lazy" decoding="async"></a>
-      <figcaption><span data-ln="zh">视角、背景、物体颜色与光照变化示例</span><span data-ln="en">Examples of viewpoint, background, object color and lighting variations</span></figcaption></figure>
+      <a href="assets/kineteach/appearance-variants.webp" target="_blank" rel="noopener"><img src="assets/kineteach/appearance-variants.webp" alt="视角、背景、物体颜色与光照变化示例" data-zh-alt="视角、背景、物体颜色与光照变化示例" data-en-alt="Examples of viewpoint, background, object colour and lighting variations" loading="lazy" decoding="async"></a>
+      <figcaption><span data-ln="zh">视角、背景、物体颜色与光照变化示例</span><span data-ln="en">Examples of viewpoint, background, object colour and lighting variations</span></figcaption></figure>
             </div>
             <div class="kine-result-images">
               <figure class="kine-figure">

@@ -107,11 +107,11 @@
       </section>
       <section id="section-3" data-anchor class="reading-section">
         <h2><span class="zh" lang="zh-CN">三轴力估计与实时部署</span><span class="en" lang="en">Three-axis force estimation and real-time deployment</span></h2>
-        <p><span class="zh" lang="zh-CN">实现基于 MAE ViT 编码器与双头潜变量结构的力估计模型，完成数据适配、分阶段训练及离线评估。模型部署于采集平台，根据触觉图像实时预测三轴接触力，并在按压与剪切实验中对照机械臂反馈的力读数，分析各分量随加载过程变化的预测误差。</span><span class="en" lang="en">A force estimator using an MAE ViT encoder and a dual-head latent architecture was implemented through data preparation, staged training and offline evaluation. Deployed on the acquisition platform, it predicts three-axis contact forces from tactile images in real time. Indentation and shear experiments compare these predictions with force readings reported by the robot to analyse component-wise errors throughout loading.</span></p>
+        <p><span class="zh" lang="zh-CN">实现基于 MAE ViT 编码器与双头潜变量结构的力估计模型，完成数据适配、分阶段训练及离线评估。模型部署于采集平台，根据触觉图像实时预测三轴接触力，并在按压与剪切实验中对照机械臂反馈的力读数，分析各分量随加载过程变化的预测误差。</span><span class="en" lang="en">A force estimator with a masked autoencoder (MAE)–based Vision Transformer (ViT) encoder and a dual-head latent architecture was implemented, trained in stages and evaluated offline. Deployed on the acquisition platform, it predicts three-axis contact forces from tactile images in real time. Indentation and shear experiments compare these predictions with force readings reported by the robot to analyse component-wise errors throughout loading.</span></p>
       </section>
       <section id="section-4" data-anchor class="reading-section">
         <h2><span class="zh" lang="zh-CN">触觉仿真图像生成</span><span class="en" lang="en">Rendering simulated tactile images</span></h2>
-        <p><span class="zh" lang="zh-CN">基于 Blender 搭建形变网格到触觉图像的批量渲染流程，完成接触表面提取、材质配置及参考表面 UV 坐标传递。不同形变状态使用一致的纹理映射，支持单样本预览与并行批量渲染。</span><span class="en" lang="en">A Blender pipeline converts simulated deformation meshes into tactile images through contact-surface extraction, material assignment and UV transfer from a reference surface. Consistent texture mapping across deformation states supports individual-sample previews and parallel batch rendering.</span></p>
+        <p><span class="zh" lang="zh-CN">基于 Blender 搭建形变网格到触觉图像的批量渲染流程，完成接触表面提取、材质配置及参考表面 UV 坐标传递。不同形变状态使用一致的纹理映射，支持单样本预览与并行批量渲染。</span><span class="en" lang="en">A Blender pipeline converts simulated deformation meshes into tactile images through contact-surface extraction, material assignment and UV transfer from a reference surface. Consistent texture mapping across deformation states supports single-sample previews and parallel batch rendering.</span></p>
       </section>
         </div>
       </div>

@@ -68,7 +68,7 @@ module.exports = [
         ],
         text: [
           "实现基于 MAE ViT 编码器与双头潜变量结构的力估计模型，完成数据适配、分阶段训练及离线评估。模型部署于采集平台，根据触觉图像实时预测三轴接触力，并在按压与剪切实验中对照机械臂反馈的力读数，分析各分量随加载过程变化的预测误差。",
-          "A force estimator using an MAE ViT encoder and a dual-head latent architecture was implemented through data preparation, staged training and offline evaluation. Deployed on the acquisition platform, it predicts three-axis contact forces from tactile images in real time. Indentation and shear experiments compare these predictions with force readings reported by the robot to analyse component-wise errors throughout loading.",
+          "A force estimator with a masked autoencoder (MAE)–based Vision Transformer (ViT) encoder and a dual-head latent architecture was implemented, trained in stages and evaluated offline. Deployed on the acquisition platform, it predicts three-axis contact forces from tactile images in real time. Indentation and shear experiments compare these predictions with force readings reported by the robot to analyse component-wise errors throughout loading.",
         ],
       },
       {
@@ -78,7 +78,7 @@ module.exports = [
         ],
         text: [
           "基于 Blender 搭建形变网格到触觉图像的批量渲染流程，完成接触表面提取、材质配置及参考表面 UV 坐标传递。不同形变状态使用一致的纹理映射，支持单样本预览与并行批量渲染。",
-          "A Blender pipeline converts simulated deformation meshes into tactile images through contact-surface extraction, material assignment and UV transfer from a reference surface. Consistent texture mapping across deformation states supports individual-sample previews and parallel batch rendering.",
+          "A Blender pipeline converts simulated deformation meshes into tactile images through contact-surface extraction, material assignment and UV transfer from a reference surface. Consistent texture mapping across deformation states supports single-sample previews and parallel batch rendering.",
         ],
       },
     ],
@@ -138,7 +138,7 @@ module.exports = [
         ],
         text: [
           "牵头平台搭建与真机联调，完成主端运动学建模、主从位姿映射、六维导纳控制与重力补偿。系统将手柄位姿转换为机械臂末端目标位姿，并通过外骨骼向操作者反馈从端接触力与力矩。",
-          "Led platform development and hardware integration, including exoskeleton kinematics, master–slave pose mapping, six-dimensional admittance control and gravity compensation. Handle poses define target end-effector poses, while contact forces and torques at the robot are returned to the operator through the exoskeleton.",
+          "I led platform development and hardware integration, including exoskeleton kinematics, master–slave pose mapping, six-dimensional admittance control and gravity compensation. Handle poses define target end-effector poses, while contact forces and torques at the robot are returned to the operator through the exoskeleton.",
         ],
       },
       {
@@ -148,7 +148,7 @@ module.exports = [
         ],
         "text": [
           "针对外骨骼结构在自重与末端负载作用下的挠曲，建立准静态柔性模型，并利用多姿态力传感器数据标定柔度、安装旋转和测量零偏。运行时根据关节角与柔性参数估计传感器实际朝向，修正工具重力在传感器坐标系中的投影，完成六维力／力矩补偿。",
-          "A quasi-static flexible-link model represents deflection under link weight and the end-effector payload. Force-sensor measurements across multiple poses calibrate compliance, mounting rotation and measurement bias. At runtime, joint angles and calibrated compliance estimate the sensor orientation, correcting the projection of tool weight into the sensor frame for six-axis force/torque compensation."
+          "A quasi-static flexible-link model represents deflection under link weight and the end-effector payload. Force-sensor measurements across multiple poses are used to calibrate compliance, mounting rotation and measurement bias. At runtime, sensor orientation is estimated from joint angles and the calibrated flexible-link model. This corrects the projection of tool weight into the sensor frame for six-axis force/torque compensation."
         ]
       },
       {
@@ -158,7 +158,7 @@ module.exports = [
         ],
         text: [
           "集成主端力反馈夹爪与从端千觉双指视触觉夹爪，开发夹爪开合控制、指尖接触检测与目标抓力调节，并将从端抓取力反馈至主端夹爪。",
-          "Integrated a master-side haptic gripper with a slave-side Xense two-finger visuotactile gripper. Developed opening and closing control, fingertip contact detection and grasp-force regulation, with slave-side grasp forces rendered at the master gripper.",
+          "I integrated a master-side haptic gripper with a slave-side Xense two-finger visuotactile gripper and developed opening and closing control, fingertip contact detection and grasp-force regulation. Grasp forces measured at the slave gripper are rendered at the master gripper.",
         ],
       },
       {
@@ -177,7 +177,7 @@ module.exports = [
     id: "force",
     lead: [
       "参与 ForceTrace-CAFE 接触操作示教学习研究，负责视觉、力觉与位姿数据采集、工具载荷标定补偿，以及策略和对比基线的真机部署。实验覆盖擦拭、刮除与装配任务。",
-      "Contributed to ForceTrace-CAFE through visual, force and pose data acquisition, tool-load calibration and compensation, and hardware deployment of the policy and comparison baselines. Experiments cover wiping, scraping and assembly.",
+      "I contributed to ForceTrace-CAFE through visual, force and pose data acquisition, tool-load calibration and compensation, and hardware deployment of the policy and comparison baselines. Experiments cover wiping, scraping and assembly.",
     ],
     walkthrough: {
       heading: ["沿着一次擦拭读懂接触力", "Reading the force trace of a single wipe"],
@@ -268,7 +268,7 @@ module.exports = [
     id: "hand",
     lead: [
       "开发 DexCap 数据手套到灵巧智能 DexHand021 的遥操作系统，完成指尖位姿重定向、关节控制接口、真机回放及触觉数据记录。",
-      "Developed a DexCap-to-DexRobot DexHand021 teleoperation system with fingertip pose retargeting, joint control, hardware replay and tactile recording.",
+      "I developed a teleoperation system that maps DexCap glove motion to DexRobot’s DexHand021 hand. It supports fingertip pose retargeting, joint control, hardware replay and tactile recording.",
     ],
     walkthrough: {
       heading: ["一次闭指动作，三个可对照的记录", "Three records of the same closing motion"],
@@ -332,7 +332,7 @@ module.exports = [
         ],
         text: [
           "关联保存手套原始测量、指尖位姿、关节指令及指尖触觉反馈，构建遥操作记录与回放工具。记录覆盖手指闭合、初次接触与抓取保持阶段，支持运动指令与接触状态的对照分析。",
-          "Recording and replay tools associate raw glove measurements, fingertip poses, joint commands and tactile feedback. Records span finger closure, initial contact and grasp holding, supporting comparisons between commanded motion and observed contact states.",
+          "Recording and replay tools associate raw glove measurements, fingertip poses, joint commands and tactile feedback. Records span finger closure, initial contact and sustained grasps, supporting comparisons between commanded motion and observed contact states.",
         ],
       },
     ],
@@ -341,7 +341,7 @@ module.exports = [
     id: "sim",
     lead: [
       "基于 Isaac Lab 搭建机械臂接触装配场景，集成千觉机器人 Xense SDK 实现双指触觉仿真，开发自动示教、位姿扰动与受阻恢复流程，并记录多模态仿真数据。",
-      "Built contact-rich assembly tasks in Isaac Lab with the Xense Robotics SDK for tactile simulation at both fingertips. The implementation includes scripted demonstrations, initial-pose perturbations, recovery from obstructions and multimodal episode recording.",
+      "I built contact-rich assembly tasks in Isaac Lab with the Xense Robotics SDK for tactile simulation at both fingertips. The implementation includes scripted demonstrations, initial-pose perturbations, recovery from obstructions and multimodal episode recording.",
     ],
     walkthrough: {
       heading: ["回看一次受阻的仿真插入", "Inspecting an obstructed insertion in simulation"],
@@ -401,7 +401,7 @@ module.exports = [
       {
         heading: [
           "位姿扰动与接触受阻恢复",
-          "Pose perturbations and recovery from obstructed contact",
+          "Pose perturbations and recovery from assembly obstructions",
         ],
         text: [
           "对工件初始位姿施加扰动，可在仿真中引入不同程度的对位偏差。检测到受阻后，控制器根据任务状态回撤、重新对准或重抓，再继续装配。示教序列保留受阻前后的动作和触觉观测，可据此回看接触变化与纠偏过程。",
@@ -424,7 +424,7 @@ module.exports = [
     id: "kineteach",
     lead: [
       "参与 KineTeach 跨本体示教数据生成研究，负责真实示教采集、三维资产构建和场景渲染，并参与轨迹增强与运动学重定向，生成用于模仿学习的视觉、状态和动作数据。",
-      "Contributed to KineTeach through real-world demonstration capture, 3D asset construction and scene rendering, with additional contributions to trajectory augmentation and kinematic retargeting. The workflow generates visual observations, states and actions for imitation learning.",
+      "I contributed to KineTeach through real-world demonstration capture, 3D asset construction and scene rendering, and participated in trajectory augmentation and kinematic retargeting. The workflow generates visual observations, states and actions for imitation learning.",
     ],
     walkthrough: {
       heading: ["同一时刻如何得到两幅对应的 RGB-D 图像？", "How does one instant yield two matching RGB-D views?"],

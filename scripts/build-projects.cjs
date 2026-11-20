@@ -46,7 +46,7 @@ const homeProjects = projects.map(({ id, title, lead, figure, sections }) => {
           </div>
           <div class="kine-results">
             <div class="kine-results-copy">${copy([3])}
-              ${media("appearance-variants", ["视角、背景、物体颜色与光照变化示例", "Examples of viewpoint, background, object color and lighting variations"])}
+              ${media("appearance-variants", ["视角、背景、物体颜色与光照变化示例", "Examples of viewpoint, background, object colour and lighting variations"])}
             </div>
             <div class="kine-result-images">
               ${media("exo-to-gs", ["真实示教场景到高斯场景的重建与运动映射", "Reconstruction and motion mapping from real demonstrations to Gaussian scenes"])}
@@ -65,7 +65,7 @@ const homeProjects = projects.map(({ id, title, lead, figure, sections }) => {
               <source src="assets/sim/episode_00000011142.mp4" type="video/mp4">
               <a href="assets/sim/episode_00000011142.mp4">${homeBilingual(["播放仿真视频", "Play simulation video"])}</a>
             </video>
-            <figcaption>${homeBilingual(["Isaac Lab 仿真数据片段", "Isaac Lab simulation data episode"])}</figcaption>
+            <figcaption>${homeBilingual(["Isaac Lab 仿真数据片段", "Isaac Lab simulation excerpt"])}</figcaption>
           </figure>
           <div class="sim-details">${explanation}</div>
         </article>`;
